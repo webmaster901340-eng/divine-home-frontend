@@ -63,6 +63,7 @@ const Collections = () => {
   const [loading, setLoading] = useState(true);
   const [pageImages, setPageImages] = useState({});
   const [failedImages, setFailedImages] = useState({});
+  const [designNamesList, setDesignNamesList] = useState([]);
 
   const [quickViewProduct, setQuickViewProduct] = useState(null);
 
@@ -191,10 +192,32 @@ const Collections = () => {
       .catch(err => {
         // Silently fail if backend unavailable
       });
+
+    // Fetch design names from API on component mount
+    fetch(`${API_BASE_URL}/api/design-names`)
+      .then(res => res.json())
+      .then(data => {
+        const names = data.map(d => d.name).sort();
+        setDesignNamesList(['All Designs', ...names]);
+      })
+      .catch(err => {
+        setDesignNamesList(['All Designs']);
+      });
   }, []);
 
   useEffect(() => {
     setLoading(true);
+
+    // Fetch design names from API
+    fetch(`${API_BASE_URL}/api/design-names`)
+      .then(res => res.json())
+      .then(data => {
+        const names = data.map(d => d.name);
+        setDesignNamesList(['All Designs', ...names]);
+      })
+      .catch(err => {
+        setDesignNamesList(['All Designs']);
+      });
 
     if (showBestsellers) {
       fetch(`${API_BASE_URL}/api/products`)
@@ -219,7 +242,7 @@ const Collections = () => {
     }
 
     if (selectedCategory && selectedCategory !== 'All Categories' && selectedDesign && selectedDesign !== 'All Designs') {
-      params.push(`designName=${encodeURIComponent(selectedDesign)}`);
+      params.push(`designNo=${encodeURIComponent(selectedDesign)}`);
     }
 
     if (selectedSeries && selectedSeries !== 'All Series') {
@@ -252,7 +275,7 @@ const Collections = () => {
 
   const dynamicCategories = ["All Categories", ...new Set(allProducts.map(p => p.category).filter(Boolean))];
   const dynamicSeries = ["All Series", ...new Set(allProducts.map(p => p.series).filter(Boolean))];
-  const dynamicDesigns = ["All Designs", ...new Set(allProducts.map(p => p.designName).filter(Boolean))];
+  const dynamicDesigns = designNamesList.length > 0 ? designNamesList : ["All Designs"];
 
   const handleCategorySelect = (cat) => {
     setSelectedCategory(cat);
