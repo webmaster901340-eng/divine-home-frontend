@@ -187,7 +187,7 @@ const Home = () => {
 
   // Dynamic filtering based on admin badge tags
   const bestsellers = products.filter(p => p.badge && p.badge.toUpperCase() === 'BESTSELLER');
-  const newArrivals = products.filter(p => p.badge && p.badge.toUpperCase() === 'NEW');
+  const newArrivals = products.filter(p => p.badge && p.badge.toUpperCase() === 'NEW ARRIVAL');
 
   // Only show products with correct badges - no fallback
   const displayBestsellers = bestsellers;
