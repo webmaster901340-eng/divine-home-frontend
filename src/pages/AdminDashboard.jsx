@@ -114,6 +114,9 @@ const AdminDashboard = () => {
     ];
   });
 
+  const [designNamesList, setDesignNamesList] = useState([]);
+  const [loadingDesignNames, setLoadingDesignNames] = useState(true);
+
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
     if (!token) {
@@ -139,6 +142,21 @@ const AdminDashboard = () => {
       .catch(err => {
         setToast({ message: 'Failed to load page images', type: 'error' });
       });
+
+    fetch(`${API_BASE_URL}/api/design-names`)
+      .then(res => res.json())
+      .then(data => {
+        const names = data.map(d => d.name);
+        setDesignNamesList(names);
+        if (names.length > 0 && !newProduct.designNo) {
+          setNewProduct(prev => ({...prev, designNo: names[0]}));
+        }
+      })
+      .catch(err => {
+        setToast({ message: 'Failed to load design names', type: 'error' });
+        setDesignNamesList(['3D Flower', 'Mandala', 'Gold Vector', 'Peacock']);
+      })
+      .finally(() => setLoadingDesignNames(false));
   }, [navigate]);
 
   const [currentUser] = useState(
@@ -676,14 +694,90 @@ const AdminDashboard = () => {
                   </div>
 
                   <div>
-                    <label className="block uppercase tracking-wider font-semibold text-stone-700 mb-1">Design No.</label>
-                    <input 
-                      type="text" 
-                      placeholder="e.g. 5001"
+                    <div className="flex justify-between items-center mb-1">
+                      <label className="block uppercase tracking-wider font-semibold text-stone-700">Design Name *</label>
+                      {newProduct.designNo && designNamesList.length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setConfirmModal({
+                              isOpen: true,
+                              title: 'Remove Design Name',
+                              message: `Are you sure you want to delete the design name "${newProduct.designNo}"?`,
+                              onConfirm: async () => {
+                                const designToDelete = designNamesList.find(d => d === newProduct.designNo);
+                                if (designToDelete) {
+                                  try {
+                                    const response = await fetch(`${API_BASE_URL}/api/design-names`, {
+                                      method: 'GET',
+                                      headers: getAuthHeaders()
+                                    });
+                                    const designs = await response.json();
+                                    const designId = designs.find(d => d.name === newProduct.designNo)?._id;
+                                    if (designId) {
+                                      const deleteRes = await fetch(`${API_BASE_URL}/api/design-names/${designId}`, {
+                                        method: 'DELETE',
+                                        headers: getAuthHeaders()
+                                      });
+                                      if (deleteRes.ok) {
+                                        const updated = designNamesList.filter(d => d !== newProduct.designNo);
+                                        setDesignNamesList(updated);
+                                        setNewProduct({...newProduct, designNo: updated[0] || ''});
+                                        setToast({ message: 'Design name deleted', type: 'success' });
+                                      }
+                                    }
+                                  } catch (error) {
+                                    setToast({ message: 'Failed to delete design name', type: 'error' });
+                                  }
+                                }
+                                setConfirmModal({ isOpen: false, title: '', message: '', onConfirm: null });
+                              }
+                            });
+                          }}
+                          className="text-[10px] bg-stone-100 hover:bg-rose-50 text-stone-500 hover:text-rose-600 px-2 py-0.5 rounded-md transition-colors flex items-center gap-1 cursor-pointer font-medium"
+                        >
+                          <span>🗑️</span> Remove
+                        </button>
+                      )}
+                    </div>
+                    <select
+                      required
                       value={newProduct.designNo}
-                      onChange={e => setNewProduct({...newProduct, designNo: e.target.value})}
+                      onChange={e => {
+                        if (e.target.value === '+ Add New Design Name...') {
+                          const custom = prompt("Enter new design name (e.g., Peacock, Mandala, Gold Vector):");
+                          if (custom && custom.trim() !== '') {
+                            const trimmed = custom.trim();
+                            if (!designNamesList.includes(trimmed)) {
+                              fetch(`${API_BASE_URL}/api/design-names`, {
+                                method: 'POST',
+                                headers: getAuthHeaders(),
+                                body: JSON.stringify({ name: trimmed })
+                              })
+                              .then(res => res.json())
+                              .then(data => {
+                                setDesignNamesList([...designNamesList, trimmed]);
+                                setNewProduct({...newProduct, designNo: trimmed});
+                                setToast({ message: 'Design name added', type: 'success' });
+                              })
+                              .catch(err => {
+                                setToast({ message: 'Failed to add design name', type: 'error' });
+                              });
+                            } else {
+                              setNewProduct({...newProduct, designNo: trimmed});
+                            }
+                          }
+                        } else {
+                          setNewProduct({...newProduct, designNo: e.target.value});
+                        }
+                      }}
                       className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 focus:outline-none focus:border-[#C5A059]"
-                    />
+                    >
+                      {designNamesList.map((name, idx) => (
+                        <option key={idx} value={name}>{name}</option>
+                      ))}
+                      <option value="+ Add New Design Name...">+ Add New Design Name...</option>
+                    </select>
                   </div>
 
                   <div>
