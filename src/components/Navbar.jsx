@@ -154,16 +154,7 @@ const Navbar = () => {
           </button>
 
           <Link to="/" className="flex flex-col shrink-0">
-            <span className="font-serif text-lg sm:text-2xl font-bold tracking-[0.18em] text-stone-900 uppercase">
-              Divine Home
-            </span>
-            <span className="font-serif text-base sm:text-lg font-bold tracking-[0.25em] text-stone-900 uppercase -mt-1">
-              India
-            </span>
-            {/* Fixed Tagline Font Size (12px standard) */}
-            <span className="text-xs uppercase tracking-[0.15em] text-[#C5A059] font-semibold mt-0.5">
-              Artisan Trays • Ceramics • Décor
-            </span>
+            <img src="/logo-header.png" alt="Divine Home India" className="h-14 sm:h-16 w-auto object-contain" />
           </Link>
         </div>
 

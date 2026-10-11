@@ -137,10 +137,8 @@ const Footer = () => {
             
             {/* Column 1: Brand Info */}
             <FadeIn direction="up" delay={100}>
-              <div className="space-y-4">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white">
-                  Divine Home India
-                </h3>
+              <div className="space-y-4 flex flex-col h-full">
+                <img src="/logo-footer.png" alt="Divine Home India" className="h-20 w-auto object-contain" />
                 <p className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-medium">
                   Karol Bagh, New Delhi
                 </p>
@@ -151,10 +149,10 @@ const Footer = () => {
                   <p className="flex items-center gap-2"><span>💛</span> Wholesale · Dealers · Distributors</p>
                 </div>
 
-                <div className="pt-2">
-                  <a 
-                    href="https://www.instagram.com/divinehomeindia" 
-                    target="_blank" 
+                <div className="pt-2 mt-auto">
+                  <a
+                    href="https://www.instagram.com/divinehomeindia"
+                    target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2.5 bg-white/5 hover:bg-white/10 text-white text-xs px-4 py-2.5 rounded-full border border-white/10 transition-colors"
                   >
