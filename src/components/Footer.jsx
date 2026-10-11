@@ -137,19 +137,24 @@ const Footer = () => {
             
             {/* Column 1: Brand Info */}
             <FadeIn direction="up" delay={100}>
-              <div className="space-y-4 flex flex-col h-full">
-                <img src="/logo-footer.png" alt="Divine Home India" className="h-20 w-auto object-contain" />
-                <p className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-medium">
-                  Karol Bagh, New Delhi
-                </p>
-
-                <div className="space-y-2 text-xs text-stone-400 pt-2 font-light">
-                  <p className="flex items-center gap-2"><span>✨</span> Luxury Handcrafted Home Décor</p>
-                  <p className="flex items-center gap-2"><span>🏺</span> Artisan Trays · Ceramics · Décor</p>
-                  <p className="flex items-center gap-2"><span>💛</span> Wholesale · Dealers · Distributors</p>
+              <div className="flex flex-col h-full">
+                <div>
+                  <img src="/logo-footer.png" alt="Divine Home India" className="h-20 w-auto object-contain mb-4" />
                 </div>
 
-                <div className="pt-2 mt-auto">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-medium mb-4">
+                    Karol Bagh, New Delhi
+                  </p>
+
+                  <div className="space-y-2 text-xs text-stone-400 font-light">
+                    <p className="flex items-center gap-2"><span>✨</span> Luxury Handcrafted Home Décor</p>
+                    <p className="flex items-center gap-2"><span>🏺</span> Artisan Trays · Ceramics · Décor</p>
+                    <p className="flex items-center gap-2"><span>💛</span> Wholesale · Dealers · Distributors</p>
+                  </div>
+                </div>
+
+                <div className="mt-auto pt-4">
                   <a
                     href="https://www.instagram.com/divinehomeindia"
                     target="_blank"
