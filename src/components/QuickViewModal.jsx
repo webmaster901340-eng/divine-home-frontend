@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../utils/api';
 
@@ -241,9 +242,9 @@ const QuickViewModal = ({ product, onClose }) => {
                 <div className="bg-[#F9F7F2] p-4 rounded-xl border border-stone-200/80 mb-6">
                   <span className="text-[9px] text-stone-400 uppercase tracking-wider font-semibold block mb-1">WHOLESALE PRICING TIER</span>
                   <div className="flex items-baseline gap-2.5">
-                    <span className="font-sans text-3xl font-bold text-stone-900 tracking-tight">₹{product.wholesalePrice || product.price}</span>
-                    <span className="text-sm text-stone-400 line-through">₹{product.mrp}</span>
-                    <span className="text-[11px] text-emerald-600 font-semibold ml-auto">Direct Factory Price</span>
+                    <span className="font-sans text-3xl font-bold text-stone-900 tracking-tight">{priceLabel(product.wholesalePrice || product.price)}</span>
+                    <span className="text-sm text-stone-400 line-through">{mrpLabel(product.mrp)}</span>
+                    <span className="text-[11px] text-emerald-600 font-semibold ml-auto">{hasPrice(product.wholesalePrice || product.price) ? "Direct Factory Price" : "WhatsApp us for dealer rates"}</span>
                   </div>
                 </div>
               </div>

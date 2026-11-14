@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { useSearchParams, useLocation, useNavigate, Link } from 'react-router-dom';
 import QuickViewModal from '../components/QuickViewModal';
 import { API_BASE_URL } from '../utils/api';
@@ -519,11 +520,11 @@ const Collections = () => {
                       <div className="flex items-center justify-between pt-4 border-t border-stone-100 mt-2">
                         <div>
                           <span className="text-[10px] text-stone-400 block uppercase">Wholesale Price</span>
-                          <span className="font-sans font-bold text-stone-900 text-base">₹{product.wholesalePrice}</span>
+                          <span className="font-sans font-bold text-stone-900 text-base">{priceLabel(product.wholesalePrice)}</span>
                         </div>
                         <div className="text-right">
-                          <span className="text-[10px] text-stone-400 block uppercase">MRP</span>
-                          <span className="text-stone-400 line-through text-xs">₹{product.mrp}</span>
+                          {hasPrice(product.mrp) && <span className="text-[10px] text-stone-400 block uppercase">MRP</span>}
+                          <span className="text-stone-400 line-through text-xs">{mrpLabel(product.mrp)}</span>
                         </div>
                       </div>
                     </div>

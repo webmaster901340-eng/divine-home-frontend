@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import { API_BASE_URL } from '../utils/api';
@@ -49,9 +50,8 @@ const Cart = () => {
    Material: ${item.specs?.material || item.material || 'N/A'}
    Finish: ${item.specs?.finish || 'N/A'}
    Dimensions: ${item.specs?.dimensions || 'N/A'}
-   Wholesale Price: ₹${item.wholesalePrice}/unit
+   Wholesale Price: ${hasPrice(item.wholesalePrice) ? `₹${item.wholesalePrice}/unit` : "On request"}
    Qty: ${item.quantity}
-   Total: ₹${item.wholesalePrice * item.quantity}
    MOQ: ${item.moq}`
     ).join('\n\n');
   };
@@ -215,7 +215,7 @@ const Cart = () => {
 
                   <div className="flex items-center justify-between mt-4 flex-wrap gap-4">
                     <div>
-                      <span className="font-sans text-xl font-bold text-stone-900 tracking-tight">₹{item.wholesalePrice}</span>
+                      <span className="font-sans text-xl font-bold text-stone-900 tracking-tight">{priceLabel(item.wholesalePrice)}</span>
                       <span className="text-xs text-stone-400 ml-2">per unit</span>
                     </div>
 
@@ -250,7 +250,7 @@ const Cart = () => {
                 <div className="text-right">
                   <p className="text-xs text-stone-500 mb-1">Subtotal</p>
                   <p className="font-sans text-1xl sm:text-1xl font-bold text-stone-900 tracking-tight">
-                    ₹{(item.wholesalePrice * item.quantity).toLocaleString()}
+                    {hasPrice(item.wholesalePrice) ? `₹${(item.wholesalePrice * item.quantity).toLocaleString()}` : "On request"}
                   </p>
                 </div>
               </div>
@@ -279,7 +279,7 @@ const Cart = () => {
                 <div className="py-4 border-b border-stone-200">
                   <div className="flex justify-between items-center">
                     <span className="text-lg font-semibold text-stone-900">Total:</span>
-                    <span className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">₹{getTotalPrice().toLocaleString()}</span>
+                    <span className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">{getTotalPrice() > 0 ? `₹${getTotalPrice().toLocaleString()}` : "On request"}</span>
                   </div>
                 </div>
               </div>

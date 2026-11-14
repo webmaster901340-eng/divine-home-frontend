@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
+import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { useParams, Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import RFQModal from '../components/RFQModal';
@@ -142,7 +143,7 @@ DIVINE HOME INDIA - WHOLESALE SPEC SHEET
 Product: ${product.title}
 SKU: ${product.sku || "DHI-SKU"}
 Category: ${product.category}
-Wholesale Rate: ₹${product.wholesalePrice}/unit (MRP: ₹${product.mrp})
+Wholesale Rate: ${hasPrice(product.wholesalePrice) ? `₹${product.wholesalePrice}/unit` : "On request"}
 MOQ: ${product.moq || "30 pcs"}
 
 TECHNICAL SPECIFICATIONS:
@@ -247,10 +248,10 @@ Email: wholesale@divinehomeindia.com
 
               <div className="flex items-baseline gap-3">
                 <span className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                  ₹{product.wholesalePrice}
+                  {priceLabel(product.wholesalePrice)}
                 </span>
-                <span className="text-xs text-stone-500 font-light">/ unit</span>
-                <span className="text-xs text-stone-400 line-through">MRP ₹{product.mrp}</span>
+                {hasPrice(product.wholesalePrice) && <span className="text-xs text-stone-500 font-light">/ unit</span>}
+                <span className="text-xs text-stone-400 line-through">{hasPrice(product.mrp) ? `MRP ${mrpLabel(product.mrp)}` : ""}</span>
               </div>
 
               <div className="flex justify-between items-center mt-3 pt-3 border-t border-stone-200/60 text-xs">

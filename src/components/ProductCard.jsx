@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { priceLabel, mrpLabel } from '../utils/price';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import QuickViewModal from './QuickViewModal';
@@ -106,8 +107,8 @@ const ProductCard = ({ product }) => {
             <div className="flex flex-col">
               <span className="text-[9px] text-stone-400 uppercase tracking-wider font-semibold">WHOLESALE TIER</span>
               <div className="flex items-baseline gap-2 mt-0.5">
-                <span className="font-sans font-bold text-stone-900 text-base leading-none">₹{product.wholesalePrice}</span>
-                <span className="text-xs text-stone-400 line-through font-sans leading-none">₹{product.mrp}</span>
+                <span className="font-sans font-bold text-stone-900 text-base leading-none">{priceLabel(product.wholesalePrice)}</span>
+                <span className="text-xs text-stone-400 line-through font-sans leading-none">{mrpLabel(product.mrp)}</span>
               </div>
             </div>
             <a
