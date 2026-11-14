@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { FAQ } from '../seo/pages';
 
 // Super Smooth & Guaranteed Scroll Reveal Component
 const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
@@ -69,24 +70,7 @@ const WholesaleDealers = () => {
     setSubmitted(true);
   };
 
-  const faqs = [
-    {
-      q: "What is the Minimum Order Quantity (MOQ)?",
-      a: "Our wholesale MOQ starts from 30–50 pieces per SKU for artisan trays and ceramic tableware, and 20 pieces for statement decor pieces. Mixed category assortments are available for registered dealers."
-    },
-    {
-      q: "Can I visit the showroom in Karol Bagh?",
-      a: "Yes! Dealers, architects, and retail buyers are welcome to visit our Karol Bagh, New Delhi trade showroom to view product finishes, sample trays, and discuss bulk margins in person."
-    },
-    {
-      q: "What is your transit breakage policy?",
-      a: "We pack using 5-ply export corrugation, individual bubble armor, and wooden palletization. In the rare event of transit damage, we offer instant replacement or credit note against unboxing photographs."
-    },
-    {
-      q: "Do you offer custom corporate gifting branding?",
-      a: "Yes! For bulk corporate gifting and festive hampers, we provide custom satin-lined keepsake packaging, custom branding tags, and personalized greeting inserts."
-    }
-  ];
+  const faqs = FAQ.map(([q, a]) => ({ q, a }));
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] py-12 overflow-hidden">
@@ -98,7 +82,7 @@ const WholesaleDealers = () => {
             WHOLESALE • DEALERS • DISTRIBUTORS
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-stone-900 mb-4 tracking-tight">
-            Request Wholesale & Dealer Pricing
+            Get Our Wholesale Price List
           </h1>
           <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light">
             Fill out the B2B quotation form below or connect with our Karol Bagh trade desk directly on WhatsApp. We provide factory-direct wholesale pricing, sample shipments, and festive gifting catalogs.
@@ -293,7 +277,7 @@ const WholesaleDealers = () => {
                     SUBMIT DEALER RFQ
                   </button>
                   <a 
-                    href="https://wa.me/919811023456?text=Hello,%20I%20want%20to%20request%20wholesale%20pricing%20and%20dealer%20catalog."
+                    href="https://wa.me/918459495594?text=Hello,%20I%20want%20to%20request%20wholesale%20pricing%20and%20dealer%20catalog."
                     target="_blank"
                     rel="noreferrer"
                     className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 rounded-xl font-semibold text-xs uppercase tracking-widest transition-colors flex items-center justify-center gap-2 shadow-md text-center"
@@ -322,7 +306,7 @@ const WholesaleDealers = () => {
                   <span className="text-base">📞</span>
                   <div>
                     <p className="font-semibold text-stone-900">Wholesale Desk:</p>
-                    <p>+91 98110 23456</p>
+                    <p>+91 84594 95594</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -343,13 +327,13 @@ const WholesaleDealers = () => {
                   <span className="text-base">📍</span>
                   <div>
                     <p className="font-semibold text-stone-900">Location:</p>
-                    <p>Commercial Trade Zone, Karol Bagh, New Delhi - 110005</p>
+                    <p>1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005</p>
                   </div>
                 </div>
               </div>
 
               <a 
-                href="https://wa.me/919811023456" 
+                href="https://wa.me/918459495594" 
                 target="_blank" 
                 rel="noreferrer"
                 className="w-full bg-[#E9FCEF] hover:bg-[#D5F7E2] text-emerald-800 border border-emerald-300 py-3.5 rounded-xl font-medium text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer"
@@ -375,15 +359,15 @@ const WholesaleDealers = () => {
                 <div className="flex items-start gap-3">
                   <span className="text-stone-900 font-bold text-sm">🚚</span>
                   <div>
-                    <strong className="text-stone-900 block font-medium">Insured Pallet Logistics:</strong>
-                    Zero-breakage delivery guarantee across all Indian states.
+                    <strong className="text-stone-900 block font-medium">Pan-India Delivery:</strong>
+                    Dispatch by transport or courier to every state, with a GST invoice.
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-stone-900 font-bold text-sm">⚡</span>
                   <div>
-                    <strong className="text-stone-900 block font-medium">Priority Sample Dispatch:</strong>
-                    Quick 48-hour sample dispatch for registered trade buyers.
+                    <strong className="text-stone-900 block font-medium">See It Before You Order:</strong>
+                    Every design is on display at our Karol Bagh showroom.
                   </div>
                 </div>
               </div>

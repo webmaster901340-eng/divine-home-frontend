@@ -86,15 +86,15 @@ const ProductDetail = () => {
             mrp: 3995,
             moq: "30 pcs",
             images: [
-              "https://images.unsplash.com/photo-1581783342894-3ee46533f08b?auto=format&fit=crop&q=80&w=1200",
-              "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&q=80&w=1200"
+              "/images/dhi/printed-tray-set.jpg",
+              "/images/dhi/festive-serving-set.jpg"
             ],
             specs: {
               material: "Natural Sea Shell Mother of Pearl & Sustainable Wood",
               finish: "Hand-Polished Organic Resin Seal",
               dimensions: "18 x 12 inches & 16 x 10 inches (2 Pcs Set)",
               weight: "1.2 kg",
-              packaging: "Export Corrugation with Bubble Armor & Wooden Palletization"
+              packaging: "Corrugated carton with bubble wrap"
             }
           });
         }
@@ -150,12 +150,12 @@ MATERIAL: ${product.specs?.material || "Standard Artisan Grade"}
 FINISH: ${product.specs?.finish || "Standard Factory Finish"}
 DIMENSIONS: ${product.specs?.dimensions || "As per master catalog"}
 WEIGHT: ${product.specs?.weight || "Standard"}
-PACKAGING: ${product.specs?.packaging || "Insured safe transit packaging"}
+PACKAGING: ${product.specs?.packaging || "Corrugated carton with bubble wrap"}
 
 CONTACT TRADE DESK:
-WhatsApp: +91 98110 23456
+WhatsApp: +91 84594 95594
 Email: wholesale@divinehomeindia.com
-Commercial Trade Zone, Karol Bagh, New Delhi - 110005
+1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005
     `.trim();
 
     const blob = new Blob([specContent], { type: 'text/plain;charset=utf-8' });
@@ -284,7 +284,7 @@ Commercial Trade Zone, Karol Bagh, New Delhi - 110005
 
                 {/* Secondary Action: WhatsApp Enquiry */}
                 <a
-                  href={`https://wa.me/919811023456?text=Hello,%20I%20want%20to%20enquire%20about%20wholesale%20order%20for%20${encodeURIComponent(product.title)}%20(SKU:%20${product.sku})`}
+                  href={`https://wa.me/918459495594?text=Hello,%20I%20want%20to%20enquire%20about%20wholesale%20order%20for%20${encodeURIComponent(product.title)}%20(SKU:%20${product.sku})`}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full bg-[#00A859] hover:bg-[#008f4c] text-white py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-colors text-center cursor-pointer"
@@ -312,7 +312,7 @@ Commercial Trade Zone, Karol Bagh, New Delhi - 110005
 
             <div className="space-y-2 pt-2 text-xs text-stone-600 border-t border-stone-200/80">
               <div className="flex items-center gap-2"><span>🛡️</span> 100% Bespoke Quality & Export Finish Guarantee</div>
-              <div className="flex items-center gap-2"><span>📦</span> Safe transit insured multi-layer corrugation & wooden pallet packing</div>
+              <div className="flex items-center gap-2"><span>📦</span> Packed in corrugated cartons with bubble wrap</div>
             </div>
           </FadeIn>
         </div>

@@ -161,7 +161,7 @@ const Cart = () => {
 
     const whatsappMessage = `Hello! I would like to request a quotation for the following products:\n\n*QUOTATION REQUEST*\n━━━━━━━━━━━━━━━━━━━\n\n*Customer Details:*\n👤 Name: ${quotationForm.name}\n🏢 Company: ${quotationForm.company || 'N/A'}\n📱 Phone: ${quotationForm.phone}\n🏙️ City: ${quotationForm.city}\n\n*CART ITEMS (${cart.length} products):*\n━━━━━━━━━━━━━━━━━━━\n\n${generateCartSummary()}\n\n*REQUEST DETAILS:*\nEstimated Quantity: ${quotationForm.estimatedQuantity}\nSpecial Instructions: ${quotationForm.specialInstructions || 'None'}\n\n*TOTAL:*\n━━━━━━━━━━━━━━━━━━━\n📦 Total Items: ${cart.length}\n🔢 Total Quantity: ${cart.reduce((sum, item) => sum + item.quantity, 0)} units\n💰 Total Price: ₹${getTotalPrice()}\n\nPlease provide a detailed quotation and lead time. Thank you!`;
 
-    window.open(`https://wa.me/919811023456?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    window.open(`https://wa.me/918459495594?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
   };
 
   if (cart.length === 0) {
@@ -195,7 +195,7 @@ const Cart = () => {
                 {/* Product Image */}
                 <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
                   <img
-                    src={item.images?.[0] || 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae'}
+                    src={item.images?.[0] || '/images/dhi/mango-wood-trays.jpg'}
                     alt={item.title}
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -305,7 +305,7 @@ const Cart = () => {
                 </div>
                 <div className="flex items-start gap-2">
                   <span>📦</span>
-                  <span>Safe transit insured multi-layer packing</span>
+                  <span>Packed in corrugated cartons for safe transit</span>
                 </div>
               </div>
             </div>

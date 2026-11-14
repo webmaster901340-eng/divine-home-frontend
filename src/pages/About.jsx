@@ -46,9 +46,9 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
 const About = () => {
   const location = useLocation();
   const [pageImages, setPageImages] = useState({
-    about_hero: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&q=80&w=1920",
-    about_img1: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600",
-    about_img2: "https://images.unsplash.com/photo-1581783342894-3ee46533f08b?auto=format&fit=crop&q=80&w=600"
+    about_hero: "/images/dhi/showroom-tray-shelves.jpg",
+    about_img1: "/images/dhi/mango-wood-trays.jpg",
+    about_img2: "/images/dhi/printed-tray-set.jpg"
   });
 
   useEffect(() => {
@@ -102,13 +102,13 @@ const About = () => {
           
           <FadeIn direction="up" delay={250}>
             <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
-              Luxury Handcrafted Home Décor, Artisan Trays & Fine Ceramics
+              About Divine Home India
             </h1>
           </FadeIn>
 
           <FadeIn direction="up" delay={400}>
             <p className="text-stone-300 text-xs sm:text-sm max-w-2xl mx-auto font-light leading-relaxed pt-2">
-              Welcome to Divine Home India. Established in the commercial heart of Karol Bagh, New Delhi, we are a leading B2B wholesale distribution partner for premium retailers, luxury gifting curators, and interior architects nationwide.
+              We started in 2015 in Karol Bagh, New Delhi, supplying home and kitchen products to local shops. Trays became the product our dealers asked for most, so we began designing our own. Today we supply gift shops, decor stores, hotels and corporate gifting companies across India.
             </p>
           </FadeIn>
         </div>
@@ -118,20 +118,20 @@ const About = () => {
       <FadeIn direction="zoom" delay={150} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-30 mb-20">
         <div className="bg-white rounded-3xl shadow-xl border border-stone-200/80 p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="border-r border-stone-100 last:border-none">
-            <p className="font-sans text-3xl font-bold text-stone-900 tracking-tight">500+</p>
-            <p className="text-xs uppercase tracking-wider text-stone-500 font-semibold mt-1">Curated Décor SKUs</p>
+            <p className="font-sans text-3xl font-bold text-stone-900 tracking-tight">2015</p>
+            <p className="text-xs uppercase tracking-wider text-stone-500 font-semibold mt-1">Supplying Since</p>
           </div>
           <div className="border-r border-stone-100 last:border-none">
-            <p className="font-sans text-3xl font-bold text-stone-900 tracking-tight">280+</p>
-            <p className="text-xs uppercase tracking-wider text-stone-500 font-semibold mt-1">Retail & Trade Dealers</p>
+            <p className="font-sans text-3xl font-bold text-stone-900 tracking-tight">250+</p>
+            <p className="text-xs uppercase tracking-wider text-stone-500 font-semibold mt-1">Dealers Across India</p>
           </div>
           <div className="border-r border-stone-100 last:border-none">
             <p className="font-serif text-3xl font-bold text-stone-900">Karol Bagh</p>
             <p className="text-xs uppercase tracking-wider text-stone-500 font-semibold mt-1">Delhi Showroom Hub</p>
           </div>
           <div>
-            <p className="font-sans text-3xl font-bold text-stone-900 tracking-tight">100%</p>
-            <p className="text-xs uppercase tracking-wider text-stone-500 font-semibold mt-1">Insured Transit Safety</p>
+            <p className="font-sans text-3xl font-bold text-stone-900 tracking-tight">50+</p>
+            <p className="text-xs uppercase tracking-wider text-stone-500 font-semibold mt-1">Distributors</p>
           </div>
         </div>
       </FadeIn>
@@ -199,17 +199,17 @@ const About = () => {
               Why Dealers & Retailers Partner With Us
             </h2>
             <p className="text-xs sm:text-sm text-stone-500 max-w-xl mx-auto font-light">
-              A wholesale supply system built around margin protection, fast inventory replenishment, and zero-breakage guarantee.
+              Why gift shops, decor stores and distributors keep reordering from us.
             </p>
           </FadeIn>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { num: "01", title: "Artisan Handcrafted Quality", desc: "Every tray, bowl, and vase features authentic artisanal finishing—from polished brass borders to natural reactive glazes." },
-            { num: "02", title: "Direct Distributor Margins", desc: "Transparent wholesale pricing tiers engineered to ensure healthy retail margins for our dealers and corporate gift houses." },
-            { num: "03", title: "Festive & Bulk Gifting", desc: "Custom gift packaging, satin lining, and coordinated combos ready for corporate gifting and festive hampers." },
-            { num: "04", title: "Zero-Breakage Guarantee", desc: "Palletized shipments with multi-layer bubble and corrugated armor ensure delicate trays and ceramics arrive pristine." }
+            { num: "01", title: "Designs Made In-House", desc: "We develop our own tray prints, so your shelf doesn't look like every other gift shop in the market." },
+            { num: "02", title: "Mix Designs In One Order", desc: "Try a few designs, see what sells in your area, then reorder only those." },
+            { num: "03", title: "Festive & Bulk Gifting", desc: "Gift boxes and branded packaging for corporate orders and festive hampers, with your logo on the box or the tray." },
+            { num: "04", title: "Full Matching Sets", desc: "Trays, coasters and candy boxes in one design let your customers buy a complete look and raise your bill value." }
           ].map((item, idx) => (
             <FadeIn key={idx} direction="up" delay={idx * 150}>
               <div className="bg-[#FDFBF7] p-8 rounded-3xl border border-stone-200/80 shadow-sm flex flex-col justify-between text-left h-full">
@@ -242,7 +242,7 @@ const About = () => {
               <span className="text-xs uppercase tracking-wider text-[#C5A059] font-semibold block mb-2">Onboarding</span>
               <h3 className="font-serif text-xl font-bold text-stone-900 mb-4">Dealer Registration & RFQ</h3>
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-                Verified retailers, interior architects, and corporate gifting houses can register as official trade partners by submitting bulk inquiries through our wholesale desk or visiting our Karol Bagh showroom. Approved dealers receive quarterly lookbooks and custom slab pricing.
+                Shops, distributors, hotels and corporate gifting companies can become dealers by sending the wholesale form or visiting our Karol Bagh showroom with their business details. We then share the catalogue and trade price list.
               </p>
             </div>
           </FadeIn>
@@ -250,9 +250,9 @@ const About = () => {
           <FadeIn direction="right" delay={200}>
             <div id="shipping-policy" className="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/80 shadow-sm scroll-mt-28 h-full">
               <span className="text-xs uppercase tracking-wider text-[#C5A059] font-semibold block mb-2">Logistics & Safety</span>
-              <h3 className="font-serif text-xl font-bold text-stone-900 mb-4">Shipping & Zero-Breakage Policy</h3>
+              <h3 className="font-serif text-xl font-bold text-stone-900 mb-4">Shipping & Delivery</h3>
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-                We pack all orders using 5-ply export corrugation, individual bubble armor, and heavy-duty wooden palletization. In the rare event of transit damage, we offer instant replacement or credit note against unboxing photographs.
+                We dispatch across India by transport or courier, packed in corrugated cartons with bubble wrap. Delhi NCR buyers can also collect orders from our Karol Bagh showroom. If anything arrives damaged, send us unboxing photos and our team will sort it out.
               </p>
             </div>
           </FadeIn>
@@ -297,7 +297,7 @@ const About = () => {
               Request Dealer Wholesale Price Sheet
             </Link>
             <a 
-              href="https://wa.me/919811023456" 
+              href="https://wa.me/918459495594" 
               target="_blank" 
               rel="noreferrer"
               className="bg-transparent border border-stone-600 hover:border-white text-white px-8 py-4 rounded-full font-semibold text-xs tracking-widest uppercase transition-colors cursor-pointer"

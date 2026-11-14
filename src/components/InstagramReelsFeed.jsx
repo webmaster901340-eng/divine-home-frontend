@@ -2,10 +2,10 @@ import React from 'react';
 
 const InstagramReelsFeed = () => {
   const instaPosts = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400', link: 'https://www.instagram.com/divinehomeindia' },
-    { id: 2, image: 'https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&q=80&w=400', link: 'https://www.instagram.com/divinehomeindia' },
-    { id: 3, image: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=400', link: 'https://www.instagram.com/divinehomeindia' },
-    { id: 4, image: 'https://images.unsplash.com/photo-1581783342894-3ee46533f08b?auto=format&fit=crop&q=80&w=400', link: 'https://www.instagram.com/divinehomeindia' },
+    { id: 1, image: '/images/dhi/mango-wood-trays.jpg', link: 'https://www.instagram.com/divinehomeindia' },
+    { id: 2, image: '/images/dhi/festive-serving-set.jpg', link: 'https://www.instagram.com/divinehomeindia' },
+    { id: 3, image: '/images/dhi/ceramic-mugs.jpg', link: 'https://www.instagram.com/divinehomeindia' },
+    { id: 4, image: '/images/dhi/printed-tray-set.jpg', link: 'https://www.instagram.com/divinehomeindia' },
   ];
 
   return (

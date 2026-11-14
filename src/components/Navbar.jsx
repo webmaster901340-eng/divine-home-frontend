@@ -268,7 +268,7 @@ const Navbar = () => {
 
           {/* INSTAGRAM */}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/divinehomeindia/"
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram"
@@ -312,7 +312,7 @@ const Navbar = () => {
 
           {/* WHATSAPP */}
           <a
-            href="https://wa.me/919811023456"
+            href="https://wa.me/918459495594"
             target="_blank"
             rel="noreferrer"
             aria-label="WhatsApp"
@@ -439,7 +439,7 @@ const Navbar = () => {
             <div className="mt-auto pt-6 border-t border-stone-200 text-stone-500 text-[11px] space-y-2">
               <p className="font-medium text-stone-900">Karol Bagh Trade Desk, New Delhi</p>
               <p>Mon - Sat: 10:30 AM - 8:00 PM</p>
-              <a href="https://wa.me/919811023456" target="_blank" rel="noreferrer" className="block mt-3 bg-emerald-600 text-white text-center py-3 rounded-xl font-medium uppercase tracking-wider text-xs shadow-sm">💬 WhatsApp Trade Support</a>
+              <a href="https://wa.me/918459495594" target="_blank" rel="noreferrer" className="block mt-3 bg-emerald-600 text-white text-center py-3 rounded-xl font-medium uppercase tracking-wider text-xs shadow-sm">💬 WhatsApp Trade Support</a>
             </div>
           </div>
         </div>

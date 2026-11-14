@@ -70,23 +70,23 @@ const Collections = () => {
   // Default category banner data (fallback if API fails)
   const defaultCategoryData = {
     "Artisan Trays & Platters": {
-      image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1920",
+      image: "/images/dhi/mango-wood-trays.jpg",
       desc: "Handcrafted luxury vanity trays, brass rimmed serving platters, mirrored accents, and wooden resin trays for premium gifting and home décor."
     },
     "Trays & Serving Platters": {
-      image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&q=80&w=1920",
+      image: "/images/dhi/serving-tray-set.jpg",
       desc: "Premium serving trays, decorative platters, and elegant serving solutions for hospitality and dining experiences."
     },
     "Organizers & Holders": {
-      image: "https://images.unsplash.com/photo-1595521624a24-92b566bb01e8?auto=format&fit=crop&q=80&w=1920",
+      image: "/images/dhi/leatherette-organiser.jpg",
       desc: "Stylish storage solutions, decorative organizers, and functional holders for home and office organization."
     },
     "Tableware & Dining": {
-      image: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&q=80&w=1920",
+      image: "/images/dhi/festive-serving-set.jpg",
       desc: "Artisan stoneware dinner sets, salad bowls, serving platters, and grazing boards designed for luxury hospitality and modern dining."
     },
     "Crockery": {
-      image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=1920",
+      image: "/images/dhi/ceramic-mugs.jpg",
       desc: "Fine ceramic crockery, dinnerware collections, and luxury tableware for everyday elegance and special occasions."
     }
   };
@@ -153,8 +153,8 @@ const Collections = () => {
   };
 
   const defaultBanner = {
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1920",
-    desc: "Direct factory pricing for interior architects, luxury gifting retailers, and home decor boutiques. Minimum order quantities apply."
+    image: "/images/dhi/showroom-tray-shelves.jpg",
+    desc: "Every design in our current range, for shops, distributors, hotels and gifting companies. Send us the product names you want and we will reply with trade prices and stock."
   };
 
   const currentBanner = categoryBannerData[selectedCategory] || defaultBanner;
@@ -474,7 +474,7 @@ const Collections = () => {
                         {/* Image Container with Hover Overlay */}
                         <div className="relative overflow-hidden rounded-2xl mb-4 h-60 bg-stone-100">
                           <img 
-                            src={product.images && product.images[0] ? product.images[0] : 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae'} 
+                            src={product.images && product.images[0] ? product.images[0] : '/images/dhi/mango-wood-trays.jpg'} 
                             alt={product.title} 
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer"
                             onClick={() => navigate(`/product/${product._id}`)}
@@ -492,7 +492,7 @@ const Collections = () => {
                             </button>
 
                             <a 
-                              href={`https://wa.me/919811023456?text=Hello,%20I%20am%20interested%20in%20wholesale%20pricing%20for%20${encodeURIComponent(product.title)}`}
+                              href={`https://wa.me/918459495594?text=Hello,%20I%20am%20interested%20in%20wholesale%20pricing%20for%20${encodeURIComponent(product.title)}`}
                               target="_blank" 
                               rel="noreferrer"
                               onClick={(e) => e.stopPropagation()}

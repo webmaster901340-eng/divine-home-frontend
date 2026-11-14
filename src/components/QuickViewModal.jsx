@@ -251,7 +251,7 @@ const QuickViewModal = ({ product, onClose }) => {
               {/* Action Buttons */}
               <div className="space-y-3 pt-4 border-t border-stone-100">
                 <a 
-                  href={`https://wa.me/919811023456?text=Hello,%20I%20want%20to%20inquire%20about%20wholesale%20for%20${product.title}%20(SKU:%20${product.sku})`}
+                  href={`https://wa.me/918459495594?text=Hello,%20I%20want%20to%20inquire%20about%20wholesale%20for%20${product.title}%20(SKU:%20${product.sku})`}
                   target="_blank" 
                   rel="noreferrer"
                   className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-xl font-medium text-xs tracking-widest uppercase transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer text-center"

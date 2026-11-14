@@ -37,7 +37,7 @@ const ProductCard = ({ product }) => {
           </span>
 
           <img
-            src={product.images?.[0] || 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae'}
+            src={product.images?.[0] || '/images/dhi/mango-wood-trays.jpg'}
             alt={product.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => {
               </button>
 
               <a
-                href={`https://wa.me/919811023456?text=${encodeURIComponent(`Hi! I'm interested in: ${product.designName || product.title}\n\n📋 Product Details:\n• Design: ${product.designName || product.title}\n• Category: ${product.category}\n• Series: ${product.series || 'Elite Series'}\n• SKU: ${product.sku}\n• Design No: ${product.designNo || 'N/A'}\n• Wholesale Price: ₹${product.wholesalePrice}\n• MRP: ₹${product.mrp}\n• MOQ: ${product.moq}\n• Material: ${product.specs?.material || 'N/A'}\n\nPlease provide more details and pricing.`)}`}
+                href={`https://wa.me/918459495594?text=${encodeURIComponent(`Hi! I'm interested in: ${product.designName || product.title}\n\n📋 Product Details:\n• Design: ${product.designName || product.title}\n• Category: ${product.category}\n• Series: ${product.series || 'Elite Series'}\n• SKU: ${product.sku}\n• Design No: ${product.designNo || 'N/A'}\n• Wholesale Price: ₹${product.wholesalePrice}\n• MRP: ₹${product.mrp}\n• MOQ: ${product.moq}\n• Material: ${product.specs?.material || 'N/A'}\n\nPlease provide more details and pricing.`)}`}
                 target="_blank"
                 rel="noreferrer"
                 onClick={(e) => e.stopPropagation()}
@@ -111,7 +111,7 @@ const ProductCard = ({ product }) => {
               </div>
             </div>
             <a
-              href={`https://wa.me/919811023456?text=${encodeURIComponent(`Hello! I would like to inquire about a wholesale product:\n\n📦 PRODUCT INQUIRY\n━━━━━━━━━━━━━━━━━━━\n🎨 Design: ${product.designName || product.title}\n📂 Category: ${product.category}\n🏷️ Series: ${product.series || 'Elite Series'}\n📍 SKU: ${product.sku}\n🔢 Design No: ${product.designNo || 'N/A'}\n\n💰 PRICING\n━━━━━━━━━━━━━━━━━━━\n💵 Wholesale Price: ₹${product.wholesalePrice}\n🏷️ MRP: ₹${product.mrp}\n📦 MOQ: ${product.moq}\n\n🔧 SPECIFICATIONS\n━━━━━━━━━━━━━━━━━━━\n🪨 Material: ${product.specs?.material || 'N/A'}\n✨ Finish: ${product.specs?.finish || 'N/A'}\n📏 Dimensions: ${product.specs?.dimensions || 'N/A'}\n⚖️ Weight: ${product.specs?.weight || 'N/A'}\n📦 Packaging: ${product.specs?.packaging || 'N/A'}\n\nPlease provide more information and current availability. Thank you!`)}`}
+              href={`https://wa.me/918459495594?text=${encodeURIComponent(`Hello! I would like to inquire about a wholesale product:\n\n📦 PRODUCT INQUIRY\n━━━━━━━━━━━━━━━━━━━\n🎨 Design: ${product.designName || product.title}\n📂 Category: ${product.category}\n🏷️ Series: ${product.series || 'Elite Series'}\n📍 SKU: ${product.sku}\n🔢 Design No: ${product.designNo || 'N/A'}\n\n💰 PRICING\n━━━━━━━━━━━━━━━━━━━\n💵 Wholesale Price: ₹${product.wholesalePrice}\n🏷️ MRP: ₹${product.mrp}\n📦 MOQ: ${product.moq}\n\n🔧 SPECIFICATIONS\n━━━━━━━━━━━━━━━━━━━\n🪨 Material: ${product.specs?.material || 'N/A'}\n✨ Finish: ${product.specs?.finish || 'N/A'}\n📏 Dimensions: ${product.specs?.dimensions || 'N/A'}\n⚖️ Weight: ${product.specs?.weight || 'N/A'}\n📦 Packaging: ${product.specs?.packaging || 'N/A'}\n\nPlease provide more information and current availability. Thank you!`)}`}
               target="_blank"
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}

@@ -17,7 +17,7 @@ const FloatingChat = () => {
         </div>
       )}
       <a
-        href="https://wa.me/919811023456"
+        href="https://wa.me/918459495594"
         target="_blank"
         rel="noreferrer"
         className="relative bg-emerald-500 hover:bg-emerald-600 text-white w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-105 flex-shrink-0"

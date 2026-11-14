@@ -229,7 +229,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
 
             <div className="grid grid-cols-2 gap-3 pt-2">
               <a 
-                href={`https://wa.me/919811023456?text=Hello,%20I%20want%20to%20request%20wholesale%20quote%20for%20${encodeURIComponent(productTitle || 'Bulk Order')}`}
+                href={`https://wa.me/918459495594?text=Hello,%20I%20want%20to%20request%20wholesale%20quote%20for%20${encodeURIComponent(productTitle || 'Bulk Order')}`}
                 target="_blank"
                 rel="noreferrer"
                 className="bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-xl font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 text-center cursor-pointer shadow-sm"

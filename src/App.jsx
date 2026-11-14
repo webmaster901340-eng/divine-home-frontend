@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import CursorFollower from './components/CursorFollower';
 import FloatingChat from './components/FloatingChat';
 import Preloader from './components/Preloader';
+import Seo from './components/Seo';
 import Home from './pages/Home';
 import Collections from './pages/Collections';
 import ProductDetails from './pages/ProductDetails';
@@ -32,6 +33,7 @@ function App() {
       <Router>
         <Preloader />
         <ScrollToTop />
+        <Seo />
         <div className="min-h-screen bg-[#FDFBF7] text-stone-900 font-sans flex flex-col justify-between">
           <div>
             <CursorFollower />

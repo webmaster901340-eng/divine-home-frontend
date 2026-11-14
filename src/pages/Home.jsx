@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import InstagramReelsCarousel from '../components/InstagramReelsCarousel';
 import { API_BASE_URL } from '../utils/api';
+import { FAQ } from '../seo/pages';
 
 const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -69,9 +70,9 @@ const Home = () => {
   const [submittingRfq, setSubmittingRfq] = useState(false);
 
   const defaultHeroImages = [
-    "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1920",
-    "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1920",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920"
+    "/images/dhi/showroom-tray-shelves.jpg",
+    "/images/dhi/heritage-trays.jpg",
+    "/images/dhi/gift-hamper.jpg"
   ];
 
   const heroImages = heroBanners.length > 0
@@ -178,12 +179,7 @@ const Home = () => {
     { name: "Leather Classic Maroon", designs: "1 DESIGN", desc: "Sophisticated maroon leather with luxurious surface treatment and durability...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070413/divine-home/designs/leather-classic-marooan.png", series: "Leather Classic" }
   ];
 
-  const faqs = [
-    { q: "What is the Minimum Order Quantity (MOQ)?", a: "Our wholesale MOQ starts from 30–50 pieces per SKU for artisan trays and ceramic tableware, and 20 pieces for statement decor pieces." },
-    { q: "Can I visit the showroom in Karol Bagh?", a: "Yes! Dealers, architects, and retail buyers are welcome to visit our Karol Bagh, New Delhi trade showroom." },
-    { q: "What is your transit breakage policy?", a: "We pack using 5-ply export corrugation, individual bubble armor, and offer instant replacement against unboxing photographs." },
-    { q: "Do you offer custom corporate gifting branding?", a: "Yes! For bulk corporate gifting and festive hampers, we provide custom satin-lined keepsake packaging." }
-  ];
+  const faqs = FAQ.slice(0, 4).map(([q, a]) => ({ q, a }));
 
   // Dynamic filtering based on admin badge tags
   const bestsellers = products.filter(p => p.badge && p.badge.toUpperCase() === 'BESTSELLER');
@@ -230,20 +226,20 @@ const Home = () => {
         <section className="bg-white border-b border-stone-200 py-6 sm:py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">500+</p>
-              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Curated Décor SKUs</p>
+              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">2015</p>
+              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Supplying Since</p>
             </div>
             <div>
-              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">280+</p>
-              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Retail & Trade Dealers</p>
+              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">250+</p>
+              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Dealers Across India</p>
             </div>
             <div>
               <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">Karol Bagh</p>
               <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Delhi Showroom Hub</p>
             </div>
             <div>
-              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">100%</p>
-              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Insured Transit Safety</p>
+              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">50+</p>
+              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Distributors</p>
             </div>
           </div>
         </section>
@@ -256,11 +252,11 @@ const Home = () => {
             <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-2">
               Explore by Series & Design
             </span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 mb-2">
-              Shop Handcrafted Home Décor & Trays
-            </h2>
+            <h1 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 mb-2">
+              Decorative Trays & Home Decor, Wholesale from Karol Bagh
+            </h1>
             <p className="text-xs sm:text-sm text-stone-500 max-w-xl mx-auto mb-6 font-light">
-              Direct wholesale collections from Karol Bagh, New Delhi — artisan trays, ceramics, and statement interior accents.
+              We design and supply printed trays, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India. Since 2015, from our showroom in Karol Bagh, New Delhi.
             </p>
             <Link to="/collections" className="inline-block text-xs font-bold text-stone-900 hover:text-[#C5A059] tracking-wider uppercase mb-8 sm:mb-12 underline underline-offset-4 transition-colors">
               View Full Catalog &rarr;
@@ -299,7 +295,7 @@ const Home = () => {
                   New Wholesale Arrivals
                 </h2>
                 <p className="text-xs sm:text-sm text-stone-400 mt-2 font-light max-w-xl">
-                  Be the first retail partner to stock our latest artisan-crafted brass vanity sets, fluted ceramic urns, and reactive glaze collections.
+                  The latest tray designs, serving sets and gift lines added to our wholesale range.
                 </p>
               </div>
 
@@ -533,16 +529,16 @@ const Home = () => {
           <div className="text-center mb-12">
             <span className="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-bold">Trade Partnerships</span>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 mt-1">Why Dealers & Retailers Partner With Us</h2>
-            <p className="text-stone-600 text-xs sm:text-sm mt-2 font-light">A wholesale supply system built around margin protection, fast inventory replenishment, and zero-breakage guarantee.</p>
+            <p className="text-stone-600 text-xs sm:text-sm mt-2 font-light">Why gift shops, decor stores and distributors keep reordering from us.</p>
           </div>
         </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { num: "01", title: "Artisan Handcrafted Quality", desc: "Every tray, bowl, and vase features authentic artisanal finishing—from polished brass borders to natural reactive glazes." },
-            { num: "02", title: "Direct Distributor Margins", desc: "Transparent wholesale pricing tiers engineered to ensure healthy retail margins for our dealers and corporate gift houses." },
-            { num: "03", title: "Festive & Bulk Gifting", desc: "Custom gift packaging, satin lining, and coordinated combos ready for corporate gifting and festive hampers." },
-            { num: "04", title: "Zero-Breakage Guarantee", desc: "Palletized shipments with multi-layer bubble and corrugated armor ensure delicate trays and ceramics arrive pristine." }
+            { num: "01", title: "Designs Made In-House", desc: "We develop our own tray prints, so your shelf doesn't look like every other gift shop in the market." },
+            { num: "02", title: "Mix Designs In One Order", desc: "Try a few designs, see what sells in your area, then reorder only those." },
+            { num: "03", title: "Festive & Bulk Gifting", desc: "Gift boxes and branded packaging for corporate orders and festive hampers, with your logo on the box or the tray." },
+            { num: "04", title: "Full Matching Sets", desc: "Trays, coasters and candy boxes in one design let your customers buy a complete look and raise your bill value." }
           ].map((item, idx) => (
             <FadeIn key={idx} direction="up" delay={idx * 150}>
               <div className="bg-white p-8 rounded-3xl border border-stone-200/90 shadow-md hover:shadow-xl hover:border-[#C5A059]/40 transition-all duration-300 h-full flex flex-col justify-between">
@@ -748,7 +744,7 @@ const Home = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   <a 
-                    href={`https://wa.me/919811023456?text=Hello,%20I%20want%20to%20enquire%20about%20bulk%20wholesale%20order%20for%20${rfqForm.quantity || 'bulk items'}.`}
+                    href={`https://wa.me/918459495594?text=Hello,%20I%20want%20to%20enquire%20about%20bulk%20wholesale%20order%20for%20${rfqForm.quantity || 'bulk items'}.`}
                     target="_blank"
                     rel="noreferrer"
                     className="w-full bg-[#00A859] hover:bg-[#008f4c] text-white py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-colors text-center"
@@ -766,7 +762,7 @@ const Home = () => {
 
                 <div className="text-center pt-2">
                   <span className="text-[11px] text-stone-500 font-medium">
-                    🛡️ GST Invoicing & Pan-India Insured Transport Supported
+                    🛡️ GST Invoicing & Pan-India Delivery
                   </span>
                 </div>
               </form>

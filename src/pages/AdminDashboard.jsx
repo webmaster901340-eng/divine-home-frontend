@@ -70,15 +70,15 @@ const AdminDashboard = () => {
   const [pageImages, setPageImages] = useState(() => {
     const saved = localStorage.getItem('dhi_page_images');
     return saved ? JSON.parse(saved) : {
-      about_hero: 'https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&q=80&w=1920',
-      about_img1: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
-      about_img2: 'https://images.unsplash.com/photo-1581783342894-3ee46533f08b?auto=format&fit=crop&q=80&w=600',
+      about_hero: '/images/dhi/festive-serving-set.jpg',
+      about_img1: '/images/dhi/mango-wood-trays.jpg',
+      about_img2: '/images/dhi/printed-tray-set.jpg',
       home_story: 'https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png',
-      collections_artisan: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1920',
-      collections_trays: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&q=80&w=1920',
-      collections_organizers: 'https://images.unsplash.com/photo-1595521624a24-92b566bb01e8?auto=format&fit=crop&q=80&w=1920',
-      collections_tableware: 'https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&q=80&w=1920',
-      collections_crockery: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=1920'
+      collections_artisan: '/images/dhi/mango-wood-trays.jpg',
+      collections_trays: '/images/dhi/serving-tray-set.jpg',
+      collections_organizers: '/images/dhi/leatherette-organiser.jpg',
+      collections_tableware: '/images/dhi/festive-serving-set.jpg',
+      collections_crockery: '/images/dhi/ceramic-mugs.jpg'
     };
   });
 

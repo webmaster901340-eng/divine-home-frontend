@@ -255,7 +255,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link to="/policy/shipping-policy" className="hover:text-[#C5A059] transition-colors">
-                      Shipping & Zero-Breakage Policy
+                      Shipping & Delivery
                     </Link>
                   </li>
                   <li>
@@ -289,11 +289,11 @@ const Footer = () => {
                 <div className="space-y-3 text-xs text-stone-400 font-light">
                   <p className="flex items-start gap-2.5">
                     <span className="text-[#C5A059] mt-0.5">📍</span>
-                    <span>Commercial Trade Zone, Karol Bagh, New Delhi, Delhi - 110005, India</span>
+                    <span>1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005</span>
                   </p>
                   <p className="flex items-center gap-2.5">
                     <span className="text-[#C5A059]">📞</span>
-                    <a href="tel:+919811023456" className="hover:text-white transition-colors">+91 98110 23456</a>
+                    <a href="tel:+918459495594" className="hover:text-white transition-colors">+91 84594 95594</a>
                   </p>
                   <p className="flex items-center gap-2.5">
                     <span className="text-[#C5A059]">✉️</span>
@@ -303,7 +303,7 @@ const Footer = () => {
 
                 <div className="pt-3">
                   <a 
-                    href="https://wa.me/919811023456" 
+                    href="https://wa.me/918459495594" 
                     target="_blank" 
                     rel="noreferrer"
                     className="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2 transition-colors"
@@ -322,7 +322,7 @@ const Footer = () => {
               <p>© 2026 Divine Home India. All Rights Reserved. • Wholesale · Dealers · Distributors</p>
               
               <div className="flex items-center gap-6">
-                <span className="text-emerald-500 flex items-center gap-1">✓ Pan-India Insured Dispatch</span>
+                <span className="text-emerald-500 flex items-center gap-1">✓ Pan-India Dispatch</span>
                 <span>Karol Bagh, New Delhi, India</span>
                 <Link 
                   to="/admin/login" 

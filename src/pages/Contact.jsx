@@ -138,7 +138,7 @@ const Contact = () => {
             Contact Divine Home India
           </h1>
           <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light">
-            Schedule a showroom visit in Karol Bagh, New Delhi or speak directly with our wholesale trade managers regarding dealer terms, festive catalogs, and bulk freight.
+            Visit the showroom, call or WhatsApp us. For prices, tell us your business type and city so we can send the right catalogue.
           </p>
         </FadeIn>
 
@@ -159,7 +159,7 @@ const Contact = () => {
                   <span className="text-base text-[#C5A059]">📍</span>
                   <div>
                     <strong className="text-stone-900 block font-medium uppercase text-[10px] tracking-wider">Wholesale Showroom:</strong>
-                    <p className="leading-relaxed mt-0.5">Commercial Trade Zone, Karol Bagh, New Delhi, Delhi - 110005, India</p>
+                    <p className="leading-relaxed mt-0.5">1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005</p>
                   </div>
                 </div>
 
@@ -167,7 +167,7 @@ const Contact = () => {
                   <span className="text-base text-[#C5A059]">📞</span>
                   <div>
                     <strong className="text-stone-900 block font-medium uppercase text-[10px] tracking-wider">Phone / WhatsApp Hotline:</strong>
-                    <p className="font-semibold text-stone-900 mt-0.5">+91 98110 23456</p>
+                    <p className="font-semibold text-stone-900 mt-0.5">+91 84594 95594</p>
                   </div>
                 </div>
 
@@ -189,7 +189,7 @@ const Contact = () => {
               </div>
 
               <a 
-                href="https://wa.me/919811023456?text=Hello,%20I%20want%20to%20schedule%20a%20showroom%20visit%20at%20Karol%20Bagh."
+                href="https://wa.me/918459495594?text=Hello,%20I%20want%20to%20schedule%20a%20showroom%20visit%20at%20Karol%20Bagh."
                 target="_blank"
                 rel="noreferrer"
                 className="w-full bg-[#00A859] hover:bg-[#008f4c] text-white py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-colors text-center cursor-pointer"
@@ -201,9 +201,9 @@ const Contact = () => {
             {/* Karol Bagh Map Card */}
             <div className="bg-white p-4 rounded-3xl border border-stone-200/80 shadow-sm overflow-hidden">
               <div className="flex justify-between items-center px-4 pt-2 pb-3">
-                <span className="font-serif text-xs font-bold text-stone-800">Karol Bagh Trade District, New Delhi</span>
+                <span className="font-serif text-xs font-bold text-stone-800">15A/47, WEA, Karol Bagh, New Delhi</span>
                 <a 
-                  href="https://maps.google.com/?q=Karol+Bagh+New+Delhi" 
+                  href="https://www.google.com/maps/search/?api=1&query=Divine+Home+India+Karol+Bagh+New+Delhi" 
                   target="_blank" 
                   rel="noreferrer"
                   className="bg-stone-100 hover:bg-stone-200 text-stone-800 text-[10px] font-semibold px-3 py-1.5 rounded-lg border border-stone-200 transition-colors"
@@ -214,7 +214,7 @@ const Contact = () => {
               <div className="w-full h-56 rounded-2xl overflow-hidden border border-stone-100">
                 <iframe 
                   title="Karol Bagh Showroom Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14007.854124991256!2d77.1852!3d28.6519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0292408b0317%3A0xf64fefb3d6d53925!2sKarol%20Bagh%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin" 
+                  src="https://maps.google.com/maps?q=Divine%20Home%20India%2C%2015A%2F47%20WEA%20Karol%20Bagh%2C%20New%20Delhi%20110005&output=embed" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
