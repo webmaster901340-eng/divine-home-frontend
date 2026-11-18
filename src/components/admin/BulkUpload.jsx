@@ -377,7 +377,7 @@ const BulkUpload = ({ products, getAuthHeaders, onDone, setToast }) => {
         <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-sm text-emerald-900 space-y-1">
           <strong>Import finished.</strong>
           <div>{report.upserted} added · {report.updated} updated · {report.removed} removed · {report.photos} photos uploaded · {report.total} products in catalogue</div>
-          <div>{report.rebuilt ? 'Website rebuild started: new product pages and sitemap go live in about 2 minutes.' : 'Products are live on the site now. Product pages and sitemap refresh on the next website deploy.'}</div>
+          <div>{report.rebuilt ? 'Products and sitemap.xml are updated now. Website rebuild also started (about 2 minutes).' : 'Products and sitemap.xml are updated now (Google sees new products on its next sitemap visit).'}</div>
           {report.failed.length > 0 && <div className="text-red-700">Photos that failed: {report.failed.join('; ')}</div>}
         </div>
       )}

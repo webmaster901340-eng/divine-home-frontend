@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "https://divine-home-backend.onrender.com/sitemap.xml" },
     { "source": "/((?!assets/|images/|.*\\..*).*)", "destination": "/index.html" }
   ]
 }

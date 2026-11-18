@@ -96,5 +96,6 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${urls.map((u) => `  <url><loc>${esc(u.loc)}</loc><lastmod>${today}</lastmod>${u.images.map((i) => `<image:image><image:loc>${esc(i)}</image:loc></image:image>`).join('')}</url>`).join('\n')}
 </urlset>
 `;
-writeFileSync(join(dist, 'sitemap.xml'), sitemap);
-console.log(`seo: sitemap.xml written (${urls.length} urls)`);
+// /sitemap.xml itself is served live from the backend (vercel.json rewrite); this build-time copy is a backup.
+writeFileSync(join(dist, 'sitemap-static.xml'), sitemap);
+console.log(`seo: sitemap-static.xml written (${urls.length} urls)`);
