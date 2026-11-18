@@ -108,7 +108,7 @@ const InstagramReelsCarousel = () => {
                   // अगर वीडियो लिंक फेल हो जाए, तो वीडियो एलिमेंट छुप जाएगा और पीछे की तस्वीर दिखने लगेगी
                   e.target.style.display = 'none';
                 }}
-              />
+              />}
 
               {/* Gradient Dark Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20 z-10 pointer-events-none"></div>
