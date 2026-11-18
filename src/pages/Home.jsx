@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import InstagramReelsCarousel from '../components/InstagramReelsCarousel';
+import HeroCarousel from '../components/HeroCarousel';
 import { API_BASE_URL } from '../utils/api';
 import { FAQ } from '../seo/pages';
 
@@ -54,7 +55,6 @@ const Home = () => {
     home_story: "/images/dhi/showroom-tray-shelves.jpg"
   });
   const [openFaq, setOpenFaq] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const [isRfqModalOpen, setIsRfqModalOpen] = useState(false);
   const [rfqForm, setRfqForm] = useState({
@@ -69,31 +69,10 @@ const Home = () => {
   const [rfqSubmitted, setRfqSubmitted] = useState(false);
   const [submittingRfq, setSubmittingRfq] = useState(false);
 
-  const defaultHeroImages = [
-    "/images/dhi/showroom-tray-shelves.jpg",
-    "/images/dhi/heritage-trays.jpg",
-    "/images/dhi/gift-hamper.jpg"
-  ];
-
-  const heroImages = heroBanners.length > 0
-    ? heroBanners.map(b => b.image)
-    : defaultHeroImages;
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [heroImages.length]);
-
-  useEffect(() => {
-    setCurrentSlide(0);
-  }, [heroBanners]);
-
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/admin/hero-banners/active`)
       .then(res => res.json())
-      .then(data => setHeroBanners(data))
+      .then(data => setHeroBanners(Array.isArray(data) ? data : []))
       .catch(err => console.error('Failed to load banners', err));
 
     fetch(`${API_BASE_URL}/api/products`)
@@ -192,34 +171,8 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#FDFBF7] overflow-hidden">
       
-      {/* 1. Hero Section (Only Images Slider without Headings & Buttons, Fixed Overlapping) */}
-      <section className="relative h-[75vh] sm:h-[85vh] flex items-center justify-center bg-stone-950 text-white overflow-hidden">
-        {heroImages.map((img, idx) => (
-          <div 
-            key={idx}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-          >
-            <div className="absolute inset-0 bg-black/20 z-10"></div>
-            <img src={img} alt={["Divine Home India showroom shelves with decorative tray sets, Karol Bagh", "Printed heritage tray sets from Divine Home India", "Corporate gift hamper with decorative trays"][idx] || "Divine Home India wholesale decorative trays"} className="w-full h-full object-cover" />
-          </div>
-        ))}
-
-        {/* Non-overlapping Slide Buttons */}
-        <button 
-          onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroImages.length - 1 : prev - 1))}
-          className="absolute left-6 sm:left-10 z-30 w-12 h-12 rounded-full bg-black/50 hover:bg-[#C5A059] text-white flex items-center justify-center border border-white/30 transition-all cursor-pointer backdrop-blur-md shadow-2xl"
-          aria-label="Previous Slide"
-        >
-          &larr;
-        </button>
-        <button 
-          onClick={() => setCurrentSlide((prev) => (prev + 1) % heroImages.length)}
-          className="absolute right-6 sm:right-10 z-30 w-12 h-12 rounded-full bg-black/50 hover:bg-[#C5A059] text-white flex items-center justify-center border border-white/30 transition-all cursor-pointer backdrop-blur-md shadow-2xl"
-          aria-label="Next Slide"
-        >
-          &rarr;
-        </button>
-      </section>
+      {/* 1. Hero slider (slides managed in Admin → Hero Banners) */}
+      <HeroCarousel banners={heroBanners} />
 
       {/* 2. Stats Bar Section */}
       <FadeIn direction="zoom" delay={150}>

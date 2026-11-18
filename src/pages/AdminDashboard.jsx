@@ -1305,7 +1305,7 @@ const AdminDashboard = () => {
               <div className="flex justify-between items-center mb-6 pb-4 border-b border-stone-200">
                 <div>
                   <h2 className="font-serif text-2xl font-bold text-stone-900 mb-1">Manage Hero Banners</h2>
-                  <p className="text-xs text-stone-500">Update or upload homepage carousel background images (Recommended size: 1920x1080px)</p>
+                  <p className="text-xs text-stone-500">Homepage slider. Landscape photos work best (at least 1300 x 800 px). Edit each slide's headline, text and button below.</p>
                 </div>
               </div>
 
@@ -1344,19 +1344,22 @@ const AdminDashboard = () => {
                           if (data.secure_url) {
                             const createRes = await fetch(`${API_BASE_URL}/api/admin/hero-banners`, {
                               method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
+                              headers: getAuthHeaders(),
                               body: JSON.stringify({
-                                title: "Luxury Handcrafted Home Décor",
-                                subtitle: "Curated collections of handcrafted brass trays and ceramics.",
-                                image: data.secure_url,
-                                isActive: true
+                                title: "New slide: edit the headline",
+                                subtitle: "",
+                                ctaLabel: "View catalogue",
+                                ctaLink: "/collections",
+                                image: data.secure_url.replace('/image/upload/', '/image/upload/f_auto,q_auto/'),
+                                isActive: true,
+                                order: heroBanners.length + 1
                               })
                             });
 
                             if (createRes.ok) {
                               setToast({ message: '✓ New hero banner uploaded successfully!', type: 'success' });
                               // Force refresh hero banners
-                              fetch(`${API_BASE_URL}/api/admin/hero-banners`)
+                              fetch(`${API_BASE_URL}/api/admin/hero-banners`, { headers: getAuthHeaders() })
                                 .then(res => res.json())
                                 .then(data => setHeroBanners(Array.isArray(data) ? data : []))
                                 .catch(err => console.error(err));
@@ -1396,8 +1399,36 @@ const AdminDashboard = () => {
                           Slide #{bannerIndex + 1}
                         </span>
                       </div>
-                      <div className="p-4 flex justify-between items-center bg-stone-50 border-t border-stone-200">
-                        <p className="text-xs font-serif font-bold text-stone-900 truncate max-w-[200px]">{banner.title}</p>
+                      <form
+                        className="p-4 space-y-2 border-t border-stone-200"
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          const f = new FormData(e.currentTarget);
+                          const body = Object.fromEntries(['title', 'subtitle', 'ctaLabel', 'ctaLink', 'order'].map(k => [k, String(f.get(k) || '').trim()]));
+                          body.order = Number(body.order) || 0;
+                          body.isActive = f.get('isActive') === 'on';
+                          fetch(`${API_BASE_URL}/api/admin/hero-banners/${banner._id}`, { method: 'PUT', headers: getAuthHeaders(), body: JSON.stringify(body) })
+                            .then(res => {
+                              if (!res.ok) throw new Error();
+                              setToast({ message: 'Slide saved', type: 'success' });
+                              fetchData();
+                            })
+                            .catch(() => setToast({ message: 'Error saving slide', type: 'error' }));
+                        }}
+                      >
+                        <input name="title" defaultValue={banner.title} placeholder="Headline" className="w-full border border-stone-200 rounded-lg px-3 py-2 text-xs font-semibold" />
+                        <textarea name="subtitle" defaultValue={banner.subtitle} placeholder="Short text under the headline" rows={2} className="w-full border border-stone-200 rounded-lg px-3 py-2 text-xs" />
+                        <div className="grid grid-cols-2 gap-2">
+                          <input name="ctaLabel" defaultValue={banner.ctaLabel} placeholder="Button text" className="border border-stone-200 rounded-lg px-3 py-2 text-xs" />
+                          <input name="ctaLink" defaultValue={banner.ctaLink} placeholder="/collections" className="border border-stone-200 rounded-lg px-3 py-2 text-xs" />
+                        </div>
+                        <div className="flex items-center gap-3 text-xs text-stone-600">
+                          <label className="flex items-center gap-1">Order <input name="order" type="number" defaultValue={banner.order} className="w-14 border border-stone-200 rounded-lg px-2 py-1" /></label>
+                          <label className="flex items-center gap-1"><input name="isActive" type="checkbox" defaultChecked={banner.isActive !== false} /> Show</label>
+                          <button type="submit" className="ml-auto bg-stone-900 hover:bg-[#C5A059] text-white px-3 py-1.5 rounded-xl font-semibold">Save</button>
+                        </div>
+                      </form>
+                      <div className="px-4 pb-4 flex justify-end">
                         <button
                           onClick={() => {
                             setConfirmModal({
@@ -1406,7 +1437,8 @@ const AdminDashboard = () => {
                               message: 'Are you sure you want to delete this hero banner from the carousel?',
                               onConfirm: () => {
                                 fetch(`${API_BASE_URL}/api/admin/hero-banners/${banner._id}`, {
-                                  method: 'DELETE'
+                                  method: 'DELETE',
+                                  headers: getAuthHeaders()
                                 })
                                   .then(() => {
                                     setToast({ message: 'Banner deleted successfully', type: 'success' });
