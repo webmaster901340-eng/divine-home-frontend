@@ -7,7 +7,29 @@ import { PAGES, SITE, businessSchema, faqSchema, productHead, productSchema } fr
 import { productPath } from '../src/utils/slug.js';
 
 const dist = new URL('../dist/', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
-const products = JSON.parse(readFileSync(new URL('./catalogue-products.json', import.meta.url), 'utf8'));
+// Products come from the live API (what the CMS bulk upload writes); the JSON file is the offline fallback.
+const API = process.env.VITE_API_BASE_URL || 'https://divine-home-backend.onrender.com';
+const loadProducts = async () => {
+  try {
+    const res = await fetch(`${API}/api/products`, { signal: AbortSignal.timeout(90000) }); // Render may cold-start
+    const data = await res.json();
+    if (Array.isArray(data) && data.length) {
+      console.log(`seo: ${data.length} products from API`);
+      return data;
+    }
+    throw new Error('empty product list');
+  } catch (err) {
+    console.warn(`seo: API unavailable (${err.message}), using scripts/catalogue-products.json`);
+    return JSON.parse(readFileSync(new URL('./catalogue-products.json', import.meta.url), 'utf8'));
+  }
+};
+const seen = new Set();
+const products = (await loadProducts()).filter((p) => {
+  const path = productPath(p);
+  if (!p.title || !p.category || seen.has(path)) return false; // two products with the same title share one URL
+  seen.add(path);
+  return true;
+});
 const template = readFileSync(join(dist, 'index.html'), 'utf8');
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;

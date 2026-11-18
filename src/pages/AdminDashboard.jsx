@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Upload } from 'lucide-react';
 import Toast from '../components/Toast';
+import BulkUpload from '../components/admin/BulkUpload';
 import { API_BASE_URL } from '../utils/api';
 
 const isBulkCartLead = (lead) => {
@@ -211,12 +212,21 @@ const AdminDashboard = () => {
 
     fetch(`${API_BASE_URL}/api/products`)
       .then(res => res.json())
-      .then(data => setProducts(data))
+      .then(data => setProducts(Array.isArray(data) ? data : []))
       .catch(err => setToast({ message: 'Failed to load products', type: 'error' }));
 
     fetch(`${API_BASE_URL}/api/admin/leads`, { headers: getAuthHeaders() })
-      .then(res => res.json())
+      .then(res => {
+        // Expired or invalid login: go back to the login page instead of crashing on an error object.
+        if (res.status === 401 || res.status === 403) {
+          localStorage.removeItem('adminToken');
+          navigate('/admin/login', { replace: true });
+          throw new Error('Session expired');
+        }
+        return res.json();
+      })
       .then(data => {
+        if (!Array.isArray(data)) data = [];
         setLeads(data);
         setContacts(data.filter(item => item.subject || item.instructions?.includes('Contact') || item.company?.includes('Inquiry')));
         setDealers(data.filter(item => item.quantity?.includes('50 trays') || item.company?.includes('Khurana') || item.instructions?.includes('Dealer')));
@@ -225,12 +235,12 @@ const AdminDashboard = () => {
 
     fetch(`${API_BASE_URL}/api/reels`)
       .then(res => res.json())
-      .then(data => setReels(data))
+      .then(data => setReels(Array.isArray(data) ? data : []))
       .catch(err => setToast({ message: 'Failed to load reels', type: 'error' }));
 
     fetch(`${API_BASE_URL}/api/admin/hero-banners`, { headers: getAuthHeaders() })
       .then(res => res.json())
-      .then(data => setHeroBanners(data))
+      .then(data => setHeroBanners(Array.isArray(data) ? data : []))
       .catch(err => setToast({ message: 'Failed to load banners', type: 'error' }));
 
     fetchAdmins();
@@ -240,7 +250,7 @@ const AdminDashboard = () => {
   const fetchAdmins = () => {
     fetch(`${API_BASE_URL}/api/admin/list`, { headers: getAuthHeaders() })
       .then(res => res.json())
-      .then(data => setAdminsList(data))
+      .then(data => setAdminsList(Array.isArray(data) ? data : []))
       .catch(err => setToast({ message: 'Failed to load admins', type: 'error' }));
   };
 
@@ -506,6 +516,12 @@ const AdminDashboard = () => {
               + Add New Product
             </button>
             <button
+              onClick={() => setActiveTab('bulk-upload')}
+              className={`pb-4 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'bulk-upload' ? 'border-[#C5A059] text-stone-900' : 'border-transparent text-stone-400 hover:text-stone-700'}`}
+            >
+              ⇪ Bulk Upload
+            </button>
+            <button
               onClick={() => setActiveTab('reels')}
               className={`pb-4 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'reels' ? 'border-[#C5A059] text-stone-900' : 'border-transparent text-stone-400 hover:text-stone-700'}`}
             >
@@ -555,6 +571,11 @@ const AdminDashboard = () => {
             </button>
           </div>
         </FadeIn>
+
+        {/* ================= BULK UPLOAD (sheet + photos) ================= */}
+        {activeTab === 'bulk-upload' && (
+          <BulkUpload products={products} getAuthHeaders={getAuthHeaders} onDone={fetchData} setToast={setToast} />
+        )}
 
         {/* ================= TAB 1: MANAGE PRODUCTS ================= */}
         {activeTab === 'products' && (
@@ -1337,7 +1358,7 @@ const AdminDashboard = () => {
                               // Force refresh hero banners
                               fetch(`${API_BASE_URL}/api/admin/hero-banners`)
                                 .then(res => res.json())
-                                .then(data => setHeroBanners(data))
+                                .then(data => setHeroBanners(Array.isArray(data) ? data : []))
                                 .catch(err => console.error(err));
                             } else {
                               setToast({ message: 'Error saving banner to database', type: 'error' });
