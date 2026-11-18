@@ -12,7 +12,7 @@ const ScrollReveal = ({ children, className = "", delay = 0 }) => {
           observer.disconnect(); // एक बार दिखने के बाद ऑब्ज़र्वर बंद हो जाएगा
         }
       },
-      { threshold: 0.15 } // 15% हिस्सा दिखते ही एनिमेशन शुरू हो जाएगा
+      { threshold: 0, rootMargin: '0px 0px 120px 0px' } // 15% हिस्सा दिखते ही एनिमेशन शुरू हो जाएगा
     );
 
     if (ref.current) {
@@ -28,10 +28,10 @@ const ScrollReveal = ({ children, className = "", delay = 0 }) => {
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-[opacity,transform] duration-700 ease-out will-change-transform ${
+      className={`transition-[opacity,transform] duration-500 ease-out ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-10'
+          : 'opacity-0 translate-y-4'
       } ${className}`}
     >
       {children}

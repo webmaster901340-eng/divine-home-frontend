@@ -19,7 +19,7 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
       }
-    }, { threshold: 0.05 });
+    }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
 
     const currentRef = domRef.current;
     if (currentRef) observer.observe(currentRef);
@@ -31,10 +31,10 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
 
   const getTransform = () => {
     if (!isVisible) {
-      if (direction === "up") return "translate-y-10 opacity-0";
-      if (direction === "down") return "-translate-y-10 opacity-0";
-      if (direction === "left") return "translate-x-10 opacity-0";
-      if (direction === "right") return "-translate-x-10 opacity-0";
+      if (direction === "up") return "translate-y-4 opacity-0";
+      if (direction === "down") return "-translate-y-4 opacity-0";
+      if (direction === "left") return "translate-x-4 opacity-0";
+      if (direction === "right") return "-translate-x-4 opacity-0";
       if (direction === "zoom") return "scale-95 opacity-0";
     }
     return "translate-y-0 translate-x-0 scale-100 opacity-100";
@@ -43,8 +43,8 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
   return (
     <div
       ref={domRef}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transform transition-all duration-700 ease-out ${getTransform()} ${className}`}
+      style={{ transitionDelay: `${Math.min(delay, 150)}ms` }}
+      className={`transition-[opacity,transform] duration-500 ease-out ${getTransform()} ${className}`}
     >
       {children}
     </div>

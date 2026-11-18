@@ -54,30 +54,29 @@ const ProductCard = ({ product }) => {
             >
               Quick view
             </button>
+          </div>
+        </Link>
+
+        <div className="pt-3 sm:pt-4">
+          {series && (
+            <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#8a6a2f] mb-1.5 line-clamp-1">{series}</p>
+          )}
+          <h3 className="font-serif text-stone-900 text-[15px] sm:text-[17px] leading-snug line-clamp-2 min-h-[2.6em]">
+            <Link to={to} className="hover:text-[#8a6a2f] transition-colors">
+              {product.title}
+            </Link>
+          </h3>
+          <div className="mt-2 flex items-center justify-between gap-2 border-t border-stone-200 pt-2">
+            <span className="text-[11px] sm:text-xs text-stone-500">Dealer price on request</span>
             <a
               href={`https://wa.me/918459495594?text=${encodeURIComponent(waText)}`}
               target="_blank"
               rel="noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="flex-1 text-center bg-stone-900 hover:bg-[#8a6a2f] text-white text-[11px] uppercase tracking-[0.16em] py-2.5 rounded-sm"
+              className="shrink-0 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.12em] text-stone-900 hover:text-[#8a6a2f]"
             >
-              Enquire
+              Enquire →
             </a>
           </div>
-        </Link>
-
-        <div className="pt-3 sm:pt-4 text-center">
-          {series && (
-            <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-1 line-clamp-1">{series}</p>
-          )}
-          <h3 className="font-serif text-stone-900 text-[15px] sm:text-base leading-snug line-clamp-2 px-1">
-            <Link to={to} className="hover:text-[#8a6a2f] transition-colors">
-              {product.designName || product.title}
-            </Link>
-          </h3>
-          <p className="mt-1 text-xs text-stone-500 line-clamp-1">
-            {product.designNo ? `Design ${product.designNo} · ` : ''}Dealer price on request
-          </p>
         </div>
       </div>
 

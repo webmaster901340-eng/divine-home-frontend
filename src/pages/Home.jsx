@@ -15,7 +15,7 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
       }
-    }, { threshold: 0.05 });
+    }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
 
     const currentRef = domRef.current;
     if (currentRef) observer.observe(currentRef);
@@ -27,10 +27,10 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
 
   const getTransform = () => {
     if (!isVisible) {
-      if (direction === "up") return "translate-y-10 opacity-0";
-      if (direction === "down") return "-translate-y-10 opacity-0";
-      if (direction === "left") return "translate-x-10 opacity-0";
-      if (direction === "right") return "-translate-x-10 opacity-0";
+      if (direction === "up") return "translate-y-4 opacity-0";
+      if (direction === "down") return "-translate-y-4 opacity-0";
+      if (direction === "left") return "translate-x-4 opacity-0";
+      if (direction === "right") return "-translate-x-4 opacity-0";
       if (direction === "zoom") return "scale-95 opacity-0";
     }
     return "translate-y-0 translate-x-0 scale-100 opacity-100";
@@ -39,8 +39,8 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
   return (
     <div
       ref={domRef}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transform transition-all duration-700 ease-out ${getTransform()} ${className}`}
+      style={{ transitionDelay: `${Math.min(delay, 150)}ms` }}
+      className={`transition-[opacity,transform] duration-500 ease-out ${getTransform()} ${className}`}
     >
       {children}
     </div>
@@ -236,18 +236,18 @@ const Home = () => {
 
       {/* 4. New Wholesale Arrivals Section */}
       <FadeIn direction="right">
-        <section className="py-20 bg-gradient-to-b from-stone-900 via-stone-950 to-stone-900 text-white border-y border-stone-800 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
+        <section className="py-16 sm:py-20 bg-white border-y border-stone-200 relative overflow-hidden">
+          
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             {/* Section Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-stone-800">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-stone-200">
               <div>
-                <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                <h2 className="font-serif text-3xl sm:text-5xl font-bold text-stone-900 tracking-tight">
                   New Wholesale Arrivals
                 </h2>
-                <p className="text-xs sm:text-sm text-stone-400 mt-2 font-light max-w-xl">
+                <p className="text-xs sm:text-sm text-stone-500 mt-2 font-light max-w-xl">
                   The latest tray designs, serving sets and gift lines added to our wholesale range.
                 </p>
               </div>
@@ -255,7 +255,7 @@ const Home = () => {
               <div className="flex items-center gap-3">
                 <Link 
                   to="/collections" 
-                  className="text-xs font-bold text-stone-950 bg-[#C5A059] hover:bg-white px-6 py-3 rounded-xl transition-all shadow-lg uppercase tracking-wider flex items-center gap-2 group"
+                  className="text-xs font-bold text-white bg-stone-900 hover:bg-[#8a6a2f] px-6 py-3 rounded-xl transition-all shadow-lg uppercase tracking-wider flex items-center gap-2 group"
                 >
                   <span>View Full Catalog</span>
                   <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
@@ -263,13 +263,13 @@ const Home = () => {
                 <div className="flex items-center gap-2">
                   <button 
                     onClick={() => document.getElementById('arrivals-slider').scrollBy({ left: -340, behavior: 'smooth' })}
-                    className="w-11 h-11 rounded-full border border-stone-700 bg-stone-900 hover:bg-[#C5A059] hover:text-stone-950 hover:border-[#C5A059] flex items-center justify-center text-stone-300 transition-all shadow-md cursor-pointer"
+                    className="w-11 h-11 rounded-full border border-stone-300 bg-white hover:bg-stone-900 hover:text-white flex items-center justify-center text-stone-700 transition-all shadow-md cursor-pointer"
                   >
                     &larr;
                   </button>
                   <button 
                     onClick={() => document.getElementById('arrivals-slider').scrollBy({ left: 340, behavior: 'smooth' })}
-                    className="w-11 h-11 rounded-full border border-stone-700 bg-stone-900 hover:bg-[#C5A059] hover:text-stone-950 hover:border-[#C5A059] flex items-center justify-center text-stone-300 transition-all shadow-md cursor-pointer"
+                    className="w-11 h-11 rounded-full border border-stone-300 bg-white hover:bg-stone-900 hover:text-white flex items-center justify-center text-stone-700 transition-all shadow-md cursor-pointer"
                   >
                     &rarr;
                   </button>
