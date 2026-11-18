@@ -105,7 +105,7 @@ const WholesaleDealers = () => {
             ['03', 'Order and dispatch', 'Confirm your mix of designs. We pack in cartons with bubble wrap and dispatch across India with a GST invoice.']
           ].map(([n, t, d]) => (
             <div key={n} className="border-t border-stone-300 pt-5">
-              <span className="text-xs font-semibold tracking-[0.14em] text-[#8a6a2f]">{n}</span>
+              <span className="text-xs font-semibold tracking-[0.14em] text-[#7a5c25]">{n}</span>
               <h2 className="font-serif text-xl sm:text-2xl text-stone-900 mt-2">{t}</h2>
               <p className="text-[15px] text-stone-600 leading-relaxed mt-2">{d}</p>
             </div>

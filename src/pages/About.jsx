@@ -163,7 +163,7 @@ const About = () => {
               { num: "04", title: "Full matching sets", desc: "Trays, coasters and candy boxes in one design let your customers buy a complete look and raise your bill value." }
             ].map((item) => (
               <div key={item.num} className="border-t border-stone-300 pt-5">
-                <span className="text-xs font-semibold tracking-[0.14em] text-[#8a6a2f]">{item.num}</span>
+                <span className="text-xs font-semibold tracking-[0.14em] text-[#7a5c25]">{item.num}</span>
                 <h3 className="font-serif text-xl sm:text-2xl text-stone-900 mt-2">{item.title}</h3>
                 <p className="text-[15px] text-stone-600 leading-relaxed mt-2">{item.desc}</p>
               </div>

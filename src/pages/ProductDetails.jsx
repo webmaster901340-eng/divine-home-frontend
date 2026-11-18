@@ -188,7 +188,7 @@ Email: wholesale@divinehomeindia.com
             <div>
               <div className="flex justify-between items-center text-xs uppercase tracking-[0.15em] text-stone-500 font-semibold mb-1">
                 <span>{product.category}</span>
-                <span className="text-stone-400">SKU: {product.sku || "DHI-SKU"}</span>
+                <span className="text-stone-500">SKU: {product.sku || "DHI-SKU"}</span>
               </div>
               <h1 className="font-serif text-[28px] sm:text-[38px] text-stone-900 leading-[1.15] mt-2">
                 {product.title}
@@ -253,7 +253,7 @@ Email: wholesale@divinehomeindia.com
 
         {/* Bottom Section: Technical Specifications (Balanced Grid) */}
         <FadeIn direction="up" className="pt-8 sm:pt-10">
-          <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-2">
+          <span className="text-xs uppercase tracking-[0.2em] text-[#7a5c25] font-semibold block mb-2">
             Specifications
           </span>
           <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-6">
@@ -291,14 +291,14 @@ Email: wholesale@divinehomeindia.com
         <FadeIn direction="up" className="max-w-6xl mx-auto">
           <div className="flex justify-between items-end mb-6">
             <div>
-              <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-1">
+              <span className="text-xs uppercase tracking-[0.2em] text-[#7a5c25] font-semibold block mb-1">
                 More from the catalogue
               </span>
               <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-900">
                 Dealers also order
               </h2>
             </div>
-            <Link to="/collections" className="text-xs font-semibold text-stone-900 hover:text-[#C5A059] transition-colors shrink-0">
+            <Link to="/collections" className="text-xs font-semibold text-stone-900 hover:text-[#7a5c25] transition-colors shrink-0">
               View More &rarr;
             </Link>
           </div>

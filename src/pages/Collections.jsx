@@ -357,18 +357,18 @@ const Collections = () => {
           <div className="relative z-10 max-w-3xl">
             {/* Breadcrumbs */}
             <div className="flex items-center justify-center gap-2 text-xs text-stone-300 mb-3 font-light">
-              <Link to="/" className="hover:text-[#C5A059] transition-colors">Home</Link>
+              <Link to="/" className="hover:text-[#E2C58B] transition-colors">Home</Link>
               <span>&gt;</span>
-              <Link to="/collections" className="hover:text-[#C5A059] transition-colors">Collections</Link>
+              <Link to="/collections" className="hover:text-[#E2C58B] transition-colors">Collections</Link>
               {selectedCategory !== 'All Categories' && (
                 <>
                   <span>&gt;</span>
-                  <span className="text-[#C5A059] font-medium">{selectedCategory}</span>
+                  <span className="text-[#E2C58B] font-medium">{selectedCategory}</span>
                 </>
               )}
             </div>
 
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#E2C58B] font-semibold block mb-2">
               {selectedSeries !== 'All Series' ? `SERIES: ${selectedSeries}` : (showBestsellers ? 'MOST REORDERED' : 'WHOLESALE CATALOGUE 2026-27')}
             </span>
 
@@ -410,7 +410,7 @@ const Collections = () => {
                       handleSeriesSelect('All Series');
                       handleDesignSelect('All Designs');
                     }}
-                    className="text-xs text-[#C5A059] underline font-medium cursor-pointer"
+                    className="text-xs text-[#7a5c25] underline font-medium cursor-pointer"
                   >
                     Reset
                   </button>
@@ -418,7 +418,7 @@ const Collections = () => {
               </div>
 
               {/* Dynamic Categories Filter */}
-              <span className="text-[11px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Categories</span>
+              <span className="text-[11px] uppercase tracking-widest text-stone-600 font-semibold block mb-3">Categories</span>
               <div className="space-y-1">
                 {dynamicCategories.map((cat, idx) => (
                   <button
@@ -436,7 +436,7 @@ const Collections = () => {
 
             {/* Dynamic Series / Collection Filter */}
             <div>
-              <span className="text-[11px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Catalogue Series</span>
+              <span className="text-[11px] uppercase tracking-widest text-stone-600 font-semibold block mb-3">Catalogue Series</span>
               <div className="space-y-1">
                 {dynamicSeries.map((ser, idx) => (
                   <button
@@ -454,7 +454,7 @@ const Collections = () => {
 
             {/* Dynamic Design Name Filter */}
             <div>
-              <span className="text-[11px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Design Names</span>
+              <span className="text-[11px] uppercase tracking-widest text-stone-600 font-semibold block mb-3">Design Names</span>
               <div className="space-y-1 max-h-64 overflow-y-auto">
                 {dynamicDesigns.map((des, idx) => (
                   <button

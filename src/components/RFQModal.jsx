@@ -100,7 +100,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
         </button>
 
         <div className="mb-6">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#7a5c25] font-semibold block mb-1">
             B2B WHOLESALE TRADE DESK
           </span>
           <h2 className="font-serif text-2xl font-bold text-stone-900">
@@ -118,7 +118,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
               </div>
             </div>
           ) : productTitle && (
-            <p className="text-xs text-[#C5A059] mt-1 font-medium">
+            <p className="text-xs text-[#7a5c25] mt-1 font-medium">
               Item: {productTitle}
             </p>
           )}

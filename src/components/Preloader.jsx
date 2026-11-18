@@ -70,12 +70,12 @@ const Preloader = () => {
       <div className={`relative z-30 flex flex-col items-center text-center px-4 transition-all duration-500 ${animateOut ? 'scale-110 opacity-0 filter blur-sm' : 'scale-100 opacity-100'}`}>
         
         <div className={`w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-[#C5A059]/40 flex items-center justify-center mb-6 shadow-2xl transition-all duration-500 ${animateOut ? '-translate-y-20 opacity-0 scale-75' : 'translate-y-0 opacity-100'}`}>
-          <span className="font-serif text-2xl font-bold text-[#C5A059]">D</span>
+          <span className="font-serif text-2xl font-bold text-[#7a5c25]">D</span>
         </div>
 
         <div className="flex items-center gap-3 sm:gap-4 font-serif text-2xl sm:text-4xl md:text-5xl font-bold tracking-[0.2em] text-white uppercase">
           <span className={`transition-all duration-500 ${animateOut ? '-translate-x-24 opacity-0' : 'translate-x-0 opacity-100'}`}>DIVINE</span>
-          <span className={`transition-all duration-500 text-[#C5A059] ${animateOut ? 'translate-y-16 opacity-0' : 'translate-y-0 opacity-100'}`}>HOME</span>
+          <span className={`transition-all duration-500 text-[#7a5c25] ${animateOut ? 'translate-y-16 opacity-0' : 'translate-y-0 opacity-100'}`}>HOME</span>
           <span className={`transition-all duration-500 ${animateOut ? 'translate-x-24 opacity-0' : 'translate-x-0 opacity-100'}`}>INDIA</span>
         </div>
 
@@ -86,7 +86,7 @@ const Preloader = () => {
       </div>
 
       {/* ================= BOTTOM INFO ================= */}
-      <div className={`absolute bottom-6 left-6 right-6 z-30 flex justify-between items-end text-xs uppercase tracking-widest text-[#C5A059] font-serif transition-opacity duration-300 ${animateOut ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`absolute bottom-6 left-6 right-6 z-30 flex justify-between items-end text-xs uppercase tracking-widest text-[#7a5c25] font-serif transition-opacity duration-300 ${animateOut ? 'opacity-0' : 'opacity-100'}`}>
         <div className="bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 text-[11px] sm:text-xs shadow-lg">
           <span className="inline-block w-2 h-2 rounded-full bg-[#C5A059] animate-ping mr-2"></span>
           {statusText}

@@ -13,7 +13,7 @@ const InstagramReelsFeed = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between mb-10">
           <div>
-            <span className="text-xs uppercase tracking-widest text-[#C5A059] font-medium">Social Craftsmanship</span>
+            <span className="text-xs uppercase tracking-widest text-[#7a5c25] font-medium">Social Craftsmanship</span>
             <h2 className="font-serif text-3xl font-bold text-stone-900 mt-1">Follow @divinehomeindia</h2>
           </div>
           <a 

@@ -426,7 +426,7 @@ const Home = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
 
                       <div className="absolute bottom-0 left-0 right-0 z-10 p-5">
-                        <h3 className="font-serif text-sm font-bold text-white line-clamp-2 group-hover:text-[#C5A059] transition-colors leading-snug">
+                        <h3 className="font-serif text-sm font-bold text-white line-clamp-2 group-hover:text-[#7a5c25] transition-colors leading-snug">
                           {reel.title}
                         </h3>
                       </div>
@@ -466,7 +466,7 @@ const Home = () => {
               { num: "04", title: "Full matching sets", desc: "Trays, coasters and candy boxes in one design let your customers buy a complete look and raise your bill value." }
             ].map((item) => (
               <div key={item.num} className="border-t border-stone-300 pt-5">
-                <span className="text-xs font-semibold tracking-[0.14em] text-[#8a6a2f]">{item.num}</span>
+                <span className="text-xs font-semibold tracking-[0.14em] text-[#7a5c25]">{item.num}</span>
                 <h3 className="font-serif text-xl sm:text-2xl text-stone-900 mt-2">{item.title}</h3>
                 <p className="text-[15px] text-stone-600 leading-relaxed mt-2">{item.desc}</p>
               </div>
@@ -519,7 +519,7 @@ const Home = () => {
 
           <FadeIn direction="right">
             <div className="space-y-6 text-center lg:text-left">
-              <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-bold block">About Divine Home India</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-[#7a5c25] font-bold block">About Divine Home India</span>
               <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 leading-tight">Designed in Delhi, Supplied Across India</h2>
               <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light">Divine Home India started in Karol Bagh in 2015. We design our own tray prints, have them made to our standard, and supply gift shops, decor stores, distributors, hotels and corporate gifting companies across India. Every design is on display at our showroom, so you can see the finish before you order.</p>
               <div className="flex justify-center lg:justify-start gap-4 pt-2">
@@ -543,7 +543,7 @@ const Home = () => {
             </button>
 
             <div className="mb-6 pr-8">
-              <span className="text-[11px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-1">
+              <span className="text-[11px] uppercase tracking-[0.2em] text-[#7a5c25] font-semibold block mb-1">
                 B2B Wholesale Trade Desk
               </span>
               <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900">

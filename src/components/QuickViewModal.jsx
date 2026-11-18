@@ -73,13 +73,13 @@ const QuickViewModal = ({ product, onClose }) => {
           /* RFQ FORM VIEW INSIDE MODAL */
           <div className="w-full p-6 md:p-8">
             <div className="mb-6">
-              <span className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
+              <span className="text-[11px] uppercase tracking-[0.25em] text-[#7a5c25] font-semibold block mb-1">
                 B2B WHOLESALE TRADE DESK
               </span>
               <h2 className="font-serif text-2xl font-bold text-stone-900">
                 Request Formal Quotation
               </h2>
-              <p className="text-xs text-[#C5A059] mt-1 font-medium">
+              <p className="text-xs text-[#7a5c25] mt-1 font-medium">
                 Item: {product.title} (SKU: {product.sku})
               </p>
             </div>

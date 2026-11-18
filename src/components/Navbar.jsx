@@ -162,7 +162,7 @@ const Navbar = () => {
         <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs uppercase tracking-widest font-medium text-stone-700">
           <Link
             to="/"
-            className={`transition-colors whitespace-nowrap ${isActive('/') && location.pathname === '/' ? 'text-[#C5A059] font-bold' : 'hover:text-[#C5A059]'}`}
+            className={`transition-colors whitespace-nowrap ${isActive('/') && location.pathname === '/' ? 'text-[#7a5c25] font-bold' : 'hover:text-[#7a5c25]'}`}
           >
             Home
           </Link>
@@ -175,7 +175,7 @@ const Navbar = () => {
             <Link
               to="/collections"
               onMouseEnter={openMegaMenu}
-              className={`flex items-center gap-1 py-4 whitespace-nowrap transition-colors ${isActive('/collections') ? 'text-[#C5A059] font-bold' : 'hover:text-[#C5A059]'}`}
+              className={`flex items-center gap-1 py-4 whitespace-nowrap transition-colors ${isActive('/collections') ? 'text-[#7a5c25] font-bold' : 'hover:text-[#7a5c25]'}`}
             >
               Collections
               <span className={`text-[11px] transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`}>
@@ -205,13 +205,13 @@ const Navbar = () => {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
-                      <h4 className="font-serif text-stone-900 font-bold text-[12px] leading-tight group-hover:text-[#C5A059] transition-colors line-clamp-1 mb-0.5">
+                      <h4 className="font-serif text-stone-900 font-bold text-[12px] leading-tight group-hover:text-[#7a5c25] transition-colors line-clamp-1 mb-0.5">
                         {item.name}
                       </h4>
                       <span className="text-[9px] text-stone-400 font-sans uppercase tracking-wide mb-1">
                         {item.series}
                       </span>
-                      <span className="text-[11px] text-[#C5A059] font-sans font-semibold uppercase tracking-wide">
+                      <span className="text-[11px] text-[#7a5c25] font-sans font-semibold uppercase tracking-wide">
                         {item.designs}
                       </span>
                     </Link>
@@ -225,7 +225,7 @@ const Navbar = () => {
                   <Link
                     to="/collections"
                     onClick={() => setIsMegaMenuOpen(false)}
-                    className="text-stone-900 font-semibold hover:text-[#C5A059] transition-colors uppercase tracking-wider text-[11px] flex items-center gap-1 whitespace-nowrap"
+                    className="text-stone-900 font-semibold hover:text-[#7a5c25] transition-colors uppercase tracking-wider text-[11px] flex items-center gap-1 whitespace-nowrap"
                   >
                     View All Collections →
                   </Link>
@@ -236,28 +236,28 @@ const Navbar = () => {
 
           <Link
             to="/collections?bestsellers=true"
-            className={`transition-colors whitespace-nowrap ${location.search.includes('bestsellers=true') ? 'text-[#C5A059] font-bold' : 'hover:text-[#C5A059]'}`}
+            className={`transition-colors whitespace-nowrap ${location.search.includes('bestsellers=true') ? 'text-[#7a5c25] font-bold' : 'hover:text-[#7a5c25]'}`}
           >
             Bestsellers
           </Link>
 
           <Link
             to="/wholesale"
-            className={`transition-colors whitespace-nowrap ${isActive('/wholesale') ? 'text-[#C5A059] font-bold' : 'hover:text-[#C5A059]'}`}
+            className={`transition-colors whitespace-nowrap ${isActive('/wholesale') ? 'text-[#7a5c25] font-bold' : 'hover:text-[#7a5c25]'}`}
           >
             Wholesale / Dealers
           </Link>
 
           <Link
             to="/about"
-            className={`transition-colors whitespace-nowrap ${isActive('/about') ? 'text-[#C5A059] font-bold' : 'hover:text-[#C5A059]'}`}
+            className={`transition-colors whitespace-nowrap ${isActive('/about') ? 'text-[#7a5c25] font-bold' : 'hover:text-[#7a5c25]'}`}
           >
             About
           </Link>
 
           <Link
             to="/contact"
-            className={`transition-colors whitespace-nowrap ${isActive('/contact') ? 'text-[#C5A059] font-bold' : 'hover:text-[#C5A059]'}`}
+            className={`transition-colors whitespace-nowrap ${isActive('/contact') ? 'text-[#7a5c25] font-bold' : 'hover:text-[#7a5c25]'}`}
           >
             Contact
           </Link>
@@ -284,7 +284,7 @@ const Navbar = () => {
             type="button"
             onClick={() => setIsSearchOpen(true)}
             aria-label="Open Search"
-            className="flex items-center justify-center w-10 h-10 rounded-full text-stone-700 hover:text-[#C5A059] hover:bg-stone-100 transition-all duration-300 cursor-pointer"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-stone-700 hover:text-[#7a5c25] hover:bg-stone-100 transition-all duration-300 cursor-pointer"
           >
             <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
               <circle cx="11" cy="11" r="8" />
@@ -296,7 +296,7 @@ const Navbar = () => {
           <Link
             to="/cart"
             aria-label="Shopping Cart"
-            className="flex items-center justify-center w-10 h-10 rounded-full text-stone-700 hover:text-[#C5A059] hover:bg-stone-100 transition-all duration-300 relative"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-stone-700 hover:text-[#7a5c25] hover:bg-stone-100 transition-all duration-300 relative"
           >
             <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
               <circle cx="9" cy="21" r="1" />
@@ -425,7 +425,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center pb-6 border-b border-stone-200">
               <div>
                 <span className="font-serif text-lg font-bold tracking-[0.15em] text-stone-900 uppercase block">Divine Home</span>
-                <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold">B2B Trade Showroom</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-[#7a5c25] font-semibold">B2B Trade Showroom</span>
               </div>
               <button onClick={() => setIsMobileMenuOpen(false)} className="w-9 h-9 rounded-full bg-stone-200/80 hover:bg-stone-300 flex items-center justify-center text-stone-800 transition-colors cursor-pointer">✕</button>
             </div>

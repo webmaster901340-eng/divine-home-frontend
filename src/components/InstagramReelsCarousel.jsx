@@ -50,7 +50,7 @@ const InstagramReelsCarousel = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#7a5c25] font-semibold block mb-2">
               INSTAGRAM SHOWCASE • @DIVINEHOMEINDIA
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 tracking-tight">
@@ -125,7 +125,7 @@ const InstagramReelsCarousel = () => {
 
               {/* Bottom Details & CTA */}
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20 flex flex-col justify-end pointer-events-none">
-                <h3 className="font-serif text-white font-bold text-sm sm:text-base leading-snug line-clamp-2 mb-3 group-hover:text-[#C5A059] transition-colors">
+                <h3 className="font-serif text-white font-bold text-sm sm:text-base leading-snug line-clamp-2 mb-3 group-hover:text-[#E2C58B] transition-colors">
                   {reel.title}
                 </h3>
                 <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-white/90 pt-3 border-t border-white/20">

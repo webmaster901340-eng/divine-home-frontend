@@ -309,7 +309,7 @@ const Footer = () => {
 
           {/* Bottom Copyright, Badges & Secret Admin Link */}
           <FadeIn direction="up">
-            <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-stone-500 gap-4 font-light">
+            <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-stone-400 gap-4">
               <p>© 2026 Divine Home India. All Rights Reserved. • Wholesale · Dealers · Distributors</p>
               
               <div className="flex items-center gap-6">

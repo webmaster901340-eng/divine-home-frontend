@@ -206,7 +206,7 @@ const Cart = () => {
                 <div className="flex-1">
                   <Link
                     to={productPath(item)}
-                    className="font-serif text-lg sm:text-xl font-bold text-stone-900 hover:text-[#C5A059] transition-colors"
+                    className="font-serif text-lg sm:text-xl font-bold text-stone-900 hover:text-[#7a5c25] transition-colors"
                   >
                     {item.designName || item.title}
                   </Link>
@@ -329,7 +329,7 @@ const Cart = () => {
 
             {/* Modal Body */}
             <div className="pt-2">
-              <p className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-bold mb-1">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-[#7a5c25] font-bold mb-1">
                 B2B WHOLESALE TRADE DESK
               </p>
               
