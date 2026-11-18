@@ -162,7 +162,13 @@ const Collections = () => {
     desc: "Every design in our current range, for shops, distributors, hotels and gifting companies. Send us the product names you want and we will reply with trade prices and stock."
   };
 
-  const currentBanner = categoryBannerData[selectedCategory] || defaultBanner;
+  const bestsellerBanner = {
+    image: "/images/hero/lotus-glow-tray-set-festive.jpg",
+    desc: "The designs our dealers reorder most, season after season. A safe first order for a new shop shelf."
+  };
+  const currentBanner = showBestsellers && selectedCategory === 'All Categories'
+    ? bestsellerBanner
+    : (categoryBannerData[selectedCategory] || defaultBanner);
 
   useEffect(() => {
     const saved = localStorage.getItem('dhi_page_images');
@@ -228,7 +234,10 @@ const Collections = () => {
       fetch(`${API_BASE_URL}/api/products`)
         .then(res => res.json())
         .then(data => {
-          const bestsellerProducts = data.filter(p => p.badge && p.badge.toUpperCase() === 'BESTSELLER');
+          const hasD2c = (p) => (p.images?.[0] || '').includes('/d2c/') ? 1 : 0;
+          const bestsellerProducts = data
+            .filter(p => (p.badge && p.badge.toUpperCase() === 'BESTSELLER') || p.isBestseller)
+            .sort((a, b) => hasD2c(b) - hasD2c(a));
           setProducts(bestsellerProducts);
           setAllProducts(bestsellerProducts);
           setLoading(false);
@@ -360,11 +369,11 @@ const Collections = () => {
             </div>
 
             <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
-              {selectedSeries !== 'All Series' ? `SERIES: ${selectedSeries}` : 'WHOLESALE CATALOGUE 2026-27'}
+              {selectedSeries !== 'All Series' ? `SERIES: ${selectedSeries}` : (showBestsellers ? 'MOST REORDERED' : 'WHOLESALE CATALOGUE 2026-27')}
             </span>
 
             <h1 className="font-serif text-3xl sm:text-5xl font-bold mb-4 tracking-tight leading-tight">
-              {selectedCategory === 'All Categories' ? 'Wholesale Catalogue 2026-27' : `Wholesale ${selectedCategory}`}
+              {selectedCategory === 'All Categories' ? (showBestsellers ? 'Bestsellers' : 'Wholesale Catalogue 2026-27') : `Wholesale ${selectedCategory}`}
             </h1>
 
             <p className="text-stone-200 text-xs sm:text-sm font-light leading-relaxed max-w-2xl mx-auto">

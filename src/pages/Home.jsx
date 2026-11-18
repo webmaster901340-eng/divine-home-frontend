@@ -161,7 +161,8 @@ const Home = () => {
   const faqs = FAQ.slice(0, 4).map(([q, a]) => ({ q, a }));
 
   // Dynamic filtering based on admin badge tags
-  const bestsellers = products.filter(p => p.badge && p.badge.toUpperCase() === 'BESTSELLER');
+  const hasD2c = (p) => (p.images?.[0] || '').includes('/d2c/') ? 1 : 0;
+  const bestsellers = products.filter(p => p.badge && p.badge.toUpperCase() === 'BESTSELLER').sort((a, b) => hasD2c(b) - hasD2c(a));
   const newArrivals = products.filter(p => p.badge && p.badge.toUpperCase() === 'NEW ARRIVAL');
 
   // Only show products with correct badges - no fallback
