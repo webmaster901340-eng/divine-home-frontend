@@ -114,7 +114,7 @@ const HeroCarousel = ({ banners = [] }) => {
                 <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#211c17]/90 via-[#211c17]/55 to-transparent" />
               </div>
 
-              <div className="md:absolute md:inset-0 flex items-center">
+              <div className="md:absolute md:inset-0 flex items-start md:items-center min-h-[300px] sm:min-h-[280px] md:min-h-0">
                 <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 md:py-0">
                   <div className={`max-w-xl transition-all duration-700 delay-150 ${active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                     <h2 className="font-serif text-[28px] leading-tight sm:text-4xl lg:text-[54px] lg:leading-[1.08] font-bold tracking-tight">
