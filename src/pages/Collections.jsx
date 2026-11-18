@@ -98,11 +98,11 @@ const Collections = () => {
   const getCategoryBannerImage = (category) => {
     // Real catalogue photos served from our own site
     const defaultImages = {
-      "Artisan Trays & Platters": "/images/dhi/mango-wood-trays.jpg",
-      "Trays & Serving Platters": "/images/dhi/printed-tray-set.jpg",
-      "Organizers & Holders": "/images/dhi/leatherette-organiser.jpg",
-      "Tableware & Dining": "/images/dhi/festive-serving-set.jpg",
-      "Crockery": "/images/dhi/ceramic-mugs.jpg"
+      "Artisan Trays & Platters": "/images/catalogue/covers/dhi-2606.jpg",
+      "Trays & Serving Platters": "/images/hero/lotus-glow-tray-set-festive.jpg",
+      "Organizers & Holders": "/images/catalogue/covers/dhi-lc-black.jpg",
+      "Tableware & Dining": "/images/hero/revolving-snack-set-gold.jpg",
+      "Crockery": "/images/hero/elegant-vector-crockery-set.jpg"
     };
 
     // Helper to validate URL
@@ -158,7 +158,7 @@ const Collections = () => {
   };
 
   const defaultBanner = {
-    image: "/images/dhi/showroom-tray-shelves.jpg",
+    image: "/images/hero/elegant-vector-gold-tray-set.jpg",
     desc: "Every design in our current range, for shops, distributors, hotels and gifting companies. Send us the product names you want and we will reply with trade prices and stock."
   };
 

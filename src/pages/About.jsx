@@ -46,7 +46,7 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
 const About = () => {
   const location = useLocation();
   const [pageImages, setPageImages] = useState({
-    about_hero: "/images/dhi/showroom-tray-shelves.jpg",
+    about_hero: "/images/hero/elegant-vector-tray-set-lifestyle.jpg",
     about_img1: "/images/dhi/mango-wood-trays.jpg",
     about_img2: "/images/dhi/printed-tray-set.jpg"
   });

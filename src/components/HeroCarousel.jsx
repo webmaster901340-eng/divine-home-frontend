@@ -76,7 +76,7 @@ const HeroCarousel = ({ banners = [] }) => {
 
   return (
     <section
-      className="relative bg-[#211c17] text-white overflow-hidden"
+      className="relative bg-[#F4EFE7] text-stone-900 overflow-hidden"
       aria-roledescription="carousel"
       aria-label="Featured collections"
       onMouseEnter={() => setPaused(true)}
@@ -91,7 +91,8 @@ const HeroCarousel = ({ banners = [] }) => {
         touchX.current = null;
       }}
     >
-      <div className="relative md:h-[78vh] md:min-h-[560px] md:max-h-[820px]">
+      {/* Split layout: photo is shown near its native size (never stretched full-bleed), so it stays sharp */}
+      <div className="relative md:h-[70vh] md:min-h-[520px] md:max-h-[720px]">
         {slides.map((s, i) => {
           const active = i === index;
           return (
@@ -101,38 +102,38 @@ const HeroCarousel = ({ banners = [] }) => {
               aria-roledescription="slide"
               aria-label={`${i + 1} of ${count}`}
               aria-hidden={!active}
-              className={`transition-opacity duration-700 ease-out ${active ? 'opacity-100 relative md:absolute md:inset-0 z-10' : 'opacity-0 absolute inset-0 z-0 pointer-events-none'}`}
+              className={`md:grid md:grid-cols-12 transition-opacity duration-700 ease-out ${active ? 'opacity-100 relative md:absolute md:inset-0 z-10' : 'opacity-0 absolute inset-0 z-0 pointer-events-none'}`}
             >
-              <div className="relative aspect-[16/10] md:aspect-auto md:absolute md:inset-0">
+              <div className="relative aspect-[16/10] md:aspect-auto md:order-2 md:col-span-7 md:h-full overflow-hidden bg-[#E9E2D6]">
                 <img
                   src={s.image}
                   alt={s.alt || s.title}
                   loading={i === 0 ? 'eager' : 'lazy'}
                   fetchPriority={i === 0 ? 'high' : 'auto'}
-                  className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-out ${active ? 'scale-105' : 'scale-100'}`}
+                  decoding="async"
+                  className="w-full h-full object-cover"
                 />
-                <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#211c17]/90 via-[#211c17]/55 to-transparent" />
               </div>
 
-              <div className="md:absolute md:inset-0 flex items-start md:items-center min-h-[300px] sm:min-h-[280px] md:min-h-0">
-                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 md:py-0">
-                  <div className={`max-w-xl transition-all duration-700 delay-150 ${active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    <h2 className="font-serif text-[28px] leading-tight sm:text-4xl lg:text-[54px] lg:leading-[1.08] font-bold tracking-tight">
+              <div className="md:order-1 md:col-span-5 flex items-center">
+                <div className="w-full px-4 sm:px-6 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-12 py-8 md:py-0">
+                  <div className={`max-w-lg transition-all duration-700 delay-150 ${active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+                    <h2 className="font-serif text-[30px] leading-[1.12] sm:text-4xl lg:text-[50px] lg:leading-[1.08] text-stone-900">
                       {s.title}
                     </h2>
                     {s.subtitle && (
-                      <p className="mt-4 text-sm sm:text-base text-white/85 leading-relaxed max-w-lg">{s.subtitle}</p>
+                      <p className="mt-4 text-[15px] sm:text-base text-stone-600 leading-relaxed">{s.subtitle}</p>
                     )}
-                    <div className="mt-6 flex flex-wrap gap-3">
+                    <div className="mt-7 flex flex-wrap gap-3">
                       <CtaLink
                         to={s.ctaLink}
-                        className="inline-flex items-center gap-2 bg-[#FBF9F5] hover:bg-white text-[#211c17] px-7 py-4 text-xs font-semibold uppercase tracking-[0.14em] transition-colors"
+                        className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#3a2f24] text-white px-7 py-4 text-xs font-semibold uppercase tracking-[0.14em] transition-colors"
                       >
                         {s.ctaLabel || 'View catalogue'} <span aria-hidden="true">&rarr;</span>
                       </CtaLink>
                       <Link
                         to="/wholesale"
-                        className="inline-flex items-center px-7 py-4 text-xs font-semibold uppercase tracking-[0.14em] border border-white/60 hover:border-white hover:bg-white/10 transition-colors"
+                        className="inline-flex items-center px-7 py-4 text-xs font-semibold uppercase tracking-[0.14em] border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white transition-colors"
                       >
                         Get trade price list
                       </Link>
@@ -146,9 +147,9 @@ const HeroCarousel = ({ banners = [] }) => {
       </div>
 
       {count > 1 && (
-        <div className="relative z-20 md:absolute md:bottom-6 md:left-0 md:right-0 pb-6 md:pb-0">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-4">
-            <div className="flex items-center gap-2">
+        <div className="relative z-20 md:absolute md:bottom-6 md:left-0 md:w-[41.666%] pb-6 md:pb-0">
+          <div className="px-4 sm:px-6 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] flex items-center gap-4">
+            <div className="flex items-center gap-1">
               {slides.map((s, i) => (
                 <button
                   key={s._id || s.image}
@@ -157,13 +158,13 @@ const HeroCarousel = ({ banners = [] }) => {
                   aria-current={i === index}
                   className="py-3 px-1 cursor-pointer"
                 >
-                  <span className={`block h-1 rounded-full transition-all duration-300 ${i === index ? 'w-10 bg-[#C5A059]' : 'w-5 bg-white/35 hover:bg-white/70'}`} />
+                  <span className={`block h-[3px] transition-all duration-300 ${i === index ? 'w-10 bg-stone-900' : 'w-5 bg-stone-900/25 hover:bg-stone-900/50'}`} />
                 </button>
               ))}
             </div>
-            <div className="ml-auto flex gap-2">
-              <button onClick={() => go(index - 1)} aria-label="Previous slide" className="w-11 h-11 rounded-full border border-white/30 hover:bg-white hover:text-[#211c17] transition-colors cursor-pointer">&larr;</button>
-              <button onClick={() => go(index + 1)} aria-label="Next slide" className="w-11 h-11 rounded-full border border-white/30 hover:bg-white hover:text-[#211c17] transition-colors cursor-pointer">&rarr;</button>
+            <div className="ml-auto lg:mr-12 flex gap-2">
+              <button onClick={() => go(index - 1)} aria-label="Previous slide" className="w-11 h-11 rounded-full border border-stone-900/30 hover:bg-stone-900 hover:text-white transition-colors cursor-pointer">&larr;</button>
+              <button onClick={() => go(index + 1)} aria-label="Next slide" className="w-11 h-11 rounded-full border border-stone-900/30 hover:bg-stone-900 hover:text-white transition-colors cursor-pointer">&rarr;</button>
             </div>
           </div>
         </div>
