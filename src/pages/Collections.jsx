@@ -1,3 +1,4 @@
+import ProductCard from '../components/ProductCard';
 import { productPath } from '../utils/slug';
 import React, { useState, useEffect, useRef } from 'react';
 import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
@@ -467,70 +468,9 @@ const Collections = () => {
                 <p className="text-xs text-stone-400">Try resetting filters or check back after publishing products from the admin dashboard.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {products.map((product, idx) => (
-                  <FadeIn key={product._id} direction="zoom" delay={idx * 80}>
-                    <div 
-                      className="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm p-4 flex flex-col justify-between group hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 h-full"
-                    >
-                      <div>
-                        {/* Image Container with Hover Overlay */}
-                        <div className="relative overflow-hidden rounded-2xl mb-4 h-60 bg-stone-100">
-                          <img 
-                            src={product.images && product.images[0] ? product.images[0] : '/images/dhi/mango-wood-trays.jpg'} 
-                            alt={product.title} 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer"
-                            onClick={() => navigate(productPath(product))}
-                          />
-
-                          <div className="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4 pointer-events-none group-hover:pointer-events-auto">
-                            <button 
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setQuickViewProduct(product);
-                              }}
-                              className="w-full bg-white hover:bg-[#C5A059] text-stone-950 hover:text-white py-2.5 px-4 rounded-xl font-semibold text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center justify-center gap-2"
-                            >
-                              <span>👁️</span> Quick View
-                            </button>
-
-                            <a 
-                              href={`https://wa.me/918459495594?text=Hello,%20I%20am%20interested%20in%20wholesale%20pricing%20for%20${encodeURIComponent(product.title)}`}
-                              target="_blank" 
-                              rel="noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-2.5 px-4 rounded-xl font-semibold text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer flex items-center justify-center gap-2 text-center"
-                            >
-                              <span>💬</span> Quick WhatsApp
-                            </a>
-                          </div>
-
-                          <span className="absolute top-3 left-3 bg-stone-900/80 backdrop-blur-md text-white text-[10px] px-2.5 py-1 rounded-full font-medium pointer-events-none shadow">
-                            {product.badge || product.series || 'ELLITE'}
-                          </span>
-                        </div>
-
-                        <h3 
-                          onClick={() => navigate(productPath(product))}
-                          className="font-serif font-bold text-stone-900 text-base mt-2 mb-1 line-clamp-1 cursor-pointer hover:text-[#C5A059] transition-colors"
-                        >
-                          {product.title}
-                        </h3>
-                        <p className="text-xs text-stone-400 mb-3">SKU: {product.sku || 'DHI-SKU'} | MOQ: {product.moq || '30 pcs'}</p>
-                      </div>
-
-                      <div className="flex items-center justify-between pt-4 border-t border-stone-100 mt-2">
-                        <div>
-                          <span className="text-[10px] text-stone-400 block uppercase">Wholesale Price</span>
-                          <span className="font-sans font-bold text-stone-900 text-base">{priceLabel(product.wholesalePrice)}</span>
-                        </div>
-                        <div className="text-right">
-                          {hasPrice(product.mrp) && <span className="text-[10px] text-stone-400 block uppercase">MRP</span>}
-                          <span className="text-stone-400 line-through text-xs">{mrpLabel(product.mrp)}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </FadeIn>
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-14">
+                {products.map((product) => (
+                  <ProductCard key={product._id} product={product} />
                 ))}
               </div>
             )}

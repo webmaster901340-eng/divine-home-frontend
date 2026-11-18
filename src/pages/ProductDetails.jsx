@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { useParams, Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import ProductGallery from '../components/ProductGallery';
 import RFQModal from '../components/RFQModal';
 import { CartContext } from '../context/CartContext';
 import { API_BASE_URL } from '../utils/api';
@@ -177,50 +178,13 @@ Email: wholesale@divinehomeindia.com
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start pb-8 sm:pb-12 border-b border-stone-200">
           
-          {/* Left Column: Thumbnails + High-Res Interactive Zoom Main Image */}
-          <FadeIn direction="left" className="lg:col-span-5 flex flex-col-reverse sm:flex-row gap-3 sm:gap-4">
-            
-            {/* Thumbnails */}
-            <div className="flex sm:flex-col gap-2.5 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0">
-              {product.images && product.images.map((img, idx) => (
-                <button 
-                  key={idx}
-                  onClick={() => setSelectedImage(idx)}
-                  className={`w-14 h-16 sm:w-16 sm:h-20 shrink-0 rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${selectedImage === idx ? 'border-[#C5A059] shadow-md scale-105' : 'border-stone-200 opacity-70 hover:opacity-100'}`}
-                >
-                  <img src={img} alt={`${product.title} photo ${idx + 1}`} loading="lazy" className="w-full h-full object-cover" />
-                </button>
-              ))}
-            </div>
-
-            {/* High-Resolution Interactive Zoom Container */}
-            <div 
-              className="relative flex-1 h-[320px] sm:h-[460px] rounded-2xl overflow-hidden bg-stone-900 shadow-xl cursor-crosshair group w-full"
-              onMouseEnter={() => setIsZoomed(true)}
-              onMouseLeave={() => setIsZoomed(false)}
-              onMouseMove={handleMouseMove}
-            >
-              <div className="absolute top-5 left-5 z-10 flex flex-col gap-1.5 items-start pointer-events-none">
-                <span className="bg-[#C5A059] text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-md shadow">
-                  {product.badge || 'Ellite Series'}
-                </span>
-              </div>
-
-              <img 
-                src={product.images && product.images[selectedImage] ? product.images[selectedImage] : product.image} 
-                alt={product.title} 
-                className={`w-full h-full object-cover transition-transform duration-200 ${isZoomed ? 'scale-150' : 'scale-100'}`}
-                style={isZoomed ? { transformOrigin: `${mousePos.x}% ${mousePos.y}%` } : {}}
-              />
-
-              <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] px-3 py-1.5 rounded-lg border border-white/20 pointer-events-none">
-                {isZoomed ? 'Move to inspect details' : '🔍 Hover to zoom'}
-              </div>
-            </div>
+          {/* Left Column: product photo carousel */}
+          <FadeIn direction="left" className="lg:col-span-6">
+            <ProductGallery images={product.images?.length ? product.images : [product.image]} title={product.title} />
           </FadeIn>
 
           {/* Right Column: Product Info & Pricing */}
-          <FadeIn direction="right" className="lg:col-span-7 space-y-5 sm:space-y-6">
+          <FadeIn direction="right" className="lg:col-span-6 space-y-5 sm:space-y-6">
             <div>
               <div className="flex justify-between items-center text-xs uppercase tracking-[0.15em] text-stone-500 font-semibold mb-1">
                 <span>{product.category}</span>
@@ -371,7 +335,7 @@ Email: wholesale@divinehomeindia.com
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 sm:gap-x-6">
             {relatedProducts.map(item => (
               <div key={item._id} className="bg-white rounded-2xl border border-stone-200/80 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <ProductCard product={item} />

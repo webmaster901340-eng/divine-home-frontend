@@ -285,7 +285,7 @@ const Home = () => {
             >
               {displayNewArrivals.length > 0 ? (
                 displayNewArrivals.map(product => (
-                  <div key={product._id} className="w-[300px] sm:w-[320px] flex-shrink-0 snap-start">
+                  <div key={product._id} className="w-[68%] sm:w-[280px] lg:w-[300px] flex-shrink-0 snap-start">
                     <ProductCard product={product} />
                   </div>
                 ))
@@ -397,7 +397,7 @@ const Home = () => {
             <div id="bestsellers-slider" className="flex gap-6 overflow-x-auto pb-6 pt-2 px-1 scroll-smooth snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               {displayBestsellers.length > 0 ? (
                 displayBestsellers.map(product => (
-                  <div key={product._id} className="w-[300px] sm:w-[320px] flex-shrink-0 snap-start">
+                  <div key={product._id} className="w-[68%] sm:w-[280px] lg:w-[300px] flex-shrink-0 snap-start">
                     <ProductCard product={product} />
                   </div>
                 ))

@@ -31,3 +31,5 @@ h1, h2, h3, h4, .font-serif {
   50% { width: 100%; left: 0%; }
   100% { width: 0%; left: 100%; }
 }
+.no-scrollbar{scrollbar-width:none;-ms-overflow-style:none}
+.no-scrollbar::-webkit-scrollbar{display:none}
