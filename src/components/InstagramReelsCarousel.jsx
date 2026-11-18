@@ -95,8 +95,8 @@ const InstagramReelsCarousel = () => {
                 className="absolute inset-0 w-full h-full object-cover z-0"
               />
 
-              {/* Video Element on top */}
-              <video 
+              {/* Video only when the link is a real video file (Instagram page links can't play) */}
+              {/\.(mp4|webm|mov)(\?|$)/i.test(reel.videoUrl || '') && <video
                 ref={el => videoRefs.current[reel._id] = el}
                 src={reel.videoUrl}
                 autoPlay 

@@ -28,7 +28,7 @@ const ScrollReveal = ({ children, className = "", delay = 0 }) => {
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transform transition-all duration-1000 ease-out ${
+      className={`transition-[opacity,transform] duration-700 ease-out will-change-transform ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-10'
