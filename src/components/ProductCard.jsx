@@ -71,7 +71,7 @@ const ProductCard = ({ product }) => {
             className="mt-auto pt-4"
           >
             <span className="block w-full text-center border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white transition-colors text-xs font-semibold uppercase tracking-[0.14em] py-3">
-              Get dealer price
+              <span className="sm:hidden">Get price</span><span className="hidden sm:inline">Get dealer price</span>
             </span>
           </a>
         </div>

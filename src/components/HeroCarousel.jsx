@@ -121,18 +121,18 @@ const HeroCarousel = ({ banners = [] }) => {
                       {s.title}
                     </h2>
                     {s.subtitle && (
-                      <p className="mt-4 text-sm sm:text-base text-stone-200/90 leading-relaxed max-w-lg">{s.subtitle}</p>
+                      <p className="mt-4 text-sm sm:text-base text-white/85 leading-relaxed max-w-lg">{s.subtitle}</p>
                     )}
                     <div className="mt-6 flex flex-wrap gap-3">
                       <CtaLink
                         to={s.ctaLink}
-                        className="inline-flex items-center gap-2 bg-[#C5A059] hover:bg-white text-[#211c17] px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors"
+                        className="inline-flex items-center gap-2 bg-[#FBF9F5] hover:bg-white text-[#211c17] px-7 py-4 text-xs font-semibold uppercase tracking-[0.14em] transition-colors"
                       >
                         {s.ctaLabel || 'View catalogue'} <span aria-hidden="true">&rarr;</span>
                       </CtaLink>
                       <Link
                         to="/wholesale"
-                        className="inline-flex items-center px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/40 hover:border-white hover:bg-white/10 transition-colors"
+                        className="inline-flex items-center px-7 py-4 text-xs font-semibold uppercase tracking-[0.14em] border border-white/60 hover:border-white hover:bg-white/10 transition-colors"
                       >
                         Get trade price list
                       </Link>

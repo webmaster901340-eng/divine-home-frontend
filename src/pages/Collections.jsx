@@ -69,6 +69,7 @@ const Collections = () => {
   const [designNamesList, setDesignNamesList] = useState([]);
 
   const [quickViewProduct, setQuickViewProduct] = useState(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   // Default category banner data (fallback if API fails)
   const defaultCategoryData = {
@@ -375,10 +376,21 @@ const Collections = () => {
       </FadeIn>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
+
+          {/* Mobile: filters collapse behind one button so products show first */}
+          <button
+            type="button"
+            onClick={() => setFiltersOpen(o => !o)}
+            aria-expanded={filtersOpen}
+            className="lg:hidden flex items-center justify-between w-full border border-stone-300 bg-white px-4 py-3 text-sm font-semibold text-stone-900"
+          >
+            <span>Filter{(selectedCategory !== 'All Categories' || selectedSeries !== 'All Series' || selectedDesign !== 'All Designs') ? ' (active)' : ''}</span>
+            <span className="text-lg leading-none">{filtersOpen ? '−' : '+'}</span>
+          </button>
+
           {/* Left Sidebar: Refine Catalog */}
-          <FadeIn direction="left" className="lg:col-span-1 bg-white p-6 rounded-2xl border border-stone-200/80 shadow-sm h-fit space-y-8">
+          <FadeIn direction="left" className={`${filtersOpen ? 'block' : 'hidden'} lg:block lg:col-span-1 bg-white p-6 border border-stone-200 h-fit space-y-8`}>
             <div>
               <div className="flex justify-between items-center pb-4 border-b border-stone-100 mb-4">
                 <h3 className="font-serif text-base font-bold text-stone-900">Refine Catalog</h3>
@@ -453,9 +465,9 @@ const Collections = () => {
           {/* Right Product Grid */}
           <div className="lg:col-span-3">
             <FadeIn direction="up">
-              <div className="flex justify-between items-center mb-6 bg-white p-4 rounded-xl border border-stone-200/80 shadow-sm">
-                <span className="text-xs text-stone-500 uppercase tracking-wider font-medium">
-                  {loading ? 'Loading products...' : `Showing ${products.length} wholesale products`}
+              <div className="flex justify-between items-center mb-6 pb-3 border-b border-stone-200">
+                <span className="text-sm text-stone-600">
+                  {loading ? 'Loading products...' : `${products.length} products`}
                 </span>
               </div>
             </FadeIn>

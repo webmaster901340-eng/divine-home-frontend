@@ -174,7 +174,7 @@ Email: wholesale@divinehomeindia.com
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] py-8 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="max-w-6xl mx-auto bg-white rounded-3xl border border-stone-200/80 shadow-sm p-4 sm:p-10 mb-16">
+      <div className="max-w-6xl mx-auto mb-16">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start pb-8 sm:pb-12 border-b border-stone-200">
           
@@ -190,96 +190,64 @@ Email: wholesale@divinehomeindia.com
                 <span>{product.category}</span>
                 <span className="text-stone-400">SKU: {product.sku || "DHI-SKU"}</span>
               </div>
-              <h1 className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight leading-snug">
+              <h1 className="font-serif text-[28px] sm:text-[38px] text-stone-900 leading-[1.15] mt-2">
                 {product.title}
               </h1>
               
               <div className="flex items-center gap-3 mt-2 text-xs flex-wrap">
-                <span className="text-stone-600 font-medium">{product.series}{product.designNo ? ` · Design ${product.designNo}` : ""}</span>
-                <span className="text-stone-300">•</span>
-                <span className="text-emerald-700 font-medium">✓ Dispatched from Karol Bagh, New Delhi</span>
+                <span className="text-sm text-stone-600">{product.series}{product.designNo ? ` · Design ${product.designNo}` : ""}</span>
               </div>
             </div>
 
-            {/* Indicative Wholesale Tier Box */}
-            <div className="bg-[#FAFAFA] p-4 sm:p-5 rounded-2xl border border-stone-200/80 relative">
-              <div className="absolute top-4 right-4 bg-emerald-100 text-emerald-900 text-[10px] uppercase font-semibold px-2.5 py-1 rounded-md">
-                Commercial Rate
+            {/* Trade price + MOQ */}
+            <div className="border-y border-stone-200 py-4 flex items-end justify-between gap-4">
+              <div>
+                <p className="text-xl sm:text-2xl text-stone-900">
+                  {hasPrice(product.wholesalePrice) ? `${priceLabel(product.wholesalePrice)} / unit` : 'Trade price on request'}
+                </p>
+                <p className="text-sm text-stone-600 mt-1">We reply on WhatsApp with dealer pricing and stock, usually the same day.</p>
               </div>
-
-              <span className="text-[10px] uppercase tracking-widest text-stone-500 font-semibold block mb-1">
-                Indicative Wholesale Tier
-              </span>
-
-              <div className="flex items-baseline gap-3">
-                <span className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                  {priceLabel(product.wholesalePrice)}
-                </span>
-                {hasPrice(product.wholesalePrice) && <span className="text-xs text-stone-500 font-light">/ unit</span>}
-                <span className="text-xs text-stone-400 line-through">{hasPrice(product.mrp) ? `MRP ${mrpLabel(product.mrp)}` : ""}</span>
-              </div>
-
-              <div className="flex justify-between items-center mt-3 pt-3 border-t border-stone-200/60 text-xs">
-                <span className="text-stone-600 font-light">Minimum Order Quantity (MOQ):</span>
-                <strong className="text-stone-900 font-semibold">{product.moq || "On request"}</strong>
+              <div className="text-right shrink-0">
+                <p className="text-xs uppercase tracking-[0.12em] text-stone-500">MOQ</p>
+                <p className="text-sm font-semibold text-stone-900 mt-0.5">{product.moq || 'On request'}</p>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+            <p className="text-[15px] text-stone-700 leading-relaxed">
               {product.description}
             </p>
 
-            {/* Action Buttons (Clear Visual Hierarchy) */}
-            <div className="space-y-3 pt-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* Primary Action: Add to Cart */}
-                <button
-                  onClick={() => {
-                    addToCart(product);
-                    setAddedToCart(true);
-                    setTimeout(() => setAddedToCart(false), 2000);
-                  }}
-                  className={`w-full py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-colors text-center cursor-pointer ${
-                    addedToCart
-                      ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                      : 'bg-[#C5A059] hover:bg-[#B8934A] text-white'
-                  }`}
-                >
-                  <span>{addedToCart ? '✓' : '🛒'}</span> {addedToCart ? 'Added to Cart' : 'Add to Cart'}
-                </button>
-
-                {/* Secondary Action: WhatsApp Enquiry */}
-                <a
-                  href={`https://wa.me/918459495594?text=Hello,%20I%20want%20to%20enquire%20about%20wholesale%20order%20for%20${encodeURIComponent(product.title)}%20(SKU:%20${product.sku})`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full bg-[#00A859] hover:bg-[#008f4c] text-white py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-colors text-center cursor-pointer"
-                >
-                  <span>💬</span> Enquire on WhatsApp
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3 pt-1">
-                <button
-                  onClick={handleDownloadSpecSheet}
-                  className="flex-1 bg-white hover:bg-stone-50 text-stone-700 border border-stone-200 py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition-colors cursor-pointer"
-                >
-                  <span>📥</span> Download Spec Sheet
-                </button>
-
-                <button
-                  onClick={handleShare}
-                  className="flex-1 bg-white hover:bg-stone-50 text-stone-700 border border-stone-200 py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition-colors cursor-pointer"
-                >
-                  <span>🔗</span> Share Product
-                </button>
+            {/* Actions */}
+            <div className="space-y-3 pt-1">
+              <a
+                href={`https://wa.me/918459495594?text=${encodeURIComponent(`Hi! I'd like dealer pricing for ${product.title} (SKU: ${product.sku}).`)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full bg-stone-900 hover:bg-[#3a2f24] text-white py-4 text-xs font-semibold uppercase tracking-[0.14em] flex items-center justify-center gap-2 transition-colors"
+              >
+                Get dealer price on WhatsApp
+              </a>
+              <button
+                onClick={() => {
+                  addToCart(product);
+                  setAddedToCart(true);
+                  setTimeout(() => setAddedToCart(false), 2000);
+                }}
+                className="w-full border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white py-4 text-xs font-semibold uppercase tracking-[0.14em] transition-colors cursor-pointer"
+              >
+                {addedToCart ? 'Added to your quote list' : 'Add to quote list'}
+              </button>
+              <div className="flex items-center gap-6 pt-1 text-sm">
+                <button onClick={handleDownloadSpecSheet} className="text-stone-700 underline underline-offset-4 decoration-stone-300 hover:decoration-stone-900 cursor-pointer">Download spec sheet</button>
+                <button onClick={handleShare} className="text-stone-700 underline underline-offset-4 decoration-stone-300 hover:decoration-stone-900 cursor-pointer">Share</button>
               </div>
             </div>
 
-            <div className="space-y-2 pt-2 text-xs text-stone-600 border-t border-stone-200/80">
-              <div className="flex items-center gap-2"><span>🛡️</span> Every design on display at our Karol Bagh showroom</div>
-              <div className="flex items-center gap-2"><span>📦</span> Packed in corrugated cartons with bubble wrap</div>
-            </div>
+            <ul className="space-y-1.5 pt-4 text-sm text-stone-600 border-t border-stone-200">
+              <li>Every design is on display at our Karol Bagh showroom</li>
+              <li>Packed in corrugated cartons with bubble wrap</li>
+              <li>Dispatched from New Delhi across India</li>
+            </ul>
           </FadeIn>
         </div>
 
