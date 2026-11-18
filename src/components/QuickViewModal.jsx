@@ -58,7 +58,7 @@ const QuickViewModal = ({ product, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fadeIn">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-4 animate-fadeIn">
       <div className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative border border-stone-200 flex flex-col md:flex-row max-h-[90vh] overflow-y-auto">
         
         {/* Close Button */}
@@ -240,12 +240,12 @@ const QuickViewModal = ({ product, onClose }) => {
                 </div>
 
                 {/* Wholesale Pricing Tier */}
-                <div className="bg-[#F9F7F2] p-4 rounded-xl border border-stone-200/80 mb-6">
+                <div className="border-y border-stone-200 py-4 mb-6">
                   <span className="text-[9px] text-stone-400 uppercase tracking-wider font-semibold block mb-1">WHOLESALE PRICING TIER</span>
                   <div className="flex items-baseline gap-2.5">
-                    <span className="font-sans text-3xl font-bold text-stone-900 tracking-tight">{priceLabel(product.wholesalePrice || product.price)}</span>
+                    <span className="font-sans text-xl text-stone-900">{priceLabel(product.wholesalePrice || product.price)}</span>
                     <span className="text-sm text-stone-400 line-through">{mrpLabel(product.mrp)}</span>
-                    <span className="text-[11px] text-emerald-600 font-semibold ml-auto">{hasPrice(product.wholesalePrice || product.price) ? "Dealer trade price" : "WhatsApp us for dealer rates"}</span>
+                    <span className="text-xs text-stone-600 ml-auto">{hasPrice(product.wholesalePrice || product.price) ? "Dealer trade price" : "WhatsApp us for dealer rates"}</span>
                   </div>
                 </div>
               </div>
@@ -256,7 +256,7 @@ const QuickViewModal = ({ product, onClose }) => {
                   href={`https://wa.me/918459495594?text=Hello,%20I%20want%20to%20inquire%20about%20wholesale%20for%20${product.title}%20(SKU:%20${product.sku})`}
                   target="_blank" 
                   rel="noreferrer"
-                  className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-xl font-medium text-xs tracking-widest uppercase transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer text-center"
+                  className="w-full bg-stone-900 hover:bg-[#3a2f24] text-white py-3.5 font-semibold text-xs tracking-[0.14em] uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer text-center"
                 >
                   <span>💬</span> Inquire via WhatsApp
                 </a>
@@ -264,7 +264,7 @@ const QuickViewModal = ({ product, onClose }) => {
                 {/* Request Formal Quotation Button */}
                 <button 
                   onClick={() => setShowRFQForm(true)}
-                  className="w-full bg-stone-900 hover:bg-[#C5A059] text-white py-3 rounded-xl font-medium text-xs tracking-wider uppercase transition-colors cursor-pointer shadow-sm"
+                  className="w-full border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white py-3.5 font-semibold text-xs tracking-[0.14em] uppercase transition-colors cursor-pointer"
                 >
                   ✦ Request Formal Quotation
                 </button>
@@ -275,7 +275,7 @@ const QuickViewModal = ({ product, onClose }) => {
                     onClose();
                     navigate(productPath(product));
                   }}
-                  className="w-full bg-stone-100 hover:bg-stone-200 text-stone-800 py-2.5 rounded-xl font-medium text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full text-stone-700 underline underline-offset-4 decoration-stone-300 py-2 text-sm transition-colors cursor-pointer flex items-center justify-center gap-2"
                 >
                   <span>✦</span> View Full Detail & Specifications →
                 </button>
