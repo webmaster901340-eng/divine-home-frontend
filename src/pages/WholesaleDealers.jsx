@@ -92,7 +92,7 @@ const WholesaleDealers = () => {
           </div>
           <div className="lg:col-span-6">
             <div className="aspect-[16/11] overflow-hidden bg-[#E9E2D6]">
-              <img src="/images/hero/elegant-vector-gold-tray-set.jpg" alt="Elegant Vector tray collection by Divine Home India" className="w-full h-full object-cover" />
+              <img src="/images/site/site-hero-a-2.jpg" alt="Elegant Vector tray collection by Divine Home India" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

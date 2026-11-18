@@ -99,10 +99,10 @@ const Collections = () => {
     // Real catalogue photos served from our own site
     const defaultImages = {
       "Artisan Trays & Platters": "/images/d2c/dhi-2606-1.jpg",
-      "Trays & Serving Platters": "/images/hero/lotus-glow-tray-set-festive.jpg",
+      "Trays & Serving Platters": "/images/site/site-hero-a-2.jpg",
       "Organizers & Holders": "/images/d2c/dhi-lc-black-1.jpg",
-      "Tableware & Dining": "/images/hero/revolving-snack-set-gold.jpg",
-      "Crockery": "/images/hero/elegant-vector-crockery-set.jpg"
+      "Tableware & Dining": "/images/site/site-hero-c-1.jpg",
+      "Crockery": "/images/site/site-hero-d-1.jpg"
     };
 
     // Helper to validate URL
@@ -158,12 +158,12 @@ const Collections = () => {
   };
 
   const defaultBanner = {
-    image: "/images/hero/elegant-vector-gold-tray-set.jpg",
+    image: "/images/site/site-hero-a-1.jpg",
     desc: "Every design in our current range, for shops, distributors, hotels and gifting companies. Send us the product names you want and we will reply with trade prices and stock."
   };
 
   const bestsellerBanner = {
-    image: "/images/hero/lotus-glow-tray-set-festive.jpg",
+    image: "/images/site/site-hero-b-1.jpg",
     desc: "The designs our dealers reorder most, season after season. A safe first order for a new shop shelf."
   };
   const currentBanner = showBestsellers && selectedCategory === 'All Categories'
