@@ -98,9 +98,9 @@ const Collections = () => {
   const getCategoryBannerImage = (category) => {
     // Real catalogue photos served from our own site
     const defaultImages = {
-      "Artisan Trays & Platters": "/images/catalogue/covers/dhi-2606.jpg",
+      "Artisan Trays & Platters": "/images/d2c/dhi-2606-1.jpg",
       "Trays & Serving Platters": "/images/hero/lotus-glow-tray-set-festive.jpg",
-      "Organizers & Holders": "/images/catalogue/covers/dhi-lc-black.jpg",
+      "Organizers & Holders": "/images/d2c/dhi-lc-black-1.jpg",
       "Tableware & Dining": "/images/hero/revolving-snack-set-gold.jpg",
       "Crockery": "/images/hero/elegant-vector-crockery-set.jpg"
     };

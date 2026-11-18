@@ -47,8 +47,8 @@ const About = () => {
   const location = useLocation();
   const [pageImages, setPageImages] = useState({
     about_hero: "/images/hero/elegant-vector-tray-set-lifestyle.jpg",
-    about_img1: "/images/dhi/mango-wood-trays.jpg",
-    about_img2: "/images/dhi/printed-tray-set.jpg"
+    about_img1: "/images/d2c/dhi-2606-1.jpg",
+    about_img2: "/images/d2c/dhi-5004-1.jpg"
   });
 
   useEffect(() => {
