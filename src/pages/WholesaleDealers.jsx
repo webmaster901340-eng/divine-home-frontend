@@ -51,7 +51,7 @@ const WholesaleDealers = () => {
     gstin: '',
     phone: '',
     email: '',
-    collectionInterest: 'Artisan Trays & Platters',
+    collectionInterest: 'Decorative Tray Sets',
     orderVolume: '',
     destination: '',
     timeline: 'Within 2 Weeks',
@@ -85,7 +85,7 @@ const WholesaleDealers = () => {
             Get Our Wholesale Price List
           </h1>
           <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light">
-            Fill out the B2B quotation form below or connect with our Karol Bagh trade desk directly on WhatsApp. We provide factory-direct wholesale pricing, sample shipments, and festive gifting catalogs.
+            Tell us about your business and we will send the 2026-27 catalogue with trade prices. Prefer to talk? WhatsApp us on +91 84594 95594 or visit the Karol Bagh showroom to see every design in person.
           </p>
         </FadeIn>
 
@@ -203,14 +203,14 @@ const WholesaleDealers = () => {
                       onChange={handleChange}
                       className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]"
                     >
-                      <option>Artisan Trays & Platters</option>
-                      <option>Ceramics & Tableware</option>
-                      <option>Luxury Home Décor</option>
-                      <option>Table Vases & Urns</option>
-                      <option>Designer Coffee Mugs</option>
+                      <option>Decorative Tray Sets</option>
+                      <option>Mango Wood Trays</option>
+                      <option>Leatherette Trays & Organisers</option>
+                      <option>Snack & Candy Sets</option>
+                      <option>Crockery & Mugs</option>
                       <option>Festive & Gifting Sets</option>
-                      <option>Bath & Vanity Sets</option>
-                      <option>Stoneware Planters</option>
+                      <option>Corporate Gifting (Custom Branding)</option>
+                      <option>Hotel / Cafe / HoReCa</option>
                     </select>
                   </div>
                   <div>
@@ -352,8 +352,8 @@ const WholesaleDealers = () => {
                 <div className="flex items-start gap-3">
                   <span className="text-stone-900 font-bold text-sm">🛡️</span>
                   <div>
-                    <strong className="text-stone-900 block font-medium">Direct Factory Margins:</strong>
-                    Competitive volume rates allowing healthy retail margins.
+                    <strong className="text-stone-900 block font-medium">Healthy Retail Margins:</strong>
+                    Trade pricing that leaves room for a proper retail margin, with MRP printed on request.
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

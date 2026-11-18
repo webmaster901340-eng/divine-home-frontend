@@ -1,3 +1,4 @@
+import { productPath } from '../utils/slug';
 import React, { useState, useEffect, useRef } from 'react';
 import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { useSearchParams, useLocation, useNavigate, Link } from 'react-router-dom';
@@ -72,39 +73,40 @@ const Collections = () => {
   const defaultCategoryData = {
     "Artisan Trays & Platters": {
       image: "/images/dhi/mango-wood-trays.jpg",
-      desc: "Handcrafted luxury vanity trays, brass rimmed serving platters, mirrored accents, and wooden resin trays for premium gifting and home décor."
+      desc: "Mango wood tray sets with hand-printed designs: peacock, Kalamkari, elephant, butterfly and more. Natural grain, so no two pieces are identical."
     },
     "Trays & Serving Platters": {
       image: "/images/dhi/serving-tray-set.jpg",
-      desc: "Premium serving trays, decorative platters, and elegant serving solutions for hospitality and dining experiences."
+      desc: "Printed decorative tray sets in our Ellite, Premium and Glass Foil series. Rectangle, square, round and oval sets with matching coasters and candy boxes."
     },
     "Organizers & Holders": {
       image: "/images/dhi/leatherette-organiser.jpg",
-      desc: "Stylish storage solutions, decorative organizers, and functional holders for home and office organization."
+      desc: "Leatherette tray and organiser sets, desk and tissue organisers, napkin holders and cutlery holders for homes, offices and hotel rooms."
     },
     "Tableware & Dining": {
       image: "/images/dhi/festive-serving-set.jpg",
-      desc: "Artisan stoneware dinner sets, salad bowls, serving platters, and grazing boards designed for luxury hospitality and modern dining."
+      desc: "Ceramic snack bowl sets with gold stands, revolving snack sets, candy sets in gift boxes and serving pieces for the festive season."
     },
     "Crockery": {
       image: "/images/dhi/ceramic-mugs.jpg",
-      desc: "Fine ceramic crockery, dinnerware collections, and luxury tableware for everyday elegance and special occasions."
+      desc: "Ceramic crockery in our signature tray designs, plus mug sets, sippers and tumblers, so shops can sell a complete matching look."
     }
   };
 
   const getCategoryBannerImage = (category) => {
-    // Use Cloudinary images as defaults (more reliable than Unsplash)
+    // Real catalogue photos served from our own site
     const defaultImages = {
-      "Artisan Trays & Platters": "https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png",
-      "Trays & Serving Platters": "https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png",
-      "Organizers & Holders": "https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png",
-      "Tableware & Dining": "https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png",
-      "Crockery": "https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png"
+      "Artisan Trays & Platters": "/images/dhi/mango-wood-trays.jpg",
+      "Trays & Serving Platters": "/images/dhi/printed-tray-set.jpg",
+      "Organizers & Holders": "/images/dhi/leatherette-organiser.jpg",
+      "Tableware & Dining": "/images/dhi/festive-serving-set.jpg",
+      "Crockery": "/images/dhi/ceramic-mugs.jpg"
     };
 
     // Helper to validate URL
     const isValidUrl = (url) => {
-      return url && typeof url === 'string' && (url.startsWith('http://') || url.startsWith('https://'));
+      // Old stock-photo placeholders (Unsplash) are ignored so real photos show.
+      return url && typeof url === 'string' && (url.startsWith('http://') || url.startsWith('https://')) && !url.includes('unsplash.com');
     };
 
     // If image failed to load, use default
@@ -133,23 +135,23 @@ const Collections = () => {
   const categoryBannerData = {
     "Artisan Trays & Platters": {
       image: getCategoryBannerImage("Artisan Trays & Platters"),
-      desc: "Handcrafted luxury vanity trays, brass rimmed serving platters, mirrored accents, and wooden resin trays for premium gifting and home décor."
+      desc: "Mango wood tray sets with hand-printed designs: peacock, Kalamkari, elephant, butterfly and more. Natural grain, so no two pieces are identical."
     },
     "Trays & Serving Platters": {
       image: getCategoryBannerImage("Trays & Serving Platters"),
-      desc: "Premium serving trays, decorative platters, and elegant serving solutions for hospitality and dining experiences."
+      desc: "Printed decorative tray sets in our Ellite, Premium and Glass Foil series. Rectangle, square, round and oval sets with matching coasters and candy boxes."
     },
     "Organizers & Holders": {
       image: getCategoryBannerImage("Organizers & Holders"),
-      desc: "Stylish storage solutions, decorative organizers, and functional holders for home and office organization."
+      desc: "Leatherette tray and organiser sets, desk and tissue organisers, napkin holders and cutlery holders for homes, offices and hotel rooms."
     },
     "Tableware & Dining": {
       image: getCategoryBannerImage("Tableware & Dining"),
-      desc: "Artisan stoneware dinner sets, salad bowls, serving platters, and grazing boards designed for luxury hospitality and modern dining."
+      desc: "Ceramic snack bowl sets with gold stands, revolving snack sets, candy sets in gift boxes and serving pieces for the festive season."
     },
     "Crockery": {
       image: getCategoryBannerImage("Crockery"),
-      desc: "Fine ceramic crockery, dinnerware collections, and luxury tableware for everyday elegance and special occasions."
+      desc: "Ceramic crockery in our signature tray designs, plus mug sets, sippers and tumblers, so shops can sell a complete matching look."
     }
   };
 
@@ -323,7 +325,7 @@ const Collections = () => {
             <img
               key={currentBanner.image}
               src={currentBanner.image}
-              alt="Collection Banner"
+              alt={`${selectedCategory === "All Categories" ? "Divine Home India wholesale catalogue" : selectedCategory} banner`}
               className="w-full h-full object-cover opacity-70"
               style={{
                 objectFit: 'cover',
@@ -358,7 +360,7 @@ const Collections = () => {
             </span>
 
             <h1 className="font-serif text-3xl sm:text-5xl font-bold mb-4 tracking-tight leading-tight">
-              {selectedCategory === 'All Categories' ? 'Wholesale Catalogue' : selectedCategory}
+              {selectedCategory === 'All Categories' ? 'Wholesale Catalogue 2026-27' : `Wholesale ${selectedCategory}`}
             </h1>
 
             <p className="text-stone-200 text-xs sm:text-sm font-light leading-relaxed max-w-2xl mx-auto">
@@ -478,7 +480,7 @@ const Collections = () => {
                             src={product.images && product.images[0] ? product.images[0] : '/images/dhi/mango-wood-trays.jpg'} 
                             alt={product.title} 
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer"
-                            onClick={() => navigate(`/product/${product._id}`)}
+                            onClick={() => navigate(productPath(product))}
                           />
 
                           <div className="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4 pointer-events-none group-hover:pointer-events-auto">
@@ -509,7 +511,7 @@ const Collections = () => {
                         </div>
 
                         <h3 
-                          onClick={() => navigate(`/product/${product._id}`)}
+                          onClick={() => navigate(productPath(product))}
                           className="font-serif font-bold text-stone-900 text-base mt-2 mb-1 line-clamp-1 cursor-pointer hover:text-[#C5A059] transition-colors"
                         >
                           {product.title}

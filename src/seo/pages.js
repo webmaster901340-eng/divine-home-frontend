@@ -44,7 +44,7 @@ export const PAGES = {
     description: 'Browse the Divine Home India wholesale catalogue: printed tray sets, mango wood, ceramic bowl and candy sets, organisers and crockery. Delhi, pan-India supply.',
     body: `<h1>Wholesale catalogue 2026-27</h1>
 <p>Every design in our current range, for shops, distributors, hotels and gifting companies. Filter by category or series, then send us the product names you want and we will reply with trade prices and stock.</p>
-<p>Categories: trays and serving platters, tableware and dining, crockery, organisers and holders. Series include Elegant Vector, Lotus Glow, Peachy Bloom, Peacock Grace, Ikkat, Marble Flow, Mangowood and Leather Classic.</p>`,
+<p>Categories: decorative tray sets, mango wood trays, leatherette trays and organisers, ceramic snack and candy sets, and crockery. Series: Ellite (Elegant Vector, Lotus Glow, Peachy Bloom, Peacock Grace, Bless Heart, Ikket, Marble Flow, Elegance Elephant), Premium, Glass Foil, Mangowood and Leather Classic.</p>`,
   },
   '/wholesale': {
     title: 'Wholesale Price List & Dealership | Home Decor Supplier Delhi | Divine Home India',
@@ -103,6 +103,47 @@ export const businessSchema = () => ({
   }],
   areaServed: 'IN',
   sameAs: ['https://www.instagram.com/divinehomeindia/'],
+});
+
+// ---- Product pages (used by ProductDetails at runtime and scripts/seo-pages.mjs at build) ----
+const absUrl = (src = '') => (src.startsWith('http') ? src : `${SITE}${src.startsWith('/') ? '' : '/'}${src}`);
+const clip = (text, max) => (text.length <= max ? text : `${text.slice(0, max - 1).replace(/\s+\S*$/, '')}…`);
+
+export const productHead = (p, path) => {
+  const name = p.title.replace(/\s*\([^)]*\)\s*$/, ''); // drop "(Ellite Series 5001)" from the <title>
+  const design = p.designNo && !name.includes(p.designNo) ? ` ${p.designNo}` : '';
+  return {
+    path,
+    title: clip(`${name}${design} | Wholesale | Divine Home India`, 70),
+    description: clip(`${name}${design}: wholesale ${p.category.toLowerCase()} for gift shops and corporate gifting. Trade price on request. Karol Bagh, Delhi; ships across India.`, 160),
+    image: p.images?.[0] ? absUrl(p.images[0]) : undefined,
+  };
+};
+
+export const productSchema = (p, path) => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Product',
+      name: p.title,
+      sku: p.sku,
+      mpn: p.designNo || p.sku,
+      brand: { '@type': 'Brand', name: BUSINESS.name },
+      category: p.category,
+      description: p.description || p.title,
+      image: (p.images || []).map(absUrl),
+      url: `${SITE}${path}`,
+      // Trade prices are shared on request, so no Offer/price is published.
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Catalogue', item: `${SITE}/collections` },
+        { '@type': 'ListItem', position: 3, name: p.title, item: `${SITE}${path}` },
+      ],
+    },
+  ],
 });
 
 export const faqSchema = () => ({

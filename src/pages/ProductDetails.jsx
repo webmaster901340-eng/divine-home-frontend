@@ -5,6 +5,9 @@ import ProductCard from '../components/ProductCard';
 import RFQModal from '../components/RFQModal';
 import { CartContext } from '../context/CartContext';
 import { API_BASE_URL } from '../utils/api';
+import { productPath, productSlug } from '../utils/slug';
+import { applyHead, setJsonLd } from '../components/Seo';
+import { productHead, productSchema } from '../seo/pages';
 
 const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -69,35 +72,15 @@ const ProductDetail = () => {
     fetch(`${API_BASE_URL}/api/products`)
       .then(res => res.json())
       .then(data => {
-        if (Array.isArray(data) && data.length > 0) {
-          let found = data.find(p => p._id === id || String(p._id) === String(id));
-          if (!found) found = data[0]; 
-
-          setProduct(found);
-          if (found.images && found.images.length > 0) setSelectedImage(0);
-
-          const filtered = data.filter(p => p._id !== found._id);
-          setRelatedProducts(filtered.slice(0, 4));
-        } else {
-          setProduct({
-            title: "Mother of Pearl Floral Inlay Decorative Platter",
-            category: "Artisan Trays & Platters",
-            sku: "DHI-TR-5001",
-            wholesalePrice: 980,
-            mrp: 3995,
-            moq: "30 pcs",
-            images: [
-              "/images/dhi/printed-tray-set.jpg",
-              "/images/dhi/festive-serving-set.jpg"
-            ],
-            specs: {
-              material: "Natural Sea Shell Mother of Pearl & Sustainable Wood",
-              finish: "Hand-Polished Organic Resin Seal",
-              dimensions: "18 x 12 inches & 16 x 10 inches (2 Pcs Set)",
-              weight: "1.2 kg",
-              packaging: "Corrugated carton with bubble wrap"
-            }
-          });
+        const list = Array.isArray(data) ? data : [];
+        // New links use the title slug; old links used the Mongo _id, so accept both.
+        const found = list.find(p => productSlug(p) === id || String(p._id) === String(id)) || null;
+        setProduct(found);
+        setSelectedImage(0);
+        if (found) {
+          const sameCategory = list.filter(p => p._id !== found._id && p.category === found.category);
+          const others = list.filter(p => p._id !== found._id && p.category !== found.category);
+          setRelatedProducts([...sameCategory, ...others].slice(0, 4));
         }
         setLoading(false);
       })
@@ -107,10 +90,28 @@ const ProductDetail = () => {
       });
   }, [id]);
 
+  useEffect(() => {
+    if (!product) return;
+    const path = productPath(product);
+    applyHead(productHead(product, path));
+    setJsonLd('product-ld', productSchema(product, path));
+  }, [product]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center">
-        <p className="font-serif text-stone-500 text-lg animate-pulse">Loading luxury specifications...</p>
+        <p className="font-serif text-stone-500 text-lg animate-pulse">Loading product details...</p>
+      </div>
+    );
+  }
+
+  if (!product) {
+    return (
+      <div className="min-h-screen bg-[#FDFBF7] flex flex-col items-center justify-center gap-4 px-4 text-center">
+        <meta name="robots" content="noindex" />
+        <h1 className="font-serif text-2xl font-bold text-stone-900">This product is no longer in our catalogue</h1>
+        <p className="text-sm text-stone-600">It may have been renamed or discontinued. Browse the current range or WhatsApp us on +91 84594 95594.</p>
+        <Link to="/collections" className="bg-stone-900 hover:bg-[#C5A059] text-white text-xs uppercase tracking-widest font-semibold px-6 py-3 rounded-full">View catalogue</Link>
       </div>
     );
   }
@@ -127,7 +128,7 @@ const ProductDetail = () => {
     if (navigator.share) {
       navigator.share({
         title: product.title,
-        text: `Check out this wholesale luxury item: ${product.title}`,
+        text: `Wholesale from Divine Home India: ${product.title}`,
         url: currentUrl,
       }).catch((err) => console.log('Error sharing:', err));
     } else {
@@ -144,11 +145,11 @@ Product: ${product.title}
 SKU: ${product.sku || "DHI-SKU"}
 Category: ${product.category}
 Wholesale Rate: ${hasPrice(product.wholesalePrice) ? `₹${product.wholesalePrice}/unit` : "On request"}
-MOQ: ${product.moq || "30 pcs"}
+MOQ: ${product.moq || "On request"}
 
 TECHNICAL SPECIFICATIONS:
-MATERIAL: ${product.specs?.material || "Standard Artisan Grade"}
-FINISH: ${product.specs?.finish || "Standard Factory Finish"}
+MATERIAL: ${product.specs?.material || "See catalogue"}
+FINISH: ${product.specs?.finish || "See catalogue"}
 DIMENSIONS: ${product.specs?.dimensions || "As per master catalog"}
 WEIGHT: ${product.specs?.weight || "Standard"}
 PACKAGING: ${product.specs?.packaging || "Corrugated carton with bubble wrap"}
@@ -187,7 +188,7 @@ Email: wholesale@divinehomeindia.com
                   onClick={() => setSelectedImage(idx)}
                   className={`w-14 h-16 sm:w-16 sm:h-20 shrink-0 rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${selectedImage === idx ? 'border-[#C5A059] shadow-md scale-105' : 'border-stone-200 opacity-70 hover:opacity-100'}`}
                 >
-                  <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                  <img src={img} alt={`${product.title} photo ${idx + 1}`} loading="lazy" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
@@ -230,9 +231,9 @@ Email: wholesale@divinehomeindia.com
               </h1>
               
               <div className="flex items-center gap-3 mt-2 text-xs flex-wrap">
-                <span className="text-amber-600 font-semibold">★ 5 <span className="text-stone-500">(Wholesale Verified)</span></span>
+                <span className="text-stone-600 font-medium">{product.series}{product.designNo ? ` · Design ${product.designNo}` : ""}</span>
                 <span className="text-stone-300">•</span>
-                <span className="text-emerald-700 font-medium">✓ Ready for Bulk Dispatch from Karol Bagh</span>
+                <span className="text-emerald-700 font-medium">✓ Dispatched from Karol Bagh, New Delhi</span>
               </div>
             </div>
 
@@ -256,12 +257,12 @@ Email: wholesale@divinehomeindia.com
 
               <div className="flex justify-between items-center mt-3 pt-3 border-t border-stone-200/60 text-xs">
                 <span className="text-stone-600 font-light">Minimum Order Quantity (MOQ):</span>
-                <strong className="text-stone-900 font-semibold">{product.moq || "30 pcs"}</strong>
+                <strong className="text-stone-900 font-semibold">{product.moq || "On request"}</strong>
               </div>
             </div>
 
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-              {product.description || 'Handcrafted to perfection with premium export-grade finish. Designed specifically for luxury home decor boutiques, gifting curators, and interior architects.'}
+              {product.description}
             </p>
 
             {/* Action Buttons (Clear Visual Hierarchy) */}
@@ -312,7 +313,7 @@ Email: wholesale@divinehomeindia.com
             </div>
 
             <div className="space-y-2 pt-2 text-xs text-stone-600 border-t border-stone-200/80">
-              <div className="flex items-center gap-2"><span>🛡️</span> 100% Bespoke Quality & Export Finish Guarantee</div>
+              <div className="flex items-center gap-2"><span>🛡️</span> Every design on display at our Karol Bagh showroom</div>
               <div className="flex items-center gap-2"><span>📦</span> Packed in corrugated cartons with bubble wrap</div>
             </div>
           </FadeIn>
@@ -321,32 +322,32 @@ Email: wholesale@divinehomeindia.com
         {/* Bottom Section: Technical Specifications (Balanced Grid) */}
         <FadeIn direction="up" className="pt-8 sm:pt-10">
           <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-2">
-            Commercial Specifications
+            Specifications
           </span>
           <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-6">
-            Technical Details & Master Packaging
+            Product details and packing
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="bg-[#FAFAFA] p-4 rounded-xl border border-stone-200/80 flex justify-between items-center text-xs">
               <span className="text-stone-500 uppercase font-semibold text-[11px]">Material / Series</span>
-              <span className="text-stone-900 font-medium text-right">{product.specs?.material || "Premium Artisan Grade"}</span>
+              <span className="text-stone-900 font-medium text-right">{product.specs?.material || product.series || "See catalogue"}</span>
             </div>
             <div className="bg-[#FAFAFA] p-4 rounded-xl border border-stone-200/80 flex justify-between items-center text-xs">
               <span className="text-stone-500 uppercase font-semibold text-[11px]">Finish</span>
-              <span className="text-stone-900 font-medium text-right">{product.specs?.finish || "Hand-Polished Gold Trim Seal"}</span>
+              <span className="text-stone-900 font-medium text-right">{product.specs?.finish || "See catalogue"}</span>
             </div>
             <div className="bg-[#FAFAFA] p-4 rounded-xl border border-stone-200/80 flex justify-between items-center text-xs">
               <span className="text-stone-500 uppercase font-semibold text-[11px]">Dimensions</span>
-              <span className="text-stone-900 font-medium text-right">{product.specs?.dimensions || "As per master catalog specs"}</span>
+              <span className="text-stone-900 font-medium text-right">{product.specs?.dimensions || "See catalogue"}</span>
             </div>
             <div className="bg-[#FAFAFA] p-4 rounded-xl border border-stone-200/80 flex justify-between items-center text-xs">
               <span className="text-stone-500 uppercase font-semibold text-[11px]">Weight</span>
-              <span className="text-stone-900 font-medium text-right">{product.specs?.weight || "Standard Export Grade"}</span>
+              <span className="text-stone-900 font-medium text-right">{product.specs?.weight || "On request"}</span>
             </div>
             <div className="bg-[#FAFAFA] p-4 rounded-xl border border-stone-200/80 flex justify-between items-center text-xs sm:col-span-2">
               <span className="text-stone-500 uppercase font-semibold text-[11px]">Master Packaging</span>
-              <span className="text-stone-900 font-medium text-right">{product.specs?.packaging || "Export corrugation with bubble armor"}</span>
+              <span className="text-stone-900 font-medium text-right">{product.specs?.packaging || "Corrugated carton with bubble wrap"}</span>
             </div>
           </div>
         </FadeIn>
@@ -359,10 +360,10 @@ Email: wholesale@divinehomeindia.com
           <div className="flex justify-between items-end mb-6">
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-1">
-                Curated Wholesale Bundle
+                More from the catalogue
               </span>
               <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-900">
-                Frequently Paired Wholesale Collections
+                Dealers also order
               </h2>
             </div>
             <Link to="/collections" className="text-xs font-semibold text-stone-900 hover:text-[#C5A059] transition-colors shrink-0">

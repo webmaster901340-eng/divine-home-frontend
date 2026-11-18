@@ -89,7 +89,7 @@ const About = () => {
         <div className="absolute inset-0 bg-black/40 z-10"></div>
         <img
           src={pageImages.about_hero}
-          alt="Luxury Ceramics"
+          alt="Divine Home India showroom, Karol Bagh, New Delhi"
           className="absolute inset-0 w-full h-full object-cover opacity-60 scale-105"
         />
 
@@ -146,13 +146,13 @@ const About = () => {
               Our Vision
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 leading-tight">
-              Empowering Interior Boutiques & Dealers with Timeless Handcrafted Luxury
+              Our own designs, made to a standard your customers notice
             </h2>
             <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light max-w-xl">
-              At Divine Home India, we believe every tabletop, vanity, and console deserves the tactile warmth of handcrafted artistry. From mirror-finish vanity trays and hammered brass accent platters to high-fired vitrified ceramic dinnerware, our wholesale catalog is designed to stand out on retail shelves and luxury projects alike.
+              We design every tray print in-house: the Ellite, Premium and Glass Foil tray series, hand-printed Mangowood sets, Leather Classic organisers, and ceramic snack, candy and crockery sets that match our tray designs. Because the designs are ours, your shelf won't look like the shop next door.
             </p>
             <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light max-w-xl">
-              We eliminate traditional distribution bottlenecks by operating a direct B2B trade hub out of Karol Bagh, New Delhi. Every order is inspected piece-by-piece, cushioned in export-grade packaging, and shipped with end-to-end tracking to dealers across all Indian states.
+              You deal with us directly, from our showroom in Karol Bagh, New Delhi. Orders are checked before packing, packed in corrugated cartons with bubble wrap, and sent by transport or courier anywhere in India.
             </p>
 
             {/* Karol Bagh Showroom Badge Box */}
@@ -161,7 +161,7 @@ const About = () => {
               <div>
                 <h3 className="font-serif text-xs font-bold text-stone-900">Karol Bagh, New Delhi Showroom</h3>
                 <p className="text-xs text-stone-600 mt-0.5 leading-relaxed">
-                  Dealers and distributors are welcome to visit our Delhi showroom to inspect material samples, finishes, and master packaging in person.
+                  Every design is on display. Come and compare finishes side by side before you order. Monday to Saturday, 10:30 am to 8 pm.
                 </p>
               </div>
             </div>
@@ -172,14 +172,14 @@ const About = () => {
             <div className="h-[380px] rounded-3xl overflow-hidden shadow-lg bg-stone-100">
               <img
                 src={pageImages.about_img1}
-                alt="Artisan Trays"
+                alt="Hand-printed mango wood tray sets"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="h-[380px] rounded-3xl overflow-hidden shadow-lg bg-stone-100 sm:mt-8">
               <img
                 src={pageImages.about_img2}
-                alt="Ceramic Vases"
+                alt="Printed decorative tray set with matching pieces"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -262,7 +262,7 @@ const About = () => {
               <span className="text-xs uppercase tracking-wider text-[#C5A059] font-semibold block mb-2">Data Confidentiality</span>
               <h3 className="font-serif text-xl font-bold text-stone-900 mb-4">Commercial Privacy Policy</h3>
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-                All trade inquiries, B2B dealer contact numbers, and corporate pricing requests are kept strictly confidential and used solely for fulfilling wholesale dispatches and order coordination from our Karol Bagh trade desk.
+                We use the details you send us only to reply to your enquiry and handle your orders. We never sell or share them.
               </p>
             </div>
           </FadeIn>
@@ -287,7 +287,7 @@ const About = () => {
             Become an Authorized Divine Home Dealer
           </h2>
           <p className="text-stone-300 text-xs sm:text-sm max-w-xl mx-auto font-light">
-            Connect with our wholesale trade desk in Karol Bagh to receive our complete master lookbook and MOQ price list.
+            Send us your shop name and city and we will share the 2026-27 catalogue with trade prices.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
             <Link 

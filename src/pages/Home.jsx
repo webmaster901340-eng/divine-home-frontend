@@ -51,7 +51,7 @@ const Home = () => {
   const [reels, setReels] = useState([]);
   const [heroBanners, setHeroBanners] = useState([]);
   const [pageImages, setPageImages] = useState({
-    home_story: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png"
+    home_story: "/images/dhi/showroom-tray-shelves.jpg"
   });
   const [openFaq, setOpenFaq] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -94,17 +94,17 @@ const Home = () => {
     fetch(`${API_BASE_URL}/api/admin/hero-banners/active`)
       .then(res => res.json())
       .then(data => setHeroBanners(data))
-      .catch(err => setToast({ message: 'Failed to load banners', type: 'error' }));
+      .catch(err => console.error('Failed to load banners', err));
 
     fetch(`${API_BASE_URL}/api/products`)
       .then(res => res.json())
       .then(data => setProducts(data))
-      .catch(err => setToast({ message: 'Failed to load products', type: 'error' }));
+      .catch(err => console.error('Failed to load products', err));
 
     fetch(`${API_BASE_URL}/api/reels`)
       .then(res => res.json())
       .then(data => setReels(data))
-      .catch(err => setToast({ message: 'Failed to load reels', type: 'error' }));
+      .catch(err => console.error('Failed to load reels', err));
 
     const saved = localStorage.getItem('dhi_page_images');
     if (saved) {
@@ -158,25 +158,25 @@ const Home = () => {
   };
 
   const categories = [
-    { name: "Elegant Vector", designs: "10 Designs", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070398/divine-home/designs/elite-series-elegant%20vector.png" },
-    { name: "Lotus Glow", designs: "5 Designs", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070403/divine-home/designs/elite-series-lotusglow.png" },
-    { name: "Peachy Bloom", designs: "3 Designs", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070408/divine-home/designs/elite-series-peachybloom.png" },
-    { name: "Peacock Grace", designs: "3 Designs", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png" },
-    { name: "Ikket", designs: "2 Designs", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070400/divine-home/designs/elite-series-ikket.png" },
-    { name: "Marble Fow", designs: "2 Designs", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070405/divine-home/designs/elite-series-marbleflow.png" },
-    { name: "Leather Classic Black", designs: "3 Designs", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070411/divine-home/designs/leather-classic-black.png" },
-    { name: "Leather Classic Maroon", designs: "1 Design", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070413/divine-home/designs/leather-classic-marooan.png" }
+    { name: "Elegant Vector", designs: "10 Designs", image: "/images/catalogue/covers/dhi-5001.jpg" },
+    { name: "Lotus Glow", designs: "5 Designs", image: "/images/catalogue/covers/dhi-5002.jpg" },
+    { name: "Peachy Bloom", designs: "3 Designs", image: "/images/catalogue/covers/dhi-5003.jpg" },
+    { name: "Peacock Grace", designs: "3 Designs", image: "/images/catalogue/covers/dhi-5004.jpg" },
+    { name: "Ikket", designs: "2 Designs", image: "/images/catalogue/covers/dhi-5006.jpg" },
+    { name: "Marble Flow", designs: "2 Designs", image: "/images/catalogue/covers/dhi-5007.jpg" },
+    { name: "Leather Classic Black", designs: "3 Designs", image: "/images/catalogue/covers/dhi-lc-black.jpg" },
+    { name: "Leather Classic Maroon", designs: "1 Design", image: "/images/catalogue/covers/dhi-lc-maroon.jpg" }
   ];
 
   const wholesaleLines = [
-    { name: "Elegant Vector", designs: "10 DESIGNS", desc: "Premium geometric and vector-inspired patterns with contemporary finishes...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070398/divine-home/designs/elite-series-elegant%20vector.png", series: "Elite Series" },
-    { name: "Lotus Glow", designs: "5 DESIGNS", desc: "Ethereal lotus-inspired designs with luminous glazes and hand-painted details...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070403/divine-home/designs/elite-series-lotusglow.png", series: "Elite Series" },
-    { name: "Peachy Bloom", designs: "3 DESIGNS", desc: "Warm peachy tones with floral accents, perfect for contemporary luxury interiors...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070408/divine-home/designs/elite-series-peachybloom.png", series: "Elite Series" },
-    { name: "Peacock Grace", designs: "3 DESIGNS", desc: "Ornate peacock motifs with rich jewel tones and metallic embellishments...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070410/divine-home/designs/elite-series-peacockgrace.png", series: "Elite Series" },
-    { name: "Ikket", designs: "2 DESIGNS", desc: "Traditional artisanal patterns with contemporary execution and premium finishes...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070400/divine-home/designs/elite-series-ikket.png", series: "Elite Series" },
-    { name: "Marble Fow", designs: "2 DESIGNS", desc: "Sophisticated marble-inspired textures with elegant surface detailing...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070405/divine-home/designs/elite-series-marbleflow.png", series: "Elite Series" },
-    { name: "Leather Classic Black", designs: "3 DESIGNS", desc: "Timeless classic leather finishes in rich black with premium hand-finishing...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070411/divine-home/designs/leather-classic-black.png", series: "Leather Classic" },
-    { name: "Leather Classic Maroon", designs: "1 DESIGN", desc: "Sophisticated maroon leather with luxurious surface treatment and durability...", image: "https://res.cloudinary.com/cm8nznam/image/upload/v1790070413/divine-home/designs/leather-classic-marooan.png", series: "Leather Classic" }
+    { name: "Elegant Vector", designs: "10 DESIGNS", desc: "Gold star line-work on a white base with a hammered rim. Our most reordered tray design.", image: "/images/catalogue/covers/dhi-5001.jpg", series: "Ellite Series" },
+    { name: "Lotus Glow", designs: "5 DESIGNS", desc: "Lotus motifs in soft gold. A steady seller for Diwali, weddings and housewarming gifts.", image: "/images/catalogue/covers/dhi-5002.jpg", series: "Ellite Series" },
+    { name: "Peachy Bloom", designs: "3 DESIGNS", desc: "Peach florals on a light base. Works well in gift shops with a younger, urban crowd.", image: "/images/catalogue/covers/dhi-5003.jpg", series: "Ellite Series" },
+    { name: "Peacock Grace", designs: "3 DESIGNS", desc: "Peacock artwork in jewel tones with gold detailing. A strong festive and gifting design.", image: "/images/catalogue/covers/dhi-5004.jpg", series: "Ellite Series" },
+    { name: "Ikket", designs: "2 DESIGNS", desc: "Ikat-inspired weave pattern printed in bold colour, for buyers who want something traditional.", image: "/images/catalogue/covers/dhi-5006.jpg", series: "Ellite Series" },
+    { name: "Marble Flow", designs: "2 DESIGNS", desc: "Marble-effect print with a gold rim. Pairs with modern dining and coffee-table setups.", image: "/images/catalogue/covers/dhi-5007.jpg", series: "Ellite Series" },
+    { name: "Leather Classic Black", designs: "3 DESIGNS", desc: "Black leatherette trays and organisers for desks, vanities and hotel rooms.", image: "/images/catalogue/covers/dhi-lc-black.jpg", series: "Leather Classic" },
+    { name: "Leather Classic Maroon", designs: "1 DESIGN", desc: "Maroon leatherette trays and organisers. Popular for corporate and wedding gifting.", image: "/images/catalogue/covers/dhi-lc-maroon.jpg", series: "Leather Classic" }
   ];
 
   const faqs = FAQ.slice(0, 4).map(([q, a]) => ({ q, a }));
@@ -200,7 +200,7 @@ const Home = () => {
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
           >
             <div className="absolute inset-0 bg-black/20 z-10"></div>
-            <img src={img} alt="Hero Slide" className="w-full h-full object-cover" />
+            <img src={img} alt={["Divine Home India showroom shelves with decorative tray sets, Karol Bagh", "Printed heritage tray sets from Divine Home India", "Corporate gift hamper with decorative trays"][idx] || "Divine Home India wholesale decorative trays"} className="w-full h-full object-cover" />
           </div>
         ))}
 
@@ -268,7 +268,7 @@ const Home = () => {
               {categories.map((cat, index) => (
                 <Link to={`/collections?category=${encodeURIComponent(cat.name)}`} key={index} className="group flex flex-col items-center cursor-pointer">
                   <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden p-1 bg-white border border-stone-200 shadow-sm group-hover:border-[#C5A059] transition-all duration-300 mb-2.5 sm:mb-3">
-                    <img src={cat.image} alt={cat.name} className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500" />
+                    <img src={cat.image} alt={`${cat.name} decorative tray set`} loading="lazy" className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h3 className="font-serif text-stone-900 font-medium text-xs group-hover:text-[#C5A059] transition-colors leading-tight mb-1 text-center line-clamp-1">
                     {cat.name}
@@ -359,7 +359,7 @@ const Home = () => {
               Explore Our Wholesale Lines
             </h2>
             <p className="text-xs sm:text-sm text-stone-400 max-w-xl mx-auto font-light mb-6">
-              From handcrafted brass vanity trays to vitrified stoneware ceramics, browse our signature trade collections.
+              Printed tray sets, leatherette organisers, mango wood and ceramics, each design available as a full matching set.
             </p>
             <Link to="/collections" className="bg-[#C5A059] text-stone-950 px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors shadow-lg inline-flex items-center gap-1">
               Explore All Collections &rarr;
@@ -376,7 +376,7 @@ const Home = () => {
                   className="group relative h-[420px] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-end p-6 text-white border border-stone-800 transition-all duration-500 hover:-translate-y-2 hover:border-[#C5A059]/50 block"
                 >
                   <div className="absolute inset-0 bg-stone-950">
-                    <img src={line.image} alt={line.name} className="w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-700" />
+                    <img src={line.image} alt={`${line.name} wholesale tray collection`} loading="lazy" className="w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-transparent"></div>
                   </div>
 
@@ -411,13 +411,13 @@ const Home = () => {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
               <div>
                 <span className="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-bold block mb-1">
-                  Top Re-Ordered Collections
+                  Most reordered
                 </span>
                 <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 tracking-tight">
                   Our Wholesale Bestsellers
                 </h2>
                 <p className="text-xs sm:text-sm text-stone-500 mt-1 font-light">
-                  Top re-ordered brass vanity platters, dinner sets, and tactile barista mugs by dealers across India.
+                  The tray sets, snack sets and organisers our dealers reorder most.
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -467,10 +467,10 @@ const Home = () => {
                 Social Media Showcase
               </span>
               <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 mb-3">
-                Watch Our Instagram Reels
+                See the range on Instagram
               </h2>
               <p className="text-xs sm:text-sm text-stone-500 max-w-xl mx-auto font-light">
-                Behind-the-scenes looks at our artisan collections, product styling, and wholesale stories.
+                New designs, showroom walk-throughs and how our sets look on a shop shelf.
               </p>
             </div>
 
@@ -592,7 +592,7 @@ const Home = () => {
           <FadeIn direction="left">
             <div className="relative flex justify-center">
               <div className="w-full sm:w-[460px] h-[380px] sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl relative border-2 border-stone-200">
-                <img src={pageImages.home_story} alt="Divine Home India Showroom" className="w-full h-full object-cover" />
+                <img src={pageImages.home_story} alt="Decorative tray sets on display at the Divine Home India showroom, Karol Bagh" className="w-full h-full object-cover" />
                 <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-stone-200 flex items-center gap-3">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#C5A059] animate-pulse"></span>
                   <div>
@@ -607,8 +607,8 @@ const Home = () => {
           <FadeIn direction="right">
             <div className="space-y-6 text-center lg:text-left">
               <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-bold block">About Divine Home India</span>
-              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 leading-tight">Luxury Handcrafted Home Décor For Trade Dealers & Distributors</h2>
-              <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light">Based in Karol Bagh, New Delhi, Divine Home India is a leading B2B wholesale distribution house specializing in luxury handcrafted home décor, artisan trays, premium ceramics, and bespoke interior statements.</p>
+              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 leading-tight">Designed in Delhi, Supplied Across India</h2>
+              <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light">Divine Home India started in Karol Bagh in 2015. We design our own tray prints, have them made to our standard, and supply gift shops, decor stores, distributors, hotels and corporate gifting companies across India. Every design is on display at our showroom, so you can see the finish before you order.</p>
               <div className="flex justify-center lg:justify-start gap-4 pt-2">
                 <Link to="/about" className="bg-stone-900 hover:bg-[#C5A059] text-white text-xs uppercase tracking-widest font-semibold px-8 py-4 rounded-full transition-colors inline-block shadow-md">Read Full Story &rarr;</Link>
               </div>

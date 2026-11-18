@@ -1,3 +1,4 @@
+import { productPath } from '../utils/slug';
 import React, { useContext, useState } from 'react';
 import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { Link } from 'react-router-dom';
@@ -204,7 +205,7 @@ const Cart = () => {
                 {/* Product Details */}
                 <div className="flex-1">
                   <Link
-                    to={`/product/${item._id}`}
+                    to={productPath(item)}
                     className="font-serif text-lg sm:text-xl font-bold text-stone-900 hover:text-[#C5A059] transition-colors"
                   >
                     {item.designName || item.title}

@@ -108,7 +108,7 @@ const Footer = () => {
                   Join Our B2B Dealer Network
                 </h3>
                 <p className="text-xs text-stone-400 mt-1 max-w-xl font-light">
-                  Subscribe to receive quarterly new artisan tray launches, festive catalog previews, and updated wholesale rate sheets.
+                  Get new tray designs, festive catalogue previews and updated trade price lists.
                 </p>
               </div>
               
@@ -148,8 +148,8 @@ const Footer = () => {
                   </p>
 
                   <div className="space-y-2 text-xs text-stone-400 font-light">
-                    <p className="flex items-center gap-2"><span>✨</span> Luxury Handcrafted Home Décor</p>
-                    <p className="flex items-center gap-2"><span>🏺</span> Artisan Trays · Ceramics · Décor</p>
+                    <p className="flex items-center gap-2"><span>✨</span> Designed in-house since 2015</p>
+                    <p className="flex items-center gap-2"><span>🏺</span> Trays · Organisers · Ceramics</p>
                     <p className="flex items-center gap-2"><span>💛</span> Wholesale · Dealers · Distributors</p>
                   </div>
                 </div>
@@ -175,57 +175,48 @@ const Footer = () => {
                 </h4>
                 <ul className="space-y-2.5 text-xs text-stone-400 font-light">
                   <li>
-                    <Link 
-                      to="/collections?category=Artisan+Trays+%26+Platters" 
+                    <Link
+                      to="/collections?category=Trays+%26+Serving+Platters"
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       className="hover:text-[#C5A059] transition-colors"
                     >
-                      Artisan Trays & Platters
+                      Decorative Tray Sets
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      to="/collections?category=Ceramics+%26+Tableware" 
+                    <Link
+                      to="/collections?category=Artisan+Trays+%26+Platters"
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       className="hover:text-[#C5A059] transition-colors"
                     >
-                      Ceramics & Tableware
+                      Mango Wood Trays
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      to="/collections?category=Luxury+Home+D%C3%A9cor" 
+                    <Link
+                      to="/collections?category=Organizers+%26+Holders"
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       className="hover:text-[#C5A059] transition-colors"
                     >
-                      Luxury Home Décor
+                      Leatherette Organisers
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      to="/collections?category=Table+Vases+%26+Urns" 
+                    <Link
+                      to="/collections?category=Tableware+%26+Dining"
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       className="hover:text-[#C5A059] transition-colors"
                     >
-                      Table Vases & Urns
+                      Snack & Candy Sets
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      to="/collections?category=Designer+Coffee+Mugs" 
+                    <Link
+                      to="/collections?category=Crockery"
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       className="hover:text-[#C5A059] transition-colors"
                     >
-                      Designer Coffee Mugs
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/collections?category=Festive+%26+Gifting+Sets" 
-                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                      className="hover:text-[#C5A059] transition-colors"
-                    >
-                      Festive & Gifting Sets
+                      Crockery & Mugs
                     </Link>
                   </li>
                 </ul>

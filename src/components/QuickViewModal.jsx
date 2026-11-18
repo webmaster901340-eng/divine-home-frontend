@@ -1,3 +1,4 @@
+import { productPath } from '../utils/slug';
 import React, { useState } from 'react';
 import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { useNavigate } from 'react-router-dom';
@@ -244,7 +245,7 @@ const QuickViewModal = ({ product, onClose }) => {
                   <div className="flex items-baseline gap-2.5">
                     <span className="font-sans text-3xl font-bold text-stone-900 tracking-tight">{priceLabel(product.wholesalePrice || product.price)}</span>
                     <span className="text-sm text-stone-400 line-through">{mrpLabel(product.mrp)}</span>
-                    <span className="text-[11px] text-emerald-600 font-semibold ml-auto">{hasPrice(product.wholesalePrice || product.price) ? "Direct Factory Price" : "WhatsApp us for dealer rates"}</span>
+                    <span className="text-[11px] text-emerald-600 font-semibold ml-auto">{hasPrice(product.wholesalePrice || product.price) ? "Dealer trade price" : "WhatsApp us for dealer rates"}</span>
                   </div>
                 </div>
               </div>
@@ -272,7 +273,7 @@ const QuickViewModal = ({ product, onClose }) => {
                 <button 
                   onClick={() => {
                     onClose();
-                    navigate(`/product/${product._id}`);
+                    navigate(productPath(product));
                   }}
                   className="w-full bg-stone-100 hover:bg-stone-200 text-stone-800 py-2.5 rounded-xl font-medium text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center justify-center gap-2"
                 >
