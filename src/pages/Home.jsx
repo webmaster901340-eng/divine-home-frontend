@@ -137,23 +137,23 @@ const Home = () => {
   };
 
   const categories = [
-    { name: "Elegant Vector", designs: "10 Designs", image: "/images/catalogue/covers/dhi-5001.jpg" },
-    { name: "Lotus Glow", designs: "5 Designs", image: "/images/catalogue/covers/dhi-5002.jpg" },
-    { name: "Peachy Bloom", designs: "3 Designs", image: "/images/catalogue/covers/dhi-5003.jpg" },
-    { name: "Peacock Grace", designs: "3 Designs", image: "/images/catalogue/covers/dhi-5004.jpg" },
-    { name: "Ikket", designs: "2 Designs", image: "/images/catalogue/covers/dhi-5006.jpg" },
-    { name: "Marble Flow", designs: "2 Designs", image: "/images/catalogue/covers/dhi-5007.jpg" },
+    { name: "Elegant Vector", designs: "10 Designs", image: "/images/d2c/dhi-5001-1.jpg" },
+    { name: "Lotus Glow", designs: "5 Designs", image: "/images/d2c/dhi-5002-1.jpg" },
+    { name: "Peachy Bloom", designs: "3 Designs", image: "/images/d2c/dhi-5003-1.jpg" },
+    { name: "Peacock Grace", designs: "3 Designs", image: "/images/d2c/dhi-5004-1.jpg" },
+    { name: "Ikket", designs: "2 Designs", image: "/images/d2c/dhi-5006-1.jpg" },
+    { name: "Marble Flow", designs: "2 Designs", image: "/images/d2c/dhi-5007-1.jpg" },
     { name: "Leather Classic Black", designs: "3 Designs", image: "/images/catalogue/covers/dhi-lc-black.jpg" },
     { name: "Leather Classic Maroon", designs: "1 Design", image: "/images/catalogue/covers/dhi-lc-maroon.jpg" }
   ];
 
   const wholesaleLines = [
-    { name: "Elegant Vector", designs: "10 DESIGNS", desc: "Gold star line-work on a white base with a hammered rim. Our most reordered tray design.", image: "/images/catalogue/covers/dhi-5001.jpg", series: "Ellite Series" },
-    { name: "Lotus Glow", designs: "5 DESIGNS", desc: "Lotus motifs in soft gold. A steady seller for Diwali, weddings and housewarming gifts.", image: "/images/catalogue/covers/dhi-5002.jpg", series: "Ellite Series" },
-    { name: "Peachy Bloom", designs: "3 DESIGNS", desc: "Peach florals on a light base. Works well in gift shops with a younger, urban crowd.", image: "/images/catalogue/covers/dhi-5003.jpg", series: "Ellite Series" },
-    { name: "Peacock Grace", designs: "3 DESIGNS", desc: "Peacock artwork in jewel tones with gold detailing. A strong festive and gifting design.", image: "/images/catalogue/covers/dhi-5004.jpg", series: "Ellite Series" },
-    { name: "Ikket", designs: "2 DESIGNS", desc: "Ikat-inspired weave pattern printed in bold colour, for buyers who want something traditional.", image: "/images/catalogue/covers/dhi-5006.jpg", series: "Ellite Series" },
-    { name: "Marble Flow", designs: "2 DESIGNS", desc: "Marble-effect print with a gold rim. Pairs with modern dining and coffee-table setups.", image: "/images/catalogue/covers/dhi-5007.jpg", series: "Ellite Series" },
+    { name: "Elegant Vector", designs: "10 DESIGNS", desc: "Gold star line-work on a white base with a hammered rim. Our most reordered tray design.", image: "/images/d2c/dhi-5001-1.jpg", series: "Ellite Series" },
+    { name: "Lotus Glow", designs: "5 DESIGNS", desc: "Lotus motifs in soft gold. A steady seller for Diwali, weddings and housewarming gifts.", image: "/images/d2c/dhi-5002-1.jpg", series: "Ellite Series" },
+    { name: "Peachy Bloom", designs: "3 DESIGNS", desc: "Peach florals on a light base. Works well in gift shops with a younger, urban crowd.", image: "/images/d2c/dhi-5003-1.jpg", series: "Ellite Series" },
+    { name: "Peacock Grace", designs: "3 DESIGNS", desc: "Peacock artwork in jewel tones with gold detailing. A strong festive and gifting design.", image: "/images/d2c/dhi-5004-1.jpg", series: "Ellite Series" },
+    { name: "Ikket", designs: "2 DESIGNS", desc: "Ikat-inspired weave pattern printed in bold colour, for buyers who want something traditional.", image: "/images/d2c/dhi-5006-1.jpg", series: "Ellite Series" },
+    { name: "Marble Flow", designs: "2 DESIGNS", desc: "Marble-effect print with a gold rim. Pairs with modern dining and coffee-table setups.", image: "/images/d2c/dhi-5007-1.jpg", series: "Ellite Series" },
     { name: "Leather Classic Black", designs: "3 DESIGNS", desc: "Black leatherette trays and organisers for desks, vanities and hotel rooms.", image: "/images/catalogue/covers/dhi-lc-black.jpg", series: "Leather Classic" },
     { name: "Leather Classic Maroon", designs: "1 DESIGN", desc: "Maroon leatherette trays and organisers. Popular for corporate and wedding gifting.", image: "/images/catalogue/covers/dhi-lc-maroon.jpg", series: "Leather Classic" }
   ];
@@ -179,20 +179,20 @@ const Home = () => {
         <section className="bg-white border-b border-stone-200 py-6 sm:py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">2015</p>
-              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Supplying Since</p>
+              <p className="font-serif text-2xl sm:text-[32px] text-stone-900">2015</p>
+              <p className="text-xs uppercase tracking-[0.12em] text-stone-600 mt-1.5 font-medium">Supplying Since</p>
             </div>
             <div>
-              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">250+</p>
-              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Dealers Across India</p>
+              <p className="font-serif text-2xl sm:text-[32px] text-stone-900">250+</p>
+              <p className="text-xs uppercase tracking-[0.12em] text-stone-600 mt-1.5 font-medium">Dealers Across India</p>
             </div>
             <div>
-              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">Karol Bagh</p>
-              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Delhi Showroom Hub</p>
+              <p className="font-serif text-2xl sm:text-[32px] text-stone-900">Karol Bagh</p>
+              <p className="text-xs uppercase tracking-[0.12em] text-stone-600 mt-1.5 font-medium">Delhi Showroom Hub</p>
             </div>
             <div>
-              <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">50+</p>
-              <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-semibold">Distributors</p>
+              <p className="font-serif text-2xl sm:text-[32px] text-stone-900">50+</p>
+              <p className="text-xs uppercase tracking-[0.12em] text-stone-600 mt-1.5 font-medium">Distributors</p>
             </div>
           </div>
         </section>
@@ -202,17 +202,14 @@ const Home = () => {
       <section className="py-12 sm:py-16 bg-[#FDFBF7] text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-2">
-              Explore by Series & Design
-            </span>
-            <h1 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 mb-2">
+                        <h1 className="font-serif text-[28px] sm:text-[44px] leading-[1.12] text-stone-900 mb-4 max-w-3xl mx-auto">
               Decorative Trays & Home Decor, Wholesale from Karol Bagh
             </h1>
-            <p className="text-xs sm:text-sm text-stone-500 max-w-xl mx-auto mb-6 font-light">
+            <p className="text-[15px] sm:text-base text-stone-600 max-w-2xl mx-auto mb-6 leading-relaxed">
               We design and supply printed trays, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India. Since 2015, from our showroom in Karol Bagh, New Delhi.
             </p>
-            <Link to="/collections" className="inline-block text-xs font-bold text-stone-900 hover:text-[#C5A059] tracking-wider uppercase mb-8 sm:mb-12 underline underline-offset-4 transition-colors">
-              View Full Catalog &rarr;
+            <Link to="/collections" className="inline-block text-sm font-semibold text-stone-900 mb-10 sm:mb-14 underline underline-offset-[6px] decoration-stone-400 hover:decoration-stone-900 transition-colors">
+              View the full catalogue
             </Link>
           </FadeIn>
 
@@ -223,10 +220,10 @@ const Home = () => {
                   <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden p-1 bg-white border border-stone-200 shadow-sm group-hover:border-[#C5A059] transition-all duration-300 mb-2.5 sm:mb-3">
                     <img src={cat.image} alt={`${cat.name} decorative tray set`} loading="lazy" className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <h3 className="font-serif text-stone-900 font-medium text-xs group-hover:text-[#C5A059] transition-colors leading-tight mb-1 text-center line-clamp-1">
+                  <h3 className="font-sans text-stone-900 font-medium text-[13px] sm:text-sm leading-tight mb-1 text-center line-clamp-1">
                     {cat.name}
                   </h3>
-                  <span className="text-[11px] text-stone-400 font-sans">{cat.designs}</span>
+                  <span className="text-xs text-stone-500 font-sans">{cat.designs}</span>
                 </Link>
               ))}
             </div>
@@ -244,10 +241,10 @@ const Home = () => {
             {/* Section Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-stone-200">
               <div>
-                <h2 className="font-serif text-3xl sm:text-5xl font-bold text-stone-900 tracking-tight">
+                <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900">
                   New Wholesale Arrivals
                 </h2>
-                <p className="text-xs sm:text-sm text-stone-500 mt-2 font-light max-w-xl">
+                <p className="text-[15px] text-stone-600 mt-3 max-w-xl">
                   The latest tray designs, serving sets and gift lines added to our wholesale range.
                 </p>
               </div>
@@ -255,7 +252,7 @@ const Home = () => {
               <div className="flex items-center gap-3">
                 <Link 
                   to="/collections" 
-                  className="text-xs font-bold text-white bg-stone-900 hover:bg-[#8a6a2f] px-6 py-3 rounded-xl transition-all shadow-lg uppercase tracking-wider flex items-center gap-2 group"
+                  className="text-sm font-semibold text-stone-900 underline underline-offset-[6px] decoration-stone-400 hover:decoration-stone-900 flex items-center gap-2 group"
                 >
                   <span>View Full Catalog</span>
                   <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
@@ -301,57 +298,40 @@ const Home = () => {
       </FadeIn>
 
       {/* 5. Explore Our Wholesale Lines Section */}
-      <section className="py-20 bg-stone-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:20px_20px] opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14 relative z-10">
-          <FadeIn direction="down">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-bold block mb-2">
-              Curated Collections
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mb-3 tracking-tight">
-              Explore Our Wholesale Lines
-            </h2>
-            <p className="text-xs sm:text-sm text-stone-400 max-w-xl mx-auto font-light mb-6">
-              Printed tray sets, leatherette organisers, mango wood and ceramics, each design available as a full matching set.
-            </p>
-            <Link to="/collections" className="bg-[#C5A059] text-stone-950 px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors shadow-lg inline-flex items-center gap-1">
-              Explore All Collections &rarr;
+      <section className="py-16 sm:py-24 bg-[#F4EFE7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
+            <div className="max-w-xl">
+              <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900">
+                Shop by design
+              </h2>
+              <p className="text-[15px] text-stone-600 mt-3 leading-relaxed">
+                Every print comes as a full matching set: trays, candy box, coasters and holders, so a shop shelf looks complete.
+              </p>
+            </div>
+            <Link to="/collections" className="self-start sm:self-auto text-sm font-semibold text-stone-900 underline underline-offset-[6px] decoration-stone-400 hover:decoration-stone-900">
+              View all designs
             </Link>
-          </FadeIn>
-        </div>
+          </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-14">
             {wholesaleLines.map((line, idx) => (
-              <FadeIn key={idx} direction="zoom" delay={idx * 100}>
-                <Link 
-                  to={`/collections?series=${encodeURIComponent(line.series)}&design=${encodeURIComponent(line.name)}`}
-                  className="group relative h-[420px] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-end p-6 text-white border border-stone-800 transition-all duration-500 hover:-translate-y-2 hover:border-[#C5A059]/50 block"
-                >
-                  <div className="absolute inset-0 bg-stone-950">
-                    <img src={line.image} alt={`${line.name} wholesale tray collection`} loading="lazy" className="w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-transparent"></div>
+              <Link
+                key={idx}
+                to={`/collections?series=${encodeURIComponent(line.series)}&design=${encodeURIComponent(line.name)}`}
+                className="group block"
+              >
+                <div className="aspect-[4/5] overflow-hidden bg-[#E9E2D6]">
+                  <img src={line.image} alt={`${line.name} tray collection`} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]" />
+                </div>
+                <div className="pt-4">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <h3 className="font-serif text-lg sm:text-[22px] text-stone-900 leading-tight">{line.name}</h3>
+                    <span className="text-xs text-stone-500 shrink-0 capitalize">{line.designs.toLowerCase()}</span>
                   </div>
-
-                  <div className="absolute top-5 left-5 right-5 flex justify-between items-center z-10">
-                    <span className="bg-[#C5A059] text-stone-950 text-[10px] uppercase px-3 py-1 rounded-full font-extrabold tracking-widest shadow-md">
-                      {line.designs}
-                    </span>
-                    <span className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-stone-950 transition-colors shadow-lg">
-                      &rarr;
-                    </span>
-                  </div>
-
-                  <div className="relative z-10 text-left">
-                    <h3 className="font-serif text-xl font-bold mb-2 group-hover:text-[#C5A059] transition-colors leading-tight">
-                      {line.name}
-                    </h3>
-                    <p className="text-xs text-stone-300 font-light line-clamp-2 leading-relaxed">
-                      {line.desc}
-                    </p>
-                  </div>
-                </Link>
-              </FadeIn>
+                  <p className="text-[13px] sm:text-sm text-stone-600 mt-1.5 leading-relaxed line-clamp-2">{line.desc}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -363,19 +343,16 @@ const Home = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
               <div>
-                <span className="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-bold block mb-1">
-                  Most reordered
-                </span>
-                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 tracking-tight">
+                <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900">
                   Our Wholesale Bestsellers
                 </h2>
-                <p className="text-xs sm:text-sm text-stone-500 mt-1 font-light">
+                <p className="text-[15px] text-stone-600 mt-3">
                   The tray sets, snack sets and organisers our dealers reorder most.
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <Link to="/collections" className="text-xs font-bold text-stone-900 bg-white border border-stone-300 px-4 py-2.5 rounded-xl hover:bg-[#C5A059] hover:border-[#C5A059] hover:text-white transition-all shadow-sm uppercase tracking-wider">
-                  View All &rarr;
+                <Link to="/collections" className="text-sm font-semibold text-stone-900 underline underline-offset-[6px] decoration-stone-400 hover:decoration-stone-900">
+                  View all
                 </Link>
                 <div className="flex items-center gap-2">
                   <button 
@@ -416,13 +393,10 @@ const Home = () => {
         <section className="py-16 sm:py-20 bg-[#FDFBF7] border-b border-stone-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-bold block mb-1">
-                Social Media Showcase
-              </span>
-              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 mb-3">
+              <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900 mb-3">
                 See the range on Instagram
               </h2>
-              <p className="text-xs sm:text-sm text-stone-500 max-w-xl mx-auto font-light">
+              <p className="text-[15px] text-stone-600 max-w-xl mx-auto">
                 New designs, showroom walk-throughs and how our sets look on a shop shelf.
               </p>
             </div>
@@ -477,63 +451,48 @@ const Home = () => {
       </FadeIn>
 
       {/* 8. Why Dealers & Retailers Partner With Us */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn direction="up">
-          <div className="text-center mb-12">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-bold">Trade Partnerships</span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 mt-1">Why Dealers & Retailers Partner With Us</h2>
-            <p className="text-stone-600 text-xs sm:text-sm mt-2 font-light">Why gift shops, decor stores and distributors keep reordering from us.</p>
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-4">
+            <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900">Why shops reorder from us</h2>
+            <p className="text-[15px] text-stone-600 mt-4 leading-relaxed">Gift shops, decor stores and distributors across India restock with us season after season. Here is why.</p>
           </div>
-        </FadeIn>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { num: "01", title: "Designs Made In-House", desc: "We develop our own tray prints, so your shelf doesn't look like every other gift shop in the market." },
-            { num: "02", title: "Mix Designs In One Order", desc: "Try a few designs, see what sells in your area, then reorder only those." },
-            { num: "03", title: "Festive & Bulk Gifting", desc: "Gift boxes and branded packaging for corporate orders and festive hampers, with your logo on the box or the tray." },
-            { num: "04", title: "Full Matching Sets", desc: "Trays, coasters and candy boxes in one design let your customers buy a complete look and raise your bill value." }
-          ].map((item, idx) => (
-            <FadeIn key={idx} direction="up" delay={idx * 150}>
-              <div className="bg-white p-8 rounded-3xl border border-stone-200/90 shadow-md hover:shadow-xl hover:border-[#C5A059]/40 transition-all duration-300 h-full flex flex-col justify-between">
-                <div>
-                  <span className="font-serif text-3xl font-extrabold text-[#C5A059] block mb-3">{item.num}</span>
-                  <h3 className="font-serif text-lg font-bold text-stone-900 mb-2">{item.title}</h3>
-                  <p className="text-xs text-stone-600 leading-relaxed font-light">{item.desc}</p>
-                </div>
+          <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+            {[
+              { num: "01", title: "Designs made in-house", desc: "We develop our own tray prints, so your shelf doesn't look like every other gift shop in the market." },
+              { num: "02", title: "Mix designs in one order", desc: "Try a few designs, see what sells in your area, then reorder only those." },
+              { num: "03", title: "Festive and bulk gifting", desc: "Gift boxes and branded packaging for corporate orders and festive hampers, with your logo on the box or the tray." },
+              { num: "04", title: "Full matching sets", desc: "Trays, coasters and candy boxes in one design let your customers buy a complete look and raise your bill value." }
+            ].map((item) => (
+              <div key={item.num} className="border-t border-stone-300 pt-5">
+                <span className="text-xs font-semibold tracking-[0.14em] text-[#8a6a2f]">{item.num}</span>
+                <h3 className="font-serif text-xl sm:text-2xl text-stone-900 mt-2">{item.title}</h3>
+                <p className="text-[15px] text-stone-600 leading-relaxed mt-2">{item.desc}</p>
               </div>
-            </FadeIn>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* 9. Wholesale & Dealer FAQs */}
-      <section className="py-16 sm:py-20 bg-stone-100/70 border-t border-stone-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="down">
-            <div className="text-center mb-12">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-bold">Frequently Asked Questions</span>
-              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 mt-1">Wholesale & Dealer FAQs</h2>
-            </div>
-          </FadeIn>
-
-          <div className="space-y-4">
+      <section className="py-16 sm:py-24 bg-[#F4EFE7]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900 text-center mb-10 sm:mb-12">Questions dealers ask</h2>
+          <div className="border-t border-stone-300">
             {faqs.map((faq, idx) => (
-              <FadeIn key={idx} direction="up" delay={idx * 100}>
-                <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm hover:border-[#C5A059]/50 transition-all">
-                  <button 
-                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full text-left flex justify-between items-center font-serif text-base sm:text-lg font-bold text-stone-900 cursor-pointer gap-4"
-                  >
-                    <span>{faq.q}</span>
-                    <span className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-[#C5A059] text-xl shrink-0 font-sans">{openFaq === idx ? '−' : '+'}</span>
-                  </button>
-                  {openFaq === idx && (
-                    <p className="text-xs sm:text-sm text-stone-600 mt-4 pt-4 border-t border-stone-100 leading-relaxed font-light">
-                      {faq.a}
-                    </p>
-                  )}
-                </div>
-              </FadeIn>
+              <div key={idx} className="border-b border-stone-300">
+                <button
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  aria-expanded={openFaq === idx}
+                  className="w-full text-left flex justify-between items-center py-5 sm:py-6 text-base sm:text-lg font-medium text-stone-900 cursor-pointer gap-6"
+                >
+                  <span>{faq.q}</span>
+                  <span className="text-2xl leading-none text-stone-500 shrink-0">{openFaq === idx ? '−' : '+'}</span>
+                </button>
+                {openFaq === idx && (
+                  <p className="text-[15px] text-stone-600 pb-6 -mt-1 leading-relaxed max-w-2xl">{faq.a}</p>
+                )}
+              </div>
             ))}
           </div>
         </div>
