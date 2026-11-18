@@ -173,7 +173,7 @@ const Cart = () => {
           <p className="text-stone-600 text-lg mb-8">Your cart is empty. Start adding products!</p>
           <Link
             to="/collections"
-            className="inline-block bg-[#C5A059] hover:bg-[#B8934A] text-white py-3 px-8 rounded-xl font-semibold transition-colors"
+            className="inline-block bg-stone-900 hover:bg-[#3a2f24] text-white py-4 px-8 text-xs font-semibold uppercase tracking-[0.14em] transition-colors"
           >
             Browse Collections
           </Link>
@@ -338,7 +338,7 @@ const Cart = () => {
               </h2>
 
               <div className="bg-stone-50/80 border border-stone-200 rounded-2xl p-3 mb-4">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-stone-600 mb-1.5">
+                <p className="text-[11px] uppercase tracking-widest font-bold text-stone-600 mb-1.5">
                   ITEMS IN QUOTATION:
                 </p>
                 <ul className="space-y-0.5">
@@ -353,7 +353,7 @@ const Cart = () => {
               <form id="cart-rfq-form" onSubmit={handleRequestQuotation} className="space-y-3 text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
                       YOUR NAME *
                     </label>
                     <input
@@ -367,7 +367,7 @@ const Cart = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
                       COMPANY / RETAIL NAME
                     </label>
                     <input
@@ -383,7 +383,7 @@ const Cart = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
                       PHONE / WHATSAPP *
                     </label>
                     <input
@@ -400,7 +400,7 @@ const Cart = () => {
                     {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
                       BUSINESS EMAIL
                     </label>
                     <input
@@ -419,7 +419,7 @@ const Cart = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
                       ESTIMATED QUANTITY REQUIRED *
                     </label>
                     <input
@@ -433,7 +433,7 @@ const Cart = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
                       DELIVERY CITY / PINCODE *
                     </label>
                     <input
@@ -449,7 +449,7 @@ const Cart = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
+                  <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">
                     CUSTOMIZATION OR SPECIAL INSTRUCTIONS
                   </label>
                   <textarea

@@ -147,7 +147,7 @@ const Footer = () => {
                     Karol Bagh, New Delhi
                   </p>
 
-                  <div className="space-y-2 text-xs text-stone-400 font-light">
+                  <div className="space-y-2 text-sm text-stone-300">
                     <p className="flex items-center gap-2"><span>✨</span> Designed in-house since 2015</p>
                     <p className="flex items-center gap-2"><span>🏺</span> Trays · Organisers · Ceramics</p>
                     <p className="flex items-center gap-2"><span>💛</span> Wholesale · Dealers · Distributors</p>
@@ -173,7 +173,7 @@ const Footer = () => {
                 <h4 className="font-sans text-xs uppercase tracking-[0.2em] font-bold text-white">
                   Wholesale Lines
                 </h4>
-                <ul className="space-y-2.5 text-xs text-stone-400 font-light">
+                <ul className="space-y-0.5 text-sm text-stone-300">
                   <li>
                     <Link
                       to="/collections?category=Trays+%26+Serving+Platters"
@@ -238,7 +238,7 @@ const Footer = () => {
                 <h4 className="font-sans text-xs uppercase tracking-[0.2em] font-bold text-white">
                   Dealer Policies
                 </h4>
-                <ul className="space-y-2.5 text-xs text-stone-400 font-light">
+                <ul className="space-y-0.5 text-sm text-stone-300">
                   <li>
                     <Link to="/policy/dealer-registration" className="hover:text-[#C5A059] transition-colors">
                       Dealer Registration & RFQ
@@ -277,7 +277,7 @@ const Footer = () => {
                 <h4 className="font-sans text-xs uppercase tracking-[0.2em] font-bold text-white">
                   Showroom & Office
                 </h4>
-                <div className="space-y-3 text-xs text-stone-400 font-light">
+                <div className="space-y-3 text-sm text-stone-300">
                   <p className="flex items-start gap-2.5">
                     <span className="text-[#C5A059] mt-0.5">📍</span>
                     <span>1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005</span>

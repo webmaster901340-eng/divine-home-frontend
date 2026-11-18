@@ -325,7 +325,7 @@ const Home = () => {
                   <img src={line.image} alt={`${line.name} tray collection`} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]" />
                 </div>
                 <div className="pt-4">
-                  <div className="flex items-baseline justify-between gap-2">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-2">
                     <h3 className="font-serif text-lg sm:text-[22px] text-stone-900 leading-tight">{line.name}</h3>
                     <span className="text-xs text-stone-500 shrink-0 capitalize">{line.designs.toLowerCase()}</span>
                   </div>
@@ -509,7 +509,7 @@ const Home = () => {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#C5A059] animate-pulse"></span>
                   <div>
                     <p className="font-serif text-xs font-bold text-stone-900">Karol Bagh, New Delhi</p>
-                    <p className="text-[10px] text-stone-500 uppercase">Direct Wholesale Showroom</p>
+                    <p className="text-[11px] text-stone-500 uppercase">Direct Wholesale Showroom</p>
                   </div>
                 </div>
               </div>
@@ -542,7 +542,7 @@ const Home = () => {
             </button>
 
             <div className="mb-6 pr-8">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-1">
+              <span className="text-[11px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-1">
                 B2B Wholesale Trade Desk
               </span>
               <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900">

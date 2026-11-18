@@ -178,7 +178,7 @@ const Navbar = () => {
               className={`flex items-center gap-1 py-4 whitespace-nowrap transition-colors ${isActive('/collections') ? 'text-[#C5A059] font-bold' : 'hover:text-[#C5A059]'}`}
             >
               Collections
-              <span className={`text-[10px] transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`}>
+              <span className={`text-[11px] transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`}>
                 ▲
               </span>
             </Link>
@@ -211,7 +211,7 @@ const Navbar = () => {
                       <span className="text-[9px] text-stone-400 font-sans uppercase tracking-wide mb-1">
                         {item.series}
                       </span>
-                      <span className="text-[10px] text-[#C5A059] font-sans font-semibold uppercase tracking-wide">
+                      <span className="text-[11px] text-[#C5A059] font-sans font-semibold uppercase tracking-wide">
                         {item.designs}
                       </span>
                     </Link>
@@ -225,7 +225,7 @@ const Navbar = () => {
                   <Link
                     to="/collections"
                     onClick={() => setIsMegaMenuOpen(false)}
-                    className="text-stone-900 font-semibold hover:text-[#C5A059] transition-colors uppercase tracking-wider text-[10px] flex items-center gap-1 whitespace-nowrap"
+                    className="text-stone-900 font-semibold hover:text-[#C5A059] transition-colors uppercase tracking-wider text-[11px] flex items-center gap-1 whitespace-nowrap"
                   >
                     View All Collections →
                   </Link>
@@ -304,7 +304,7 @@ const Navbar = () => {
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
             </svg>
             {getTotalItems() > 0 && (
-              <span className="absolute -top-1 -right-1 bg-[#C5A059] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-[#C5A059] text-white text-[11px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
                 {getTotalItems()}
               </span>
             )}
@@ -326,7 +326,7 @@ const Navbar = () => {
           {/* WHOLESALE QUOTE (Optimized Vertical Padding) */}
           <Link
             to="/wholesale"
-            className="bg-stone-900 hover:bg-[#C5A059] text-white text-[10px] sm:text-xs uppercase tracking-wider font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-colors shadow-md hidden sm:inline-block whitespace-nowrap"
+            className="bg-stone-900 hover:bg-[#C5A059] text-white text-[11px] sm:text-xs uppercase tracking-wider font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-colors shadow-md hidden sm:inline-block whitespace-nowrap"
           >
             Wholesale Quote
           </Link>
@@ -365,7 +365,7 @@ const Navbar = () => {
               <button 
                 type="button"
                 onClick={() => setIsSearchOpen(false)}
-                className="absolute right-3 top-2.5 text-[10px] bg-stone-200 hover:bg-stone-300 text-stone-700 px-2.5 py-1.5 rounded-md font-semibold cursor-pointer transition-colors"
+                className="absolute right-3 top-2.5 text-[11px] bg-stone-200 hover:bg-stone-300 text-stone-700 px-2.5 py-1.5 rounded-md font-semibold cursor-pointer transition-colors"
               >
                 ESC
               </button>

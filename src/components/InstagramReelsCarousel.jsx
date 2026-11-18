@@ -50,7 +50,7 @@ const InstagramReelsCarousel = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
               INSTAGRAM SHOWCASE • @DIVINEHOMEINDIA
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-stone-900 tracking-tight">
@@ -115,7 +115,7 @@ const InstagramReelsCarousel = () => {
 
               {/* Top Badge */}
               <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-20 pointer-events-none">
-                <span className="bg-white/25 backdrop-blur-md text-white text-[10px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full border border-white/30 flex items-center gap-1.5">
+                <span className="bg-white/25 backdrop-blur-md text-white text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full border border-white/30 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Reel
                 </span>
                 <span className="text-white text-[11px] font-sans font-medium bg-black/40 px-2.5 py-1 rounded-full">

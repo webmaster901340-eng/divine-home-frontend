@@ -6,11 +6,11 @@ const FloatingChat = () => {
   return (
     <div className="fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 sm:gap-3">
       {isOpen && (
-        <div className="bg-white text-stone-900 px-3 py-2 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl shadow-xl border border-stone-200 flex items-center gap-2 sm:gap-3">
+        <div className="hidden sm:flex bg-white text-stone-900 px-4 py-3 rounded-2xl shadow-xl border border-stone-200 items-center gap-3">
           <span className="text-[11px] sm:text-xs font-medium line-clamp-1">Need Wholesale Pricing? Chat with us</span>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-stone-400 hover:text-stone-900 text-sm font-bold flex-shrink-0"
+            aria-label="Close" className="text-stone-400 hover:text-stone-900 text-lg leading-none font-bold flex-shrink-0 w-8 h-8"
           >
             &times;
           </button>
@@ -20,7 +20,7 @@ const FloatingChat = () => {
         href="https://wa.me/918459495594"
         target="_blank"
         rel="noreferrer"
-        className="relative bg-emerald-500 hover:bg-emerald-600 text-white w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-105 flex-shrink-0"
+        aria-label="Chat on WhatsApp" className="relative bg-emerald-500 hover:bg-emerald-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-105 flex-shrink-0"
       >
         <span className="absolute top-0 right-0 w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 bg-red-500 border-2 border-white rounded-full"></span>
         <svg className="w-5 h-5 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24">

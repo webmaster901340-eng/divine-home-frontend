@@ -155,7 +155,7 @@ const HeroCarousel = ({ banners = [] }) => {
                   onClick={() => go(i)}
                   aria-label={`Show slide ${i + 1}: ${s.title}`}
                   aria-current={i === index}
-                  className="py-2 cursor-pointer"
+                  className="py-3 px-1 cursor-pointer"
                 >
                   <span className={`block h-1 rounded-full transition-all duration-300 ${i === index ? 'w-10 bg-[#C5A059]' : 'w-5 bg-white/35 hover:bg-white/70'}`} />
                 </button>

@@ -158,7 +158,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <span className="text-base text-[#C5A059]">📍</span>
                   <div>
-                    <strong className="text-stone-900 block font-medium uppercase text-[10px] tracking-wider">Wholesale Showroom:</strong>
+                    <strong className="text-stone-900 block font-medium uppercase text-[11px] tracking-wider">Wholesale Showroom:</strong>
                     <p className="leading-relaxed mt-0.5">1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005</p>
                   </div>
                 </div>
@@ -166,7 +166,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <span className="text-base text-[#C5A059]">📞</span>
                   <div>
-                    <strong className="text-stone-900 block font-medium uppercase text-[10px] tracking-wider">Phone / WhatsApp Hotline:</strong>
+                    <strong className="text-stone-900 block font-medium uppercase text-[11px] tracking-wider">Phone / WhatsApp Hotline:</strong>
                     <p className="font-semibold text-stone-900 mt-0.5">+91 84594 95594</p>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <span className="text-base text-[#C5A059]">✉️</span>
                   <div>
-                    <strong className="text-stone-900 block font-medium uppercase text-[10px] tracking-wider">Dealer Procurement Email:</strong>
+                    <strong className="text-stone-900 block font-medium uppercase text-[11px] tracking-wider">Dealer Procurement Email:</strong>
                     <p className="text-stone-900 mt-0.5">wholesale@divinehomeindia.com</p>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <span className="text-base text-[#C5A059]">⏰</span>
                   <div>
-                    <strong className="text-stone-900 block font-medium uppercase text-[10px] tracking-wider">Showroom Hours:</strong>
+                    <strong className="text-stone-900 block font-medium uppercase text-[11px] tracking-wider">Showroom Hours:</strong>
                     <p className="mt-0.5">Mon – Sat: 10:30 AM – 8:00 PM IST</p>
                   </div>
                 </div>
@@ -206,7 +206,7 @@ const Contact = () => {
                   href="https://www.google.com/maps/search/?api=1&query=Divine+Home+India+Karol+Bagh+New+Delhi" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="bg-stone-100 hover:bg-stone-200 text-stone-800 text-[10px] font-semibold px-3 py-1.5 rounded-lg border border-stone-200 transition-colors"
+                  className="bg-stone-100 hover:bg-stone-200 text-stone-800 text-[11px] font-semibold px-3 py-1.5 rounded-lg border border-stone-200 transition-colors"
                 >
                   Open in Maps ↗
                 </a>

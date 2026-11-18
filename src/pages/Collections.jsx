@@ -359,7 +359,7 @@ const Collections = () => {
               )}
             </div>
 
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
               {selectedSeries !== 'All Series' ? `SERIES: ${selectedSeries}` : 'WHOLESALE CATALOGUE 2026-27'}
             </span>
 
@@ -409,7 +409,7 @@ const Collections = () => {
               </div>
 
               {/* Dynamic Categories Filter */}
-              <span className="text-[10px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Categories</span>
+              <span className="text-[11px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Categories</span>
               <div className="space-y-1">
                 {dynamicCategories.map((cat, idx) => (
                   <button
@@ -427,7 +427,7 @@ const Collections = () => {
 
             {/* Dynamic Series / Collection Filter */}
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Catalogue Series</span>
+              <span className="text-[11px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Catalogue Series</span>
               <div className="space-y-1">
                 {dynamicSeries.map((ser, idx) => (
                   <button
@@ -445,7 +445,7 @@ const Collections = () => {
 
             {/* Dynamic Design Name Filter */}
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Design Names</span>
+              <span className="text-[11px] uppercase tracking-widest text-stone-400 font-semibold block mb-3">Design Names</span>
               <div className="space-y-1 max-h-64 overflow-y-auto">
                 {dynamicDesigns.map((des, idx) => (
                   <button

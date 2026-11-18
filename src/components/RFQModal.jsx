@@ -100,7 +100,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
         </button>
 
         <div className="mb-6">
-          <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
             B2B WHOLESALE TRADE DESK
           </span>
           <h2 className="font-serif text-2xl font-bold text-stone-900">
@@ -108,7 +108,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
           </h2>
           {cartItems.length > 0 ? (
             <div className="mt-3 bg-stone-50 p-3 rounded-lg border border-stone-200">
-              <p className="text-[10px] uppercase tracking-wider font-semibold text-stone-600 mb-2">Items in Quotation:</p>
+              <p className="text-[11px] uppercase tracking-wider font-semibold text-stone-600 mb-2">Items in Quotation:</p>
               <div className="space-y-1">
                 {cartItems.map((item, idx) => (
                   <p key={idx} className="text-xs text-stone-700">
@@ -139,7 +139,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
           <form onSubmit={handleSubmit} className="space-y-4 text-xs">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Your Name *</label>
+                <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Your Name *</label>
                 <input 
                   type="text" 
                   required
@@ -150,7 +150,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
                 />
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Company / Retail Name</label>
+                <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Company / Retail Name</label>
                 <input 
                   type="text" 
                   placeholder="e.g. Roastery Café & Kitchen"
@@ -163,7 +163,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Phone / WhatsApp *</label>
+                <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Phone / WhatsApp *</label>
                 <input
                   type="text"
                   required
@@ -177,7 +177,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
                 {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Business Email</label>
+                <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Business Email</label>
                 <input
                   type="text"
                   placeholder="procurement@brand.com"
@@ -193,7 +193,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Estimated Quantity Required *</label>
+                <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Estimated Quantity Required *</label>
                 <input 
                   type="text" 
                   required
@@ -204,7 +204,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
                 />
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Delivery City / Pincode *</label>
+                <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Delivery City / Pincode *</label>
                 <input 
                   type="text" 
                   required
@@ -217,7 +217,7 @@ const RFQModal = ({ isOpen, onClose, productTitle = '', cartItems = [] }) => {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Customization or Special Instructions</label>
+              <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Customization or Special Instructions</label>
               <textarea 
                 rows="2"
                 placeholder="Need custom logo branding, specific glaze, or delivery details..."

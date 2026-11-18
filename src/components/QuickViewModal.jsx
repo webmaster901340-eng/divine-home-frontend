@@ -73,7 +73,7 @@ const QuickViewModal = ({ product, onClose }) => {
           /* RFQ FORM VIEW INSIDE MODAL */
           <div className="w-full p-6 md:p-8">
             <div className="mb-6">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
+              <span className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
                 B2B WHOLESALE TRADE DESK
               </span>
               <h2 className="font-serif text-2xl font-bold text-stone-900">
@@ -99,7 +99,7 @@ const QuickViewModal = ({ product, onClose }) => {
               <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Your Name *</label>
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Your Name *</label>
                     <input 
                       type="text" 
                       required
@@ -110,7 +110,7 @@ const QuickViewModal = ({ product, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Company / Retail Name</label>
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Company / Retail Name</label>
                     <input 
                       type="text" 
                       placeholder="e.g. Roastery Café & Kitchen"
@@ -123,7 +123,7 @@ const QuickViewModal = ({ product, onClose }) => {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Phone / WhatsApp *</label>
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Phone / WhatsApp *</label>
                     <input 
                       type="tel" 
                       required
@@ -134,7 +134,7 @@ const QuickViewModal = ({ product, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Business Email</label>
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Business Email</label>
                     <input 
                       type="email" 
                       placeholder="procurement@brand.com"
@@ -147,7 +147,7 @@ const QuickViewModal = ({ product, onClose }) => {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Quantity Required *</label>
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Quantity Required *</label>
                     <input 
                       type="text" 
                       required
@@ -157,7 +157,7 @@ const QuickViewModal = ({ product, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Delivery City / Pincode *</label>
+                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Delivery City / Pincode *</label>
                     <input 
                       type="text" 
                       required
@@ -170,7 +170,7 @@ const QuickViewModal = ({ product, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Special Instructions</label>
+                  <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1">Special Instructions</label>
                   <textarea 
                     rows="2"
                     placeholder="Custom branding, packaging notes..."
@@ -205,7 +205,7 @@ const QuickViewModal = ({ product, onClose }) => {
             {/* Left: Product Image */}
             <div className="w-full md:w-1/2 bg-stone-100 relative h-72 md:h-auto">
               {product.badge && (
-                <span className="absolute top-4 left-4 z-10 bg-[#C5A059] text-white text-[10px] uppercase px-3 py-1 rounded tracking-widest font-semibold shadow-sm">
+                <span className="absolute top-4 left-4 z-10 bg-[#C5A059] text-white text-[11px] uppercase px-3 py-1 rounded tracking-widest font-semibold shadow-sm">
                   {product.badge}
                 </span>
               )}
@@ -219,7 +219,7 @@ const QuickViewModal = ({ product, onClose }) => {
             {/* Right: Product Details & Wholesale Info */}
             <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
               <div>
-                <div className="flex justify-between items-center text-[10px] text-stone-400 uppercase tracking-widest mb-2 font-medium">
+                <div className="flex justify-between items-center text-[11px] text-stone-400 uppercase tracking-widest mb-2 font-medium">
                   <span>{product.category}</span>
                   <span>SKU: {product.sku}</span>
                 </div>

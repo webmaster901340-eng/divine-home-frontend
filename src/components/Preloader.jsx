@@ -79,7 +79,7 @@ const Preloader = () => {
           <span className={`transition-all duration-500 ${animateOut ? 'translate-x-24 opacity-0' : 'translate-x-0 opacity-100'}`}>INDIA</span>
         </div>
 
-        <div className={`mt-3 text-[10px] sm:text-xs uppercase tracking-[0.35em] text-stone-400 font-medium transition-all duration-300 ${animateOut ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+        <div className={`mt-3 text-[11px] sm:text-xs uppercase tracking-[0.35em] text-stone-400 font-medium transition-all duration-300 ${animateOut ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
           KAROL BAGH, NEW DELHI • B2B TRADE SHOWROOM
         </div>
 
@@ -87,7 +87,7 @@ const Preloader = () => {
 
       {/* ================= BOTTOM INFO ================= */}
       <div className={`absolute bottom-6 left-6 right-6 z-30 flex justify-between items-end text-xs uppercase tracking-widest text-[#C5A059] font-serif transition-opacity duration-300 ${animateOut ? 'opacity-0' : 'opacity-100'}`}>
-        <div className="bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 text-[10px] sm:text-xs shadow-lg">
+        <div className="bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 text-[11px] sm:text-xs shadow-lg">
           <span className="inline-block w-2 h-2 rounded-full bg-[#C5A059] animate-ping mr-2"></span>
           {statusText}
         </div>

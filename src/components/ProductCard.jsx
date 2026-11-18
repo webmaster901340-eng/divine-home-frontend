@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
           )}
 
           {product.badge && (
-            <span className="absolute top-3 left-3 bg-[#FBF9F5] text-stone-900 text-[10px] font-semibold uppercase tracking-[0.14em] px-2.5 py-1">
+            <span className="absolute top-3 left-3 bg-[#FBF9F5] text-stone-900 text-[11px] font-semibold uppercase tracking-[0.14em] px-2.5 py-1">
               {product.badge}
             </span>
           )}

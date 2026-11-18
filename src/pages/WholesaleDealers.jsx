@@ -78,7 +78,7 @@ const WholesaleDealers = () => {
         
         {/* Top Header Section */}
         <FadeIn direction="down" className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold block mb-2">
             WHOLESALE • DEALERS • DISTRIBUTORS
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-stone-900 mb-4 tracking-tight">
@@ -294,7 +294,7 @@ const WholesaleDealers = () => {
             
             {/* Support Desk Card */}
             <div className="bg-white p-8 rounded-3xl border border-stone-200/80 shadow-sm">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
+              <span className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
                 KAROL BAGH WHOLESALE DESK
               </span>
               <h3 className="font-serif text-xl font-bold text-stone-900 mb-6">
@@ -380,7 +380,7 @@ const WholesaleDealers = () => {
         {/* Wholesale & Dealer FAQs Section */}
         <FadeIn direction="up" className="pt-12 border-t border-stone-200">
           <div className="text-center mb-12">
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
               FREQUENTLY ASKED QUESTIONS
             </span>
             <h2 className="font-serif text-3xl font-bold text-stone-900">
