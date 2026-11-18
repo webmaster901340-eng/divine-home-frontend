@@ -25,50 +25,50 @@ const Navbar = () => {
       name: 'Elegant Vector',
       series: 'Ellite Series',
       designs: '10 Designs',
-      image: '/images/catalogue/covers/dhi-5001.jpg',
+      image: '/images/d2c/dhi-5001-1.jpg',
     },
     {
       name: 'Lotus Glow',
       series: 'Ellite Series',
       designs: '5 Designs',
-      image: '/images/catalogue/covers/dhi-5002.jpg',
+      image: '/images/d2c/dhi-5002-1.jpg',
     },
     {
       name: 'Peachy Bloom',
       series: 'Ellite Series',
       designs: '3 Designs',
-      image: '/images/catalogue/covers/dhi-5003.jpg',
+      image: '/images/d2c/dhi-5003-1.jpg',
     },
     {
       name: 'Peacock Grace',
       series: 'Ellite Series',
       designs: '3 Designs',
-      image: '/images/catalogue/covers/dhi-5004.jpg',
+      image: '/images/d2c/dhi-5004-1.jpg',
     },
     {
       name: 'Ikket',
       series: 'Ellite Series',
       designs: '2 Designs',
-      image: '/images/catalogue/covers/dhi-5006.jpg',
+      image: '/images/d2c/dhi-5006-1.jpg',
     },
     {
       name: 'Marble Flow',
       series: 'Ellite Series',
       designs: '2 Designs',
-      image: '/images/catalogue/covers/dhi-5007.jpg',
+      image: '/images/d2c/dhi-5007-1.jpg',
     },
     // LEATHER CLASSIC SERIES
     {
       name: 'Leather Classic Black',
       series: 'Leather Classic',
       designs: '3 Designs',
-      image: '/images/catalogue/covers/dhi-lc-black.jpg',
+      image: '/images/d2c/dhi-lc-black-1.jpg',
     },
     {
       name: 'Leather Classic Maroon',
       series: 'Leather Classic',
       designs: '1 Design',
-      image: '/images/catalogue/covers/dhi-lc-maroon.jpg',
+      image: '/images/d2c/dhi-lc-maroon-1.jpg',
     },
   ];
 

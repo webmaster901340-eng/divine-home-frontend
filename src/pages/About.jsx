@@ -46,9 +46,9 @@ const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
 const About = () => {
   const location = useLocation();
   const [pageImages, setPageImages] = useState({
-    about_hero: "/images/hero/elegant-vector-tray-set-lifestyle.jpg",
-    about_img1: "/images/d2c/dhi-2606-1.jpg",
-    about_img2: "/images/d2c/dhi-5004-1.jpg"
+    about_hero: "/images/site/about-hero-1.jpg",
+    about_img1: "/images/site/about-hero-2.jpg",
+    about_img2: "/images/site/about-detail-1.jpg"
   });
 
   useEffect(() => {
@@ -139,10 +139,10 @@ const About = () => {
           </div>
           <div className="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
             <div className="aspect-[4/5] overflow-hidden bg-[#E9E2D6]">
-              <img src={pageImages.about_img1} alt="Hand-printed mango wood tray sets" loading="lazy" className="w-full h-full object-cover" />
+              <img src={pageImages.about_img1} alt="A tray being finished by hand" loading="lazy" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-[4/5] overflow-hidden bg-[#E9E2D6] mt-8 sm:mt-12">
-              <img src={pageImages.about_img2} alt="Printed decorative tray set with matching pieces" loading="lazy" className="w-full h-full object-cover" />
+              <img src={pageImages.about_img2} alt="Close-up of a printed tray with gold rim" loading="lazy" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

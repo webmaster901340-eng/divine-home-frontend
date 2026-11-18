@@ -52,7 +52,7 @@ const Home = () => {
   const [reels, setReels] = useState([]);
   const [heroBanners, setHeroBanners] = useState([]);
   const [pageImages, setPageImages] = useState({
-    home_story: "/images/dhi/showroom-tray-shelves.jpg"
+    home_story: "/images/site/about-hero-2.jpg"
   });
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -143,8 +143,8 @@ const Home = () => {
     { name: "Peacock Grace", designs: "3 Designs", image: "/images/d2c/dhi-5004-1.jpg" },
     { name: "Ikket", designs: "2 Designs", image: "/images/d2c/dhi-5006-1.jpg" },
     { name: "Marble Flow", designs: "2 Designs", image: "/images/d2c/dhi-5007-1.jpg" },
-    { name: "Leather Classic Black", designs: "3 Designs", image: "/images/catalogue/covers/dhi-lc-black.jpg" },
-    { name: "Leather Classic Maroon", designs: "1 Design", image: "/images/catalogue/covers/dhi-lc-maroon.jpg" }
+    { name: "Leather Classic Black", designs: "3 Designs", image: "/images/d2c/dhi-lc-black-1.jpg" },
+    { name: "Leather Classic Maroon", designs: "1 Design", image: "/images/d2c/dhi-lc-maroon-1.jpg" }
   ];
 
   const wholesaleLines = [
@@ -154,8 +154,8 @@ const Home = () => {
     { name: "Peacock Grace", designs: "3 DESIGNS", desc: "Peacock artwork in jewel tones with gold detailing. A strong festive and gifting design.", image: "/images/d2c/dhi-5004-1.jpg", series: "Ellite Series" },
     { name: "Ikket", designs: "2 DESIGNS", desc: "Ikat-inspired weave pattern printed in bold colour, for buyers who want something traditional.", image: "/images/d2c/dhi-5006-1.jpg", series: "Ellite Series" },
     { name: "Marble Flow", designs: "2 DESIGNS", desc: "Marble-effect print with a gold rim. Pairs with modern dining and coffee-table setups.", image: "/images/d2c/dhi-5007-1.jpg", series: "Ellite Series" },
-    { name: "Leather Classic Black", designs: "3 DESIGNS", desc: "Black leatherette trays and organisers for desks, vanities and hotel rooms.", image: "/images/catalogue/covers/dhi-lc-black.jpg", series: "Leather Classic" },
-    { name: "Leather Classic Maroon", designs: "1 DESIGN", desc: "Maroon leatherette trays and organisers. Popular for corporate and wedding gifting.", image: "/images/catalogue/covers/dhi-lc-maroon.jpg", series: "Leather Classic" }
+    { name: "Leather Classic Black", designs: "3 DESIGNS", desc: "Black leatherette trays and organisers for desks, vanities and hotel rooms.", image: "/images/d2c/dhi-lc-black-1.jpg", series: "Leather Classic" },
+    { name: "Leather Classic Maroon", designs: "1 DESIGN", desc: "Maroon leatherette trays and organisers. Popular for corporate and wedding gifting.", image: "/images/d2c/dhi-lc-maroon-1.jpg", series: "Leather Classic" }
   ];
 
   const faqs = FAQ.slice(0, 4).map(([q, a]) => ({ q, a }));
@@ -505,12 +505,12 @@ const Home = () => {
           <FadeIn direction="left">
             <div className="relative flex justify-center">
               <div className="w-full sm:w-[460px] h-[380px] sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl relative border-2 border-stone-200">
-                <img src={pageImages.home_story} alt="Decorative tray sets on display at the Divine Home India showroom, Karol Bagh" className="w-full h-full object-cover" />
+                <img src={pageImages.home_story} alt="A Divine Home India tray being finished by hand" className="w-full h-full object-cover" />
                 <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-stone-200 flex items-center gap-3">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#C5A059] animate-pulse"></span>
                   <div>
                     <p className="font-serif text-xs font-bold text-stone-900">Karol Bagh, New Delhi</p>
-                    <p className="text-[11px] text-stone-500 uppercase">Direct Wholesale Showroom</p>
+                    <p className="text-[11px] text-stone-500 uppercase">Designed and finished in-house</p>
                   </div>
                 </div>
               </div>
