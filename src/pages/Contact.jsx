@@ -126,120 +126,82 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="min-h-screen bg-[#FBF9F5] py-10 sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Top Header Section */}
-        <FadeIn direction="down" className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-2">
-            Karol Bagh Trade Desk
-          </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-stone-900 mb-4 tracking-tight">
-            Contact Divine Home India
+
+        {/* Header */}
+        <div className="max-w-2xl mb-10 sm:mb-14">
+          <h1 className="font-serif text-[34px] sm:text-5xl leading-[1.1] text-stone-900">
+            Contact us
           </h1>
-          <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-light">
+          <p className="text-[15px] sm:text-base text-stone-600 leading-relaxed mt-4">
             Visit the showroom, call or WhatsApp us. For prices, tell us your business type and city so we can send the right catalogue.
           </p>
-        </FadeIn>
+        </div>
 
-        {/* Main Grid Layout - Fixed vertical alignment using items-stretch */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* Left Column: Showroom Office Card & Google Map (5 Columns) */}
-          <FadeIn direction="left" className="lg:col-span-5 space-y-6 flex flex-col justify-between">
-            
-            {/* Showroom & Trade Office Info Card */}
-            <div className="bg-white p-8 rounded-3xl border border-stone-200/80 shadow-sm space-y-6 flex-grow">
-              <h2 className="font-serif text-xl font-bold text-stone-900 pb-3 border-b border-stone-100">
-                Showroom & Trade Office
-              </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
-              <div className="space-y-4 text-xs text-stone-600">
-                <div className="flex items-start gap-3">
-                  <span className="text-base text-[#C5A059]">📍</span>
-                  <div>
-                    <strong className="text-stone-900 block font-medium uppercase text-[11px] tracking-wider">Wholesale Showroom:</strong>
-                    <p className="leading-relaxed mt-0.5">1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <span className="text-base text-[#C5A059]">📞</span>
-                  <div>
-                    <strong className="text-stone-900 block font-medium uppercase text-[11px] tracking-wider">Phone / WhatsApp Hotline:</strong>
-                    <p className="font-semibold text-stone-900 mt-0.5">+91 84594 95594</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <span className="text-base text-[#C5A059]">✉️</span>
-                  <div>
-                    <strong className="text-stone-900 block font-medium uppercase text-[11px] tracking-wider">Dealer Procurement Email:</strong>
-                    <p className="text-stone-900 mt-0.5">wholesale@divinehomeindia.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <span className="text-base text-[#C5A059]">⏰</span>
-                  <div>
-                    <strong className="text-stone-900 block font-medium uppercase text-[11px] tracking-wider">Showroom Hours:</strong>
-                    <p className="mt-0.5">Mon – Sat: 10:30 AM – 8:00 PM IST</p>
-                  </div>
-                </div>
-              </div>
-
-              <a 
+          {/* Left: showroom details + map */}
+          <div className="lg:col-span-5 space-y-8">
+            <div>
+              <h2 className="font-serif text-2xl text-stone-900 mb-5">Showroom and trade office</h2>
+              <dl className="divide-y divide-stone-200 border-y border-stone-200 text-[15px]">
+                <div className="py-4 flex justify-between gap-4"><dt className="text-stone-500 shrink-0">Address</dt><dd className="text-stone-900 text-right">1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005</dd></div>
+                <div className="py-4 flex justify-between gap-4"><dt className="text-stone-500 shrink-0">Phone / WhatsApp</dt><dd><a href="tel:+918459495594" className="text-stone-900 font-medium">+91 84594 95594</a></dd></div>
+                <div className="py-4 flex justify-between gap-4"><dt className="text-stone-500 shrink-0">Email</dt><dd className="text-right"><a href="mailto:wholesale@divinehomeindia.com" className="text-stone-900 font-medium break-all">wholesale@divinehomeindia.com</a></dd></div>
+                <div className="py-4 flex justify-between gap-4"><dt className="text-stone-500 shrink-0">Hours</dt><dd className="text-stone-900 text-right">Mon to Sat, 10:30 am to 8 pm</dd></div>
+              </dl>
+              <a
                 href="https://wa.me/918459495594?text=Hello,%20I%20want%20to%20schedule%20a%20showroom%20visit%20at%20Karol%20Bagh."
                 target="_blank"
                 rel="noreferrer"
-                className="w-full bg-[#00A859] hover:bg-[#008f4c] text-white py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-colors text-center cursor-pointer"
+                className="mt-6 w-full bg-stone-900 hover:bg-[#3a2f24] text-white py-4 text-xs font-semibold uppercase tracking-[0.14em] transition-colors flex items-center justify-center"
               >
-                <span>💬</span> Chat on WhatsApp Trade Desk
+                Chat on WhatsApp
               </a>
             </div>
 
-            {/* Karol Bagh Map Card */}
-            <div className="bg-white p-4 rounded-3xl border border-stone-200/80 shadow-sm overflow-hidden">
-              <div className="flex justify-between items-center px-4 pt-2 pb-3">
-                <span className="font-serif text-xs font-bold text-stone-800">15A/47, WEA, Karol Bagh, New Delhi</span>
-                <a 
-                  href="https://www.google.com/maps/search/?api=1&query=Divine+Home+India+Karol+Bagh+New+Delhi" 
-                  target="_blank" 
+            <div>
+              <div className="flex justify-between items-center mb-3 gap-4">
+                <span className="text-[15px] text-stone-900">15A/47, WEA, Karol Bagh, New Delhi</span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Divine+Home+India+Karol+Bagh+New+Delhi"
+                  target="_blank"
                   rel="noreferrer"
-                  className="bg-stone-100 hover:bg-stone-200 text-stone-800 text-[11px] font-semibold px-3 py-1.5 rounded-lg border border-stone-200 transition-colors"
+                  className="text-sm font-semibold text-stone-900 underline underline-offset-4 decoration-stone-400 hover:decoration-stone-900 shrink-0"
                 >
-                  Open in Maps ↗
+                  Open in Maps
                 </a>
               </div>
-              <div className="w-full h-56 rounded-2xl overflow-hidden border border-stone-100">
-                <iframe 
+              <div className="w-full h-64 overflow-hidden border border-stone-200">
+                <iframe
                   title="Karol Bagh Showroom Map"
-                  src="https://maps.google.com/maps?q=Divine%20Home%20India%2C%2015A%2F47%20WEA%20Karol%20Bagh%2C%20New%20Delhi%20110005&output=embed" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen="" 
+                  src="https://maps.google.com/maps?q=Divine%20Home%20India%2C%2015A%2F47%20WEA%20Karol%20Bagh%2C%20New%20Delhi%20110005&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
                   loading="lazy"
                 ></iframe>
               </div>
             </div>
+          </div>
 
-          </FadeIn>
-
-          {/* Right Column: Direct Trade Inquiry Form (7 Columns) */}
-          <FadeIn direction="right" className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/80 shadow-sm flex flex-col justify-between">
+          {/* Right: enquiry form */}
+          <div className="lg:col-span-7 bg-white p-6 sm:p-10 border border-stone-200">
             <div>
-              <h2 className="font-serif text-xl font-bold text-stone-900 mb-6 pb-4 border-b border-stone-100">
-                Direct Trade Inquiry
+              <h2 className="font-serif text-2xl sm:text-3xl text-stone-900 mb-2">
+                Send us a message
               </h2>
+              <p className="text-[15px] text-stone-600 mb-7">We usually reply within a few hours on working days.</p>
 
               {submitted ? (
-                <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-8 rounded-2xl text-center space-y-3">
-                  <h3 className="font-serif text-xl font-bold">Message Sent Successfully!</h3>
-                  <p className="text-xs">Thank you, {formData.name}. Our Karol Bagh trade desk has received your inquiry and will respond within 2 business hours.</p>
+                <div className="border border-stone-300 p-8 text-center space-y-3">
+                  <h3 className="font-serif text-2xl text-stone-900">Thank you, message sent</h3>
+                  <p className="text-[15px] text-stone-600">Thank you, {formData.name}. Our Karol Bagh trade desk has received your inquiry and will respond within 2 business hours.</p>
                   <button 
                     onClick={() => setSubmitted(false)}
-                    className="mt-4 bg-stone-900 text-white text-xs uppercase px-6 py-2.5 rounded-xl font-semibold tracking-wider hover:bg-[#C5A059] transition-colors cursor-pointer"
+                    className="mt-4 border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white text-xs uppercase px-6 py-3 font-semibold tracking-[0.14em] transition-colors cursor-pointer"
                   >
                     Send Another Message
                   </button>
@@ -247,7 +209,7 @@ const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1.5">Your Name *</label>
+                    <label className="block text-sm font-medium text-stone-800 mb-1.5">Your Name *</label>
                     <input 
                       type="text" 
                       name="name"
@@ -255,13 +217,13 @@ const Contact = () => {
                       placeholder="e.g. Manish Sharma"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3.5 text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]"
+                      className="w-full bg-white border border-stone-300 px-4 py-3.5 text-base sm:text-[15px] text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1.5">Email Address *</label>
+                      <label className="block text-sm font-medium text-stone-800 mb-1.5">Email Address *</label>
                       <input
                         type="text"
                         name="email"
@@ -269,14 +231,14 @@ const Contact = () => {
                         placeholder="procurement@brand.com"
                         value={formData.email}
                         onChange={handleEmailChange}
-                        className={`w-full bg-stone-50 border rounded-xl px-4 py-3.5 text-xs text-stone-900 focus:outline-none transition-colors ${
-                          errors.email ? 'border-red-500 focus:border-red-500' : 'border-stone-200 focus:border-[#C5A059]'
+                        className={`w-full bg-white border px-4 py-3.5 text-base sm:text-[15px] text-stone-900 placeholder:text-stone-400 focus:outline-none transition-colors ${
+                          errors.email ? 'border-red-500 focus:border-red-500' : 'border-stone-300 focus:border-stone-900'
                         }`}
                       />
-                      {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email}</p>}
+                      {errors.email && <p className="text-sm text-red-700 mt-1">{errors.email}</p>}
                     </div>
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1.5">Phone Number *</label>
+                      <label className="block text-sm font-medium text-stone-800 mb-1.5">Phone Number *</label>
                       <input
                         type="text"
                         name="phone"
@@ -284,21 +246,21 @@ const Contact = () => {
                         placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={handlePhoneChange}
-                        className={`w-full bg-stone-50 border rounded-xl px-4 py-3.5 text-xs text-stone-900 focus:outline-none transition-colors ${
-                          errors.phone ? 'border-red-500 focus:border-red-500' : 'border-stone-200 focus:border-[#C5A059]'
+                        className={`w-full bg-white border px-4 py-3.5 text-base sm:text-[15px] text-stone-900 placeholder:text-stone-400 focus:outline-none transition-colors ${
+                          errors.phone ? 'border-red-500 focus:border-red-500' : 'border-stone-300 focus:border-stone-900'
                         }`}
                       />
-                      {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
+                      {errors.phone && <p className="text-sm text-red-700 mt-1">{errors.phone}</p>}
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1.5">Subject</label>
+                    <label className="block text-sm font-medium text-stone-800 mb-1.5">Subject</label>
                     <select 
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3.5 text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]"
+                      className="w-full bg-white border border-stone-300 px-4 py-3.5 text-base sm:text-[15px] text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors"
                     >
                       <option>Wholesale & Dealer Inquiry</option>
                       <option>Showroom Visit Appointment</option>
@@ -308,7 +270,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider font-semibold text-stone-700 mb-1.5">Your Message / Requirements *</label>
+                    <label className="block text-sm font-medium text-stone-800 mb-1.5">Your Message / Requirements *</label>
                     <textarea 
                       name="message"
                       rows="4"
@@ -316,21 +278,21 @@ const Contact = () => {
                       placeholder="Tell us about your store location, product lines of interest, estimated quantities, and target timeline..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3.5 text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]"
+                      className="w-full bg-white border border-stone-300 px-4 py-3.5 text-base sm:text-[15px] text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors"
                     ></textarea>
                   </div>
 
                   <button 
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-stone-900 hover:bg-[#C5A059] text-white py-4 rounded-xl font-semibold text-xs uppercase tracking-widest transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full bg-stone-900 hover:bg-[#3a2f24] text-white py-4 font-semibold text-xs uppercase tracking-[0.14em] transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
-                    <span>✈</span> {loading ? 'SENDING...' : 'SEND MESSAGE TO TRADE DESK'}
+                    {loading ? 'Sending...' : 'Send message'}
                   </button>
                 </form>
               )}
             </div>
-          </FadeIn>
+          </div>
 
         </div>
 
