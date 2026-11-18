@@ -269,7 +269,9 @@ const Collections = () => {
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        setProducts(data);
+        // Products with the new D2C studio photos first
+        const hasD2c = (p) => (p.images?.[0] || '').includes('/d2c/') ? 1 : 0;
+        setProducts(Array.isArray(data) ? [...data].sort((a, b) => hasD2c(b) - hasD2c(a)) : data);
         setLoading(false);
       })
       .catch(err => {
