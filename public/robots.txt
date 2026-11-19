@@ -4,3 +4,4 @@ Disallow: /admin
 Disallow: /cart
 
 Sitemap: https://www.divinehomeindia.com/sitemap.xml
+Sitemap: https://www.divinehomeindia.com/sitemap-static.xml

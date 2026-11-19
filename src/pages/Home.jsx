@@ -404,14 +404,14 @@ const Home = () => {
             </div>
 
             {reels && reels.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                 {reels.map((reel) => (
                   <div key={reel._id} className="flex justify-center">
                     <a
                       href={reel.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="group relative w-full max-w-[260px] h-[380px] rounded-3xl overflow-hidden shadow-xl transition-transform duration-300 hover:-translate-y-2 block bg-stone-900 border border-stone-200"
+                      className="group relative w-full sm:max-w-[260px] aspect-[9/14] sm:aspect-auto sm:h-[380px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md sm:shadow-xl transition-transform duration-300 hover:-translate-y-2 block bg-stone-900 border border-stone-200"
                     >
                       {reel.image ? (
                         <img
@@ -428,15 +428,15 @@ const Home = () => {
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
 
-                      <div className="absolute bottom-0 left-0 right-0 z-10 p-5">
-                        <h3 className="font-serif text-sm font-bold text-white line-clamp-2 group-hover:text-[#7a5c25] transition-colors leading-snug">
+                      <div className="absolute bottom-0 left-0 right-0 z-10 p-3 sm:p-5">
+                        <h3 className="font-serif text-[13px] sm:text-sm font-bold text-white line-clamp-2 group-hover:text-[#7a5c25] transition-colors leading-snug">
                           {reel.title}
                         </h3>
                       </div>
 
-                      <div className="absolute top-4 right-4 z-10">
-                        <span className="w-10 h-10 rounded-full bg-[#E1306C] flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                          <svg className="w-5 h-5 fill-white ml-0.5" viewBox="0 0 24 24">
+                      <div className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-10">
+                        <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#E1306C] flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-white ml-0.5" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z"/>
                           </svg>
                         </span>
