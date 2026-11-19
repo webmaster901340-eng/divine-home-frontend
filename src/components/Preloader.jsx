@@ -16,11 +16,11 @@ const Preloader = () => {
       /* storage blocked: treat as first visit */
     }
 
-    const wait = Math.max(0, (firstVisit ? 1100 : 150) - performance.now());
+    const wait = Math.max(0, (firstVisit ? 1900 : 600) - performance.now());
     const timers = [];
     timers.push(setTimeout(() => {
       gate.classList.add('open');
-      timers.push(setTimeout(() => gate.remove(), 1000));
+      timers.push(setTimeout(() => gate.remove(), 1400));
     }, wait));
     return () => timers.forEach(clearTimeout);
   }, []);
