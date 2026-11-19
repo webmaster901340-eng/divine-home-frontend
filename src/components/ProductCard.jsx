@@ -2,6 +2,7 @@ import { productPath } from '../utils/slug';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import QuickViewModal from './QuickViewModal';
+import { img, srcSet, onImgError } from '../utils/img';
 
 const FALLBACK = '/images/dhi/mango-wood-trays.jpg';
 
@@ -21,7 +22,10 @@ const ProductCard = ({ product }) => {
       <article className="group w-full flex flex-col h-full">
         <Link to={to} className="block relative aspect-[4/5] overflow-hidden bg-[#EFE9DF]">
           <img
-            src={first}
+            src={img(first, 480)}
+            srcSet={srcSet(first, [480, 960])}
+            sizes="(min-width: 1024px) 25vw, 50vw"
+            onError={onImgError(first)}
             alt={`${product.title} by Divine Home India`}
             loading="lazy"
             decoding="async"
@@ -29,7 +33,10 @@ const ProductCard = ({ product }) => {
           />
           {second && (
             <img
-              src={second}
+              src={img(second, 480)}
+              srcSet={srcSet(second, [480, 960])}
+              sizes="(min-width: 1024px) 25vw, 50vw"
+              onError={onImgError(second)}
               alt=""
               aria-hidden="true"
               loading="lazy"

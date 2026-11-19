@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
 import FloatingChat from './components/FloatingChat';
 import Seo from './components/Seo';
+import Preloader from './components/Preloader';
 import Home from './pages/Home';
 import Collections from './pages/Collections';
 import ProductDetails from './pages/ProductDetails';
@@ -29,6 +30,7 @@ function App() {
   return (
     <CartProvider>
       <Router>
+        <Preloader />
         <ScrollToTop />
         <Seo />
         <div className="min-h-screen bg-[#FDFBF7] text-stone-900 font-sans flex flex-col justify-between">

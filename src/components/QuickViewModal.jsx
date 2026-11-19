@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../utils/api';
+import { img, srcSet, onImgError } from '../utils/img';
 
 const QuickViewModal = ({ product, onClose }) => {
   const navigate = useNavigate();
@@ -210,7 +211,8 @@ const QuickViewModal = ({ product, onClose }) => {
                 </span>
               )}
               <img 
-                src={product.images && product.images[0] ? product.images[0] : product.image} 
+                src={img(product.images && product.images[0] ? product.images[0] : product.image, 960)}
+                onError={onImgError(product.images && product.images[0] ? product.images[0] : product.image)}
                 alt={product.title} 
                 className="w-full h-full object-cover"
               />

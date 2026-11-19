@@ -1,4 +1,5 @@
 import React from 'react';
+import { img, srcSet, onImgError } from '../utils/img';
 
 const InstagramReelsFeed = () => {
   const instaPosts = [
@@ -38,7 +39,7 @@ const InstagramReelsFeed = () => {
               rel="noreferrer"
               className="group relative h-80 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 block"
             >
-              <img src={post.image} alt="Instagram" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={img(post.image, 480)} onError={onImgError(post.image)} loading="lazy" decoding="async" alt="Instagram" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="bg-white/90 backdrop-blur-sm text-stone-900 p-3 rounded-full shadow-lg">
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

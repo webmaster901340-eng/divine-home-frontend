@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
+import { img, srcSet, onImgError } from '../utils/img';
 
 const Navbar = () => {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
@@ -199,7 +200,8 @@ const Navbar = () => {
                     >
                       <div className="w-full h-[100px] rounded-xl overflow-hidden bg-stone-100 mb-2">
                         <img
-                          src={item.image}
+                          src={img(item.image, 240)}
+                          onError={onImgError(item.image)}
                           alt={item.name}
                           loading="lazy"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

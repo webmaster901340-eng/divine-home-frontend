@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { img as imgUrl, srcSet, onImgError } from '../utils/img';
 
 // Swipeable square product carousel (scroll-snap) with thumbnails, arrows, dots and desktop hover zoom.
 const ProductGallery = ({ images = [], title = '' }) => {
@@ -43,7 +44,7 @@ const ProductGallery = ({ images = [], title = '' }) => {
               aria-label={`Show photo ${i + 1}`}
               className={`w-16 h-16 md:w-20 md:h-20 shrink-0 overflow-hidden rounded-sm bg-[#F3EEE6] transition-opacity ${active === i ? 'ring-1 ring-stone-900 opacity-100' : 'opacity-60 hover:opacity-100'}`}
             >
-              <img src={img} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+              <img src={imgUrl(img, 240)} onError={onImgError(img)} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </button>
           ))}
         </div>
@@ -63,7 +64,10 @@ const ProductGallery = ({ images = [], title = '' }) => {
               onMouseLeave={() => setZoom(null)}
             >
               <img
-                src={img}
+                src={imgUrl(img, 960)}
+                srcSet={srcSet(img, [480, 960, 1600])}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                onError={onImgError(img)}
                 alt={i === 0 ? title : `${title} – photo ${i + 1}`}
                 loading={i === 0 ? 'eager' : 'lazy'}
                 fetchPriority={i === 0 ? 'high' : undefined}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { img, srcSet, onImgError } from '../utils/img';
 
 // Super Smooth & Guaranteed Scroll Reveal Component
 const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
@@ -101,7 +102,7 @@ const About = () => {
           </div>
           <div className="lg:col-span-7">
             <div className="aspect-[16/10] overflow-hidden bg-[#E9E2D6]">
-              <img src={pageImages.about_hero} alt="Divine Home India tray collection" className="w-full h-full object-cover" />
+              <img src={img(pageImages.about_hero, 1600)} srcSet={srcSet(pageImages.about_hero, [960, 1600])} sizes="(min-width: 768px) 50vw, 100vw" onError={onImgError(pageImages.about_hero)} alt="Divine Home India tray collection" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -139,10 +140,10 @@ const About = () => {
           </div>
           <div className="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
             <div className="aspect-[4/5] overflow-hidden bg-[#E9E2D6]">
-              <img src={pageImages.about_img1} alt="A tray being finished by hand" loading="lazy" className="w-full h-full object-cover" />
+              <img src={img(pageImages.about_img1, 960)} onError={onImgError(pageImages.about_img1)} alt="A tray being finished by hand" loading="lazy" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-[4/5] overflow-hidden bg-[#E9E2D6] mt-8 sm:mt-12">
-              <img src={pageImages.about_img2} alt="Close-up of a printed tray with gold rim" loading="lazy" className="w-full h-full object-cover" />
+              <img src={img(pageImages.about_img2, 960)} onError={onImgError(pageImages.about_img2)} alt="Close-up of a printed tray with gold rim" loading="lazy" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

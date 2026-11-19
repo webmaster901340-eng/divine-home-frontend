@@ -6,6 +6,7 @@ import { CartContext } from '../context/CartContext';
 import { API_BASE_URL } from '../utils/api';
 import Toast from '../components/Toast';
 import { validateEmail, validateIndianPhone, formatPhoneInput } from '../utils/validation';
+import { img, srcSet, onImgError } from '../utils/img';
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, clearCart, getTotalPrice } = useContext(CartContext);
@@ -196,7 +197,8 @@ const Cart = () => {
                 {/* Product Image */}
                 <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
                   <img
-                    src={item.images?.[0] || '/images/dhi/mango-wood-trays.jpg'}
+                    src={img(item.images?.[0] || '/images/dhi/mango-wood-trays.jpg', 240)}
+                    onError={onImgError(item.images?.[0] || '/images/dhi/mango-wood-trays.jpg')}
                     alt={item.title}
                     className="w-full h-full object-cover rounded-xl"
                   />

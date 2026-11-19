@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { img, srcSet, onImgError } from '../utils/img';
 
 // Homepage hero slider. Slides come from Admin → Hero Banners (title, subtitle, image, ctaLabel, ctaLink);
 // DEFAULT_SLIDES is used until the CMS has any. Desktop: photo full-bleed with text on a dark gradient.
@@ -106,7 +107,10 @@ const HeroCarousel = ({ banners = [] }) => {
             >
               <div className="relative aspect-[16/10] md:aspect-auto md:order-2 md:col-span-7 md:h-full overflow-hidden bg-[#E9E2D6]">
                 <img
-                  src={s.image}
+                  src={img(s.image, 960)}
+                  srcSet={srcSet(s.image, [480, 960, 1600])}
+                  sizes="(min-width: 768px) 60vw, 100vw"
+                  onError={onImgError(s.image)}
                   alt={s.alt || s.title}
                   loading={i === 0 ? 'eager' : 'lazy'}
                   fetchPriority={i === 0 ? 'high' : 'auto'}

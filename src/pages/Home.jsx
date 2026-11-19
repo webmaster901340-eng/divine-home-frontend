@@ -5,6 +5,7 @@ import InstagramReelsCarousel from '../components/InstagramReelsCarousel';
 import HeroCarousel from '../components/HeroCarousel';
 import { API_BASE_URL } from '../utils/api';
 import { FAQ } from '../seo/pages';
+import { img, srcSet, onImgError } from '../utils/img';
 
 const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -219,7 +220,7 @@ const Home = () => {
               {categories.map((cat, index) => (
                 <Link to={`/collections?category=${encodeURIComponent(cat.name)}`} key={index} className="group flex flex-col items-center cursor-pointer">
                   <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden p-1 bg-white border border-stone-200 shadow-sm group-hover:border-[#C5A059] transition-all duration-300 mb-2.5 sm:mb-3">
-                    <img src={cat.image} alt={`${cat.name} decorative tray set`} loading="lazy" className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500" />
+                    <img src={img(cat.image, 240)} onError={onImgError(cat.image)} alt={`${cat.name} decorative tray set`} loading="lazy" className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h3 className="font-sans text-stone-900 font-medium text-[13px] sm:text-sm leading-tight mb-1 text-center line-clamp-1">
                     {cat.name}
@@ -323,7 +324,7 @@ const Home = () => {
                 className="group block"
               >
                 <div className="aspect-[4/5] overflow-hidden bg-[#E9E2D6]">
-                  <img src={line.image} alt={`${line.name} tray collection`} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]" />
+                  <img src={img(line.image, 960)} srcSet={srcSet(line.image, [480, 960])} sizes="(min-width: 768px) 33vw, 100vw" onError={onImgError(line.image)} alt={`${line.name} tray collection`} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]" />
                 </div>
                 <div className="pt-4">
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-2">
@@ -414,7 +415,9 @@ const Home = () => {
                     >
                       {reel.image ? (
                         <img
-                          src={reel.image}
+                          src={img(reel.image, 480)}
+                          onError={onImgError(reel.image)}
+                          loading="lazy"
                           alt={reel.title}
                           className="w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700"
                         />
@@ -505,7 +508,7 @@ const Home = () => {
           <FadeIn direction="left">
             <div className="relative flex justify-center">
               <div className="w-full sm:w-[460px] h-[380px] sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl relative border-2 border-stone-200">
-                <img src={pageImages.home_story} alt="A Divine Home India tray being finished by hand" className="w-full h-full object-cover" />
+                <img src={img(pageImages.home_story, 960)} onError={onImgError(pageImages.home_story)} loading="lazy" alt="A Divine Home India tray being finished by hand" className="w-full h-full object-cover" />
                 <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-stone-200 flex items-center gap-3">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#C5A059] animate-pulse"></span>
                   <div>

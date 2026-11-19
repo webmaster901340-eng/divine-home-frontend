@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { API_BASE_URL } from '../utils/api';
+import { img, srcSet, onImgError } from '../utils/img';
 
 const InstagramReelsCarousel = () => {
   const [reelsList, setReelsList] = useState([]);
@@ -90,7 +91,10 @@ const InstagramReelsCarousel = () => {
             >
               {/* Fallback Image Poster (ताकि अगर वीडियो लोड न हो या ब्लॉक हो, तो भी फोटो दिखे) */}
               <img 
-                src={reel.image} 
+                src={img(reel.image, 480)}
+                onError={onImgError(reel.image)}
+                loading="lazy"
+                decoding="async"
                 alt={reel.title} 
                 className="absolute inset-0 w-full h-full object-cover z-0"
               />

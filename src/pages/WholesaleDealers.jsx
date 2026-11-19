@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FAQ } from '../seo/pages';
+import { img, srcSet, onImgError } from '../utils/img';
 
 // Super Smooth & Guaranteed Scroll Reveal Component
 const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
@@ -92,7 +93,7 @@ const WholesaleDealers = () => {
           </div>
           <div className="lg:col-span-6">
             <div className="aspect-[16/11] overflow-hidden bg-[#E9E2D6]">
-              <img src="/images/site/site-hero-a-2.jpg" alt="Elegant Vector tray collection by Divine Home India" className="w-full h-full object-cover" />
+              <img src={img('/images/site/site-hero-a-2.jpg', 1600)} srcSet={srcSet('/images/site/site-hero-a-2.jpg', [960, 1600])} sizes="(min-width: 768px) 50vw, 100vw" alt="Elegant Vector tray collection by Divine Home India" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

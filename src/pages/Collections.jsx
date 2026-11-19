@@ -5,6 +5,7 @@ import { priceLabel, mrpLabel, hasPrice } from '../utils/price';
 import { useSearchParams, useLocation, useNavigate, Link } from 'react-router-dom';
 import QuickViewModal from '../components/QuickViewModal';
 import { API_BASE_URL } from '../utils/api';
+import { img, srcSet, onImgError } from '../utils/img';
 
 const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -337,7 +338,8 @@ const Collections = () => {
           <div className="absolute inset-0 z-0 bg-gradient-to-br from-stone-800 via-stone-900 to-stone-800">
             <img
               key={currentBanner.image}
-              src={currentBanner.image}
+              src={img(currentBanner.image, 1600)}
+              onError={onImgError(currentBanner.image)}
               alt={`${selectedCategory === "All Categories" ? "Divine Home India wholesale catalogue" : selectedCategory} banner`}
               className="w-full h-full object-cover opacity-70"
               style={{
