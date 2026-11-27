@@ -3,7 +3,7 @@
 // real content. Also writes dist/sitemap.xml (with image entries). React's createRoot replaces #root on load.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { PAGES, SITE, businessSchema, faqSchema, productHead, productSchema, blogPostSchema } from '../src/seo/pages.js';
+import { PAGES, SITE, businessSchema, websiteSchema, faqSchema, productHead, productSchema, blogPostSchema } from '../src/seo/pages.js';
 import { POSTS, postPath } from '../src/blog/posts.js';
 import { img, srcSet } from '../src/utils/img.js';
 import { productPath } from '../src/utils/slug.js';
@@ -75,7 +75,7 @@ const extraBody = { '/collections': catalogueLinks, '/blog': blogLinks, '/': `<h
 
 for (const [path, page] of Object.entries(PAGES)) {
   const body = extraBody[path] ? `${page.body}\n${extraBody[path]}` : page.body;
-  writePage(path, page, [businessSchema(), page.faq ? faqSchema() : null].filter(Boolean), body);
+  writePage(path, page, [businessSchema(), path === '/' ? websiteSchema() : null, page.faq ? faqSchema() : null].filter(Boolean), body);
 }
 console.log(`seo: ${Object.keys(PAGES).length} pages`);
 

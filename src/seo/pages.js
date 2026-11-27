@@ -32,7 +32,7 @@ export const FAQ = [
 // path -> page SEO. `body` is plain HTML shown to crawlers that do not run JavaScript; React replaces it on load.
 export const PAGES = {
   '/': {
-    title: 'Serving Tray Manufacturer & Wholesaler in Delhi NCR | Divine Home India',
+    title: 'Serving Tray Manufacturer & Wholesaler Delhi NCR | Divine Home India',
     description: 'Premium serving trays, luxury serveware and tableware from Karol Bagh, Delhi. Manufacturer, importer and wholesaler for 250+ dealers, hotels and corporate gifting.',
     body: `<h1>Premium serving tray manufacturer and wholesaler in Delhi, supplying all of India</h1>
 <p>Divine Home India designs, imports and supplies premium printed serving trays, decorative tray sets, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India, from our showroom in Karol Bagh, New Delhi, since 2015.</p>
@@ -45,14 +45,14 @@ export const PAGES = {
 <p>We develop our own prints, so your shelf doesn't look like every other gift shop. Each design comes as a full set of trays, coasters and candy boxes, and you can mix designs in one order to test what sells in your area.</p>`,
   },
   '/collections': {
-    title: 'Wholesale Catalogue 2026-27: Trays, Ceramics & Decor | Divine Home India',
+    title: 'Wholesale Catalogue 2026-27: Trays & Ceramics | Divine Home India',
     description: 'Browse the Divine Home India wholesale catalogue: printed tray sets, mango wood, ceramic bowl and candy sets, organisers and crockery. Delhi, pan-India supply.',
     body: `<h1>Wholesale catalogue 2026-27</h1>
 <p>Every design in our current range, for shops, distributors, hotels and gifting companies. Filter by category or series, then send us the product names you want and we will reply with trade prices and stock.</p>
 <p>Categories: decorative tray sets, mango wood trays, leatherette trays and organisers, ceramic snack and candy sets, and crockery. Series: Ellite (Elegant Vector, Lotus Glow, Peachy Bloom, Peacock Grace, Bless Heart, Ikket, Marble Flow, Elegance Elephant), Premium, Glass Foil, Mangowood and Leather Classic.</p>`,
   },
   '/wholesale': {
-    title: 'Wholesale Price List & Dealership | Home Decor Supplier Delhi | Divine Home India',
+    title: 'Wholesale Price List & Dealership, Delhi | Divine Home India',
     description: 'Become a Divine Home India dealer. Get our trade price list for decorative trays, ceramics and gift sets. Showroom in Karol Bagh, delivery across India.',
     faq: true,
     body: `<h1>Get our wholesale price list</h1>
@@ -65,20 +65,20 @@ export const PAGES = {
 <p>A box of sweets is gone in a week. A tray set stays on a client's table for years. We put together corporate gift sets from our own range, with your logo on the gift box, a sleeve or a printed card.</p>`,
   },
   '/about': {
-    title: 'About Divine Home India | Home Decor Wholesaler, Karol Bagh, Delhi',
+    title: 'About Divine Home India | Tray Wholesaler, Karol Bagh, Delhi',
     description: 'Divine Home India has designed and supplied decorative trays and home decor from Karol Bagh, New Delhi since 2015. Showroom open to dealers and buyers.',
     body: `<h1>About Divine Home India</h1>
 <p>Divine Home India started in 2015 in Karol Bagh, New Delhi, supplying home and kitchen products to local shops. Trays became the product our dealers asked for most, so we began developing our own designs instead of reselling what everyone else had.</p>
 <p>Today we supply gift shops, home decor stores, hotels, cafes and corporate gifting companies across India with printed trays, handcrafted mango wood, ceramics, leatherette organisers and kitchen accessories.</p>`,
   },
   '/blog': {
-    title: 'Tray Buying Guides for Retailers & Gifting | Divine Home India Blog',
+    title: 'Tray & Serveware Buying Guides | Divine Home India Blog',
     description: 'Guides for shops and corporate buyers: choosing a serving tray manufacturer in Delhi NCR, buying trays wholesale, the best tray designs, sizes and gifting.',
     body: `<h1>Guides for tray buyers, retailers and gifting teams</h1>
 <p>Practical advice from Divine Home India, a serving tray manufacturer and wholesaler in Karol Bagh, New Delhi: how to choose a supplier, what sells, sizes, materials and festive buying.</p>`,
   },
   '/contact': {
-    title: 'Contact Divine Home India | Wholesale Showroom, Karol Bagh, New Delhi',
+    title: 'Contact Divine Home India | Karol Bagh Showroom, New Delhi',
     description: 'Visit or call Divine Home India at 1st Floor, 15A/47, WEA, Karol Bagh, New Delhi. Open Mon to Sat, 10:30 am to 8 pm. Wholesale and corporate enquiries.',
     body: `<h1>Contact Divine Home India</h1>
 <p>Showroom: 1st Floor, 15A/47, near Hotel Kyron, Block 15A, WEA, Karol Bagh, New Delhi 110005.</p>
@@ -90,11 +90,16 @@ export const PAGES = {
 export const businessSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'WholesaleStore',
+  '@id': `${SITE}/#business`,
   name: BUSINESS.name,
+  alternateName: ['Divine Home', 'DHI'],
   url: `${SITE}/`,
   logo: `${SITE}/logo-header.png`,
-  image: `${SITE}/logo-header.png`,
-  description: 'Wholesaler and manufacturer of decorative trays, home decor and corporate gifts in Karol Bagh, New Delhi, supplying businesses across India since 2015.',
+  image: [`${SITE}/images/dhi/showroom-tray-shelves.jpg`, `${SITE}/logo-header.png`],
+  description: 'Premium serving tray manufacturer, importer and wholesaler in Karol Bagh, New Delhi: luxury tray sets, serveware, crockery and corporate gifts for retailers, hotels and gifting buyers across India since 2015.',
+  priceRange: '₹₹',
+  hasMap: 'https://www.google.com/maps/search/?api=1&query=Divine+Home+India+Karol+Bagh+New+Delhi',
+  currenciesAccepted: 'INR',
   foundingDate: '2015',
   telephone: BUSINESS.phoneIntl,
   email: BUSINESS.email,
@@ -121,6 +126,18 @@ export const businessSchema = () => ({
   sameAs: ['https://www.instagram.com/divinehomeindia/'],
 });
 
+// Home page only: tells Google the site name ("Divine Home India") shown above results.
+export const websiteSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE}/#website`,
+  name: BUSINESS.name,
+  alternateName: ['Divine Home', 'divinehomeindia.com'],
+  url: `${SITE}/`,
+  inLanguage: 'en-IN',
+  publisher: { '@id': `${SITE}/#business` },
+});
+
 // ---- Blog ----
 export const blogPostSchema = (post, path) => ({
   '@context': 'https://schema.org',
@@ -132,9 +149,10 @@ export const blogPostSchema = (post, path) => ({
       image: absUrl(post.cover),
       datePublished: post.date,
       dateModified: post.updated || post.date,
-      author: { '@type': 'Organization', name: BUSINESS.name, url: `${SITE}/` },
-      publisher: { '@type': 'Organization', name: BUSINESS.name, logo: { '@type': 'ImageObject', url: `${SITE}/logo-header.png` } },
+      author: { '@type': 'Organization', '@id': `${SITE}/#business`, name: BUSINESS.name, url: `${SITE}/` },
+      publisher: { '@type': 'Organization', '@id': `${SITE}/#business`, name: BUSINESS.name, logo: { '@type': 'ImageObject', url: `${SITE}/logo-header.png` } },
       mainEntityOfPage: `${SITE}${path}`,
+      inLanguage: 'en-IN',
       keywords: (post.keywords || []).join(', '),
     },
     post.faq?.length ? {
@@ -157,11 +175,20 @@ const absUrl = (src = '') => (src.startsWith('http') ? src : `${SITE}${src.start
 const clip = (text, max) => (text.length <= max ? text : `${text.slice(0, max - 1).replace(/\s+\S*$/, '')}…`);
 
 export const productHead = (p, path) => {
-  const name = p.title.replace(/\s*\([^)]*\)\s*$/, ''); // drop "(Ellite Series 5001)" from the <title>
+  // "(Ellite Series 5001)" is dropped; a colour/variant like "(Black)" or "(Gray, Design 1110)" is kept as
+  // "– Black" so variants get unique titles.
+  const name = p.title
+    .replace(/\s*\([^)]*series[^)]*\)\s*$/i, '')
+    .replace(/\s*\(([^)]*)\)\s*$/, (m, inner) => {
+      const v = inner.replace(/,?\s*design\s*\d+/i, '').trim();
+      return v ? ` – ${v}` : '';
+    });
   const design = p.designNo && !name.includes(p.designNo) ? ` ${p.designNo}` : '';
+  const full = `${name}${design} | Wholesale | Divine Home India`;
+  const short = `${name}${design} | Divine Home India`;
   return {
     path,
-    title: clip(`${name}${design} | Wholesale | Divine Home India`, 70),
+    title: full.length <= 65 ? full : clip(short, 65),
     description: clip(`${name}${design}: wholesale ${p.category.toLowerCase()} for gift shops and corporate gifting. Trade price on request. Karol Bagh, Delhi; ships across India.`, 160),
     image: p.images?.[0] ? absUrl(p.images[0]) : undefined,
   };
