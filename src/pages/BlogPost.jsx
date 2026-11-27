@@ -49,8 +49,8 @@ const BlogPost = () => {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 mt-8">
         <div className="aspect-[16/9] overflow-hidden bg-[#E9E2D6]">
-          <img src={img(post.cover, 1600)} srcSet={srcSet(post.cover, [960, 1600])} sizes="(min-width: 1024px) 1024px, 100vw"
-            onError={onImgError(post.cover)} alt={post.coverAlt} className="w-full h-full object-cover" />
+          <img src={img(post.cover, 960)} srcSet={srcSet(post.cover, [480, 960, 1600])} sizes="(min-width: 1024px) 1024px, 100vw"
+            onError={onImgError(post.cover)} alt={post.coverAlt} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
         </div>
       </div>
 

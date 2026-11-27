@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { PAGES, SITE, businessSchema, faqSchema, productHead, productSchema, blogPostSchema } from '../src/seo/pages.js';
 import { POSTS, postPath } from '../src/blog/posts.js';
+import { img, srcSet } from '../src/utils/img.js';
 import { productPath } from '../src/utils/slug.js';
 
 const dist = new URL('../dist/', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
@@ -36,7 +37,7 @@ const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
 const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
 const abs = (src) => (src.startsWith('http') ? src : `${SITE}${src}`);
 
-const writePage = (path, { title, description, image }, schemas, body) => {
+const writePage = (path, { title, description, image, preload }, schemas, body) => {
   const url = `${SITE}${path === '/' ? '/' : path}`;
   const head = [
     `<title>${esc(title)}</title>`,
@@ -46,6 +47,8 @@ const writePage = (path, { title, description, image }, schemas, body) => {
     `<meta property="og:description" content="${esc(description)}" />`,
     `<meta property="og:url" content="${url}" />`,
     image ? `<meta property="og:image" content="${esc(image)}" />` : '',
+    // LCP image (blog cover) discoverable straight from the HTML
+    preload ? `<link rel="preload" as="image" href="${esc(preload.href)}"${preload.srcset ? ` imagesrcset="${esc(preload.srcset)}" imagesizes="${esc(preload.sizes)}"` : ''} fetchpriority="high" />` : '',
     ...schemas.map(ld),
   ].filter(Boolean).join('\n    ');
 
@@ -99,7 +102,8 @@ for (const post of POSTS) {
 <img src="${esc(post.cover)}" alt="${esc(post.coverAlt)}" width="960" />
 ${post.body}
 ${faq ? `<h2>Frequently asked questions</h2>${faq}` : ''}`;
-  writePage(path, { title: post.metaTitle || post.title, description: post.description, image: abs(post.cover) }, [blogPostSchema(post, path)], body);
+  const preload = { href: img(post.cover, 960), srcset: srcSet(post.cover, [480, 960, 1600]), sizes: '(min-width: 1024px) 1024px, 100vw' };
+  writePage(path, { title: post.metaTitle || post.title, description: post.description, image: abs(post.cover), preload }, [blogPostSchema(post, path)], body);
 }
 console.log(`seo: ${POSTS.length} blog posts`);
 
