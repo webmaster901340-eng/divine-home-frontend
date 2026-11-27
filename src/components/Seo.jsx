@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { PAGES, SITE } from '../seo/pages';
+import { trackPageView } from '../utils/analytics';
 
 const setMeta = (selector, attr, key, value) => {
   let el = document.head.querySelector(selector);
@@ -40,6 +41,7 @@ const Seo = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    trackPageView();
     if (!pathname.startsWith('/product/')) setJsonLd('product-ld', null);
     const page = PAGES[pathname];
     if (!page) return;
