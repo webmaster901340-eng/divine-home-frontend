@@ -33,7 +33,7 @@ export const FAQ = [
 export const PAGES = {
   '/': {
     title: 'Serving Tray Manufacturer & Wholesaler in Delhi NCR | Divine Home India',
-    description: 'Premium serving tray manufacturer, importer and wholesaler in Karol Bagh, Delhi. Luxury tray sets, ceramics and corporate gifts for 250+ dealers across India.',
+    description: 'Premium serving trays, luxury serveware and tableware from Karol Bagh, Delhi. Manufacturer, importer and wholesaler for 250+ dealers, hotels and corporate gifting.',
     body: `<h1>Premium serving tray manufacturer and wholesaler in Delhi, supplying all of India</h1>
 <p>Divine Home India designs, imports and supplies premium printed serving trays, decorative tray sets, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India, from our showroom in Karol Bagh, New Delhi, since 2015.</p>
 <h2>What dealers buy from us</h2>

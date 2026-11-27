@@ -455,19 +455,40 @@ const Home = () => {
         </section>
       </FadeIn>
 
+      {/* 7b. Who we make it for (routes each buyer type to its page) */}
+      <section className="py-16 sm:py-24 bg-[#F4EFE7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900 max-w-2xl">Who we make it for</h2>
+          <div className="mt-10 border-t border-stone-300">
+            {[
+              { title: 'Retailers, gift shops and distributors', desc: 'Premium tray collections and serveware that hold their price on the shelf. Mix designs in one wholesale order.', to: '/wholesale', cta: 'Get the trade price list' },
+              { title: 'Hotels, restaurants and cafés', desc: 'Room amenity sets, high-tea crockery, serving trays and buffet display pieces, kept available for reorders.', to: '/blog/hotel-restaurant-serveware-supplier-delhi', cta: 'Hospitality supply' },
+              { title: 'Corporate and wedding gifting', desc: 'Tray sets, dry fruit sets and crockery in gift boxes, with your logo on the box, sleeve or tray.', to: '/blog/corporate-gifting-trays-delhi', cta: 'Plan your gifting' },
+              { title: 'Private label', desc: 'Your design and your brand on trays, crockery, room sets and packaging, from sample to bulk production.', to: '/blog/private-label-tableware-hotels-restaurants', cta: 'How private label works' },
+            ].map((row) => (
+              <Link key={row.title} to={row.to} className="group grid md:grid-cols-12 gap-2 md:gap-8 py-6 sm:py-7 border-b border-stone-300 items-baseline">
+                <h3 className="md:col-span-4 font-serif text-xl sm:text-2xl text-stone-900 group-hover:underline underline-offset-4 decoration-1">{row.title}</h3>
+                <p className="md:col-span-6 text-[15px] text-stone-600 leading-relaxed">{row.desc}</p>
+                <span className="md:col-span-2 md:text-right text-sm font-semibold text-stone-900 whitespace-nowrap">{row.cta} &rarr;</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 8. Why Dealers & Retailers Partner With Us */}
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4">
-            <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900">Why shops reorder from us</h2>
-            <p className="text-[15px] text-stone-600 mt-4 leading-relaxed">Gift shops, decor stores and distributors across India restock with us season after season. Here is why.</p>
+            <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900">Premium by design. Checked before it reaches you.</h2>
+            <p className="text-[15px] text-stone-600 mt-4 leading-relaxed">Quality is the reason we exist. Every collection is designed for accessible luxury and held to the same standard, whether it is made in India or imported from specialist factories abroad. <Link to="/blog/premium-luxury-serving-trays-quality" className="text-stone-900 underline underline-offset-4">Our quality standards</Link></p>
           </div>
           <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-10">
             {[
-              { num: "01", title: "Designs made in-house", desc: "We develop our own tray prints, so your shelf doesn't look like every other gift shop in the market." },
-              { num: "02", title: "Mix designs in one order", desc: "Try a few designs, see what sells in your area, then reorder only those." },
-              { num: "03", title: "Festive and bulk gifting", desc: "Gift boxes and branded packaging for corporate orders and festive hampers, with your logo on the box or the tray." },
-              { num: "04", title: "Full matching sets", desc: "Trays, coasters and candy boxes in one design let your customers buy a complete look and raise your bill value." }
+              { num: "01", title: "Designed in-house", desc: "We develop our own prints and collections, so your shelf, table or room doesn't look like everyone else's." },
+              { num: "02", title: "Approved from a real sample", desc: "Print, rim, finish, weight and packing are signed off on a physical sample before any bulk order." },
+              { num: "03", title: "Complete luxury collections", desc: "Trays, candy boxes, coasters, cutlery holders and matching crockery in one design: one complete look." },
+              { num: "04", title: "The same design on every reorder", desc: "Bestsellers stay available in the same specification, so shops can restock and hotels can replace breakage." }
             ].map((item) => (
               <div key={item.num} className="border-t border-stone-300 pt-5">
                 <span className="text-xs font-semibold tracking-[0.14em] text-[#7a5c25]">{item.num}</span>
@@ -549,6 +570,20 @@ const Home = () => {
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* 11. Closing B2B call to action */}
+      <section className="bg-stone-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-8">
+            <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-white">Buying for a store, a hotel or a gifting programme?</h2>
+            <p className="text-[15px] sm:text-base text-stone-300 mt-4 leading-relaxed max-w-2xl">Tell us what you need and we will send the 2026-27 catalogue with trade prices, or book a visit to our Karol Bagh showroom to see every collection in person.</p>
+          </div>
+          <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+            <Link to="/wholesale" className="inline-flex justify-center items-center px-7 py-4 bg-[#FBF9F5] hover:bg-white text-stone-900 text-xs font-semibold uppercase tracking-[0.14em] transition-colors">Request the catalogue</Link>
+            <a href="https://wa.me/918459495594" target="_blank" rel="noreferrer" className="inline-flex justify-center items-center px-7 py-4 border border-stone-500 hover:border-white text-white text-xs font-semibold uppercase tracking-[0.14em] transition-colors">WhatsApp +91 84594 95594</a>
+          </div>
         </div>
       </section>
 
