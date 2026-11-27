@@ -22,15 +22,17 @@ export const FAQ = [
   ['Can I see samples before ordering?', 'Yes. Every design is on display at our Karol Bagh showroom, and you can compare finishes side by side before you order.'],
   ['Can you put our logo on trays or gift boxes?', 'Yes. We make custom-branded trays and gift packaging for corporate orders, hotels and brands. Allow 5 to 6 weeks for custom pieces.'],
   ['How early should we order corporate Diwali gifts?', 'Order 3 to 4 weeks ahead for standard gift sets and 5 to 6 weeks ahead for branded ones. For Diwali, late August to mid-September is the safest time.'],
+  ['Are you a serving tray manufacturer or a wholesaler?', 'Both. We design our own tray prints in Delhi, have them made to our standard and sell them wholesale as complete collections to shops, distributors and corporate buyers across India.'],
+  ['Do you supply trays in Gurgaon, Noida, Ghaziabad and Faridabad?', 'Yes. We supply dealers and corporate buyers across Delhi NCR and the rest of India. Buyers in NCR can also visit our Karol Bagh showroom to see every design.'],
 ];
 
 // path -> page SEO. `body` is plain HTML shown to crawlers that do not run JavaScript; React replaces it on load.
 export const PAGES = {
   '/': {
-    title: 'Decorative Trays & Home Decor Wholesaler in Delhi | Divine Home India',
-    description: 'Wholesale decorative trays, mango wood, ceramics and corporate gifts from Karol Bagh, New Delhi. Supplying dealers and distributors across India since 2015.',
-    body: `<h1>Decorative trays and home decor, wholesale from Karol Bagh</h1>
-<p>Divine Home India designs and supplies printed trays, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India, from our showroom in Karol Bagh, New Delhi, since 2015.</p>
+    title: 'Serving Tray Manufacturer & Wholesaler in Delhi NCR | Divine Home India',
+    description: 'Decorative and serving tray manufacturer and wholesaler in Karol Bagh, Delhi. Own designs, full tray sets and corporate gifts for 250+ dealers across India.',
+    body: `<h1>Serving tray manufacturer and wholesaler in Delhi, supplying all of India</h1>
+<p>Divine Home India designs and supplies printed serving trays, decorative tray sets, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India, from our showroom in Karol Bagh, New Delhi, since 2015.</p>
 <h2>What dealers buy from us</h2>
 <ul><li>Decorative printed trays in gold and copper, plain or hammered: rectangle, square, round, oval and capsule sets</li>
 <li>Mango wood trays, handcrafted with natural grain</li><li>Serving and dry-fruit sets for the festive season</li>
@@ -65,6 +67,12 @@ export const PAGES = {
     body: `<h1>About Divine Home India</h1>
 <p>Divine Home India started in 2015 in Karol Bagh, New Delhi, supplying home and kitchen products to local shops. Trays became the product our dealers asked for most, so we began developing our own designs instead of reselling what everyone else had.</p>
 <p>Today we supply gift shops, home decor stores, hotels, cafes and corporate gifting companies across India with printed trays, handcrafted mango wood, ceramics, leatherette organisers and kitchen accessories.</p>`,
+  },
+  '/blog': {
+    title: 'Tray Buying Guides for Retailers & Gifting | Divine Home India Blog',
+    description: 'Guides for shops and corporate buyers: choosing a serving tray manufacturer in Delhi NCR, buying trays wholesale, the best tray designs, sizes and gifting.',
+    body: `<h1>Guides for tray buyers, retailers and gifting teams</h1>
+<p>Practical advice from Divine Home India, a serving tray manufacturer and wholesaler in Karol Bagh, New Delhi: how to choose a supplier, what sells, sizes, materials and festive buying.</p>`,
   },
   '/contact': {
     title: 'Contact Divine Home India | Wholesale Showroom, Karol Bagh, New Delhi',
@@ -101,8 +109,44 @@ export const businessSchema = () => ({
     opens: '10:30',
     closes: '20:00',
   }],
-  areaServed: 'IN',
+  areaServed: [
+    { '@type': 'City', name: 'New Delhi' }, { '@type': 'City', name: 'Gurugram' }, { '@type': 'City', name: 'Noida' },
+    { '@type': 'City', name: 'Ghaziabad' }, { '@type': 'City', name: 'Faridabad' }, { '@type': 'Country', name: 'India' },
+  ],
+  knowsAbout: ['serving trays', 'decorative trays', 'tray sets', 'mango wood trays', 'glass foil trays', 'corporate gifting', 'custom branded trays', 'home decor wholesale'],
+  slogan: 'Designed in Delhi, supplied across India',
   sameAs: ['https://www.instagram.com/divinehomeindia/'],
+});
+
+// ---- Blog ----
+export const blogPostSchema = (post, path) => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.description,
+      image: absUrl(post.cover),
+      datePublished: post.date,
+      dateModified: post.updated || post.date,
+      author: { '@type': 'Organization', name: BUSINESS.name, url: `${SITE}/` },
+      publisher: { '@type': 'Organization', name: BUSINESS.name, logo: { '@type': 'ImageObject', url: `${SITE}/logo-header.png` } },
+      mainEntityOfPage: `${SITE}${path}`,
+      keywords: (post.keywords || []).join(', '),
+    },
+    post.faq?.length ? {
+      '@type': 'FAQPage',
+      mainEntity: post.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+    } : null,
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+        { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE}${path}` },
+      ],
+    },
+  ].filter(Boolean),
 });
 
 // ---- Product pages (used by ProductDetails at runtime and scripts/seo-pages.mjs at build) ----

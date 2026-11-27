@@ -3,7 +3,8 @@
 // real content. Also writes dist/sitemap.xml (with image entries). React's createRoot replaces #root on load.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { PAGES, SITE, businessSchema, faqSchema, productHead, productSchema } from '../src/seo/pages.js';
+import { PAGES, SITE, businessSchema, faqSchema, productHead, productSchema, blogPostSchema } from '../src/seo/pages.js';
+import { POSTS, postPath } from '../src/blog/posts.js';
 import { productPath } from '../src/utils/slug.js';
 
 const dist = new URL('../dist/', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
@@ -66,8 +67,11 @@ const catalogueLinks = Object.entries(byCategory)
   .map(([cat, list]) => `<h2>${esc(cat)}</h2><ul>${list.map((p) => `<li><a href="${productPath(p)}">${esc(p.title)}</a></li>`).join('')}</ul>`)
   .join('\n');
 
+const blogLinks = `<ul>${POSTS.map((p) => `<li><a href="${postPath(p)}">${esc(p.title)}</a>: ${esc(p.excerpt)}</li>`).join('')}</ul>`;
+const extraBody = { '/collections': catalogueLinks, '/blog': blogLinks, '/': `<h2>Guides for tray buyers</h2>${blogLinks}` };
+
 for (const [path, page] of Object.entries(PAGES)) {
-  const body = path === '/collections' ? `${page.body}\n${catalogueLinks}` : page.body;
+  const body = extraBody[path] ? `${page.body}\n${extraBody[path]}` : page.body;
   writePage(path, page, [businessSchema(), page.faq ? faqSchema() : null].filter(Boolean), body);
 }
 console.log(`seo: ${Object.keys(PAGES).length} pages`);
@@ -86,9 +90,23 @@ ${specs ? `<ul>${specs}</ul>` : ''}
 }
 console.log(`seo: ${products.length} product pages`);
 
+for (const post of POSTS) {
+  const path = postPath(post);
+  const faq = (post.faq || []).map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join('');
+  const body = `<p><a href="/">Home</a> / <a href="/blog">Blog</a> / ${esc(post.category)}</p>
+<h1>${esc(post.title)}</h1>
+<p>By the Divine Home India team · ${esc(post.date)}</p>
+<img src="${esc(post.cover)}" alt="${esc(post.coverAlt)}" width="960" />
+${post.body}
+${faq ? `<h2>Frequently asked questions</h2>${faq}` : ''}`;
+  writePage(path, { title: post.metaTitle || post.title, description: post.description, image: abs(post.cover) }, [blogPostSchema(post, path)], body);
+}
+console.log(`seo: ${POSTS.length} blog posts`);
+
 const today = new Date().toISOString().slice(0, 10);
 const urls = [
   ...Object.keys(PAGES).map((p) => ({ loc: `${SITE}${p === '/' ? '/' : p}`, images: [] })),
+  ...POSTS.map((p) => ({ loc: `${SITE}${postPath(p)}`, images: [abs(p.cover)] })),
   ...products.map((p) => ({ loc: `${SITE}${productPath(p)}`, images: (p.images || []).map(abs) })),
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

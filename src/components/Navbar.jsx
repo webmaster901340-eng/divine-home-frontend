@@ -251,6 +251,13 @@ const Navbar = () => {
           </Link>
 
           <Link
+            to="/blog"
+            className={`transition-colors whitespace-nowrap ${location.pathname.startsWith('/blog') ? 'text-[#7a5c25] font-bold' : 'hover:text-[#7a5c25]'}`}
+          >
+            Blog
+          </Link>
+
+          <Link
             to="/about"
             className={`transition-colors whitespace-nowrap ${isActive('/about') ? 'text-[#7a5c25] font-bold' : 'hover:text-[#7a5c25]'}`}
           >
@@ -435,6 +442,7 @@ const Navbar = () => {
               <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="py-3 px-4 rounded-xl transition-colors flex items-center justify-between hover:bg-stone-100"><span>Home</span><span>&rarr;</span></Link>
               <Link to="/collections" onClick={() => setIsMobileMenuOpen(false)} className="py-3 px-4 rounded-xl transition-colors flex items-center justify-between hover:bg-stone-100"><span>Collections</span><span>&rarr;</span></Link>
               <Link to="/wholesale" onClick={() => setIsMobileMenuOpen(false)} className="py-3 px-4 rounded-xl transition-colors flex items-center justify-between hover:bg-stone-100"><span>Wholesale / Dealers</span><span>&rarr;</span></Link>
+              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="py-3 px-4 rounded-xl transition-colors flex items-center justify-between hover:bg-stone-100"><span>Blog &amp; Guides</span><span>&rarr;</span></Link>
               <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="py-3 px-4 rounded-xl transition-colors flex items-center justify-between hover:bg-stone-100"><span>About</span><span>&rarr;</span></Link>
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="py-3 px-4 rounded-xl transition-colors flex items-center justify-between hover:bg-stone-100"><span>Contact</span><span>&rarr;</span></Link>
             </div>

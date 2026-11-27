@@ -5,6 +5,7 @@ import InstagramReelsCarousel from '../components/InstagramReelsCarousel';
 import HeroCarousel from '../components/HeroCarousel';
 import { API_BASE_URL } from '../utils/api';
 import { FAQ } from '../seo/pages';
+import { POSTS, postPath } from '../blog/posts';
 import { img, srcSet, onImgError } from '../utils/img';
 
 const FadeIn = ({ children, className = "", delay = 0, direction = "up" }) => {
@@ -205,10 +206,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
                         <h1 className="font-serif text-[28px] sm:text-[44px] leading-[1.12] text-stone-900 mb-4 max-w-3xl mx-auto">
-              Decorative Trays & Home Decor, Wholesale from Karol Bagh
+              Serving Tray Manufacturer &amp; Wholesaler in Delhi, Supplying All of India
             </h1>
             <p className="text-[15px] sm:text-base text-stone-600 max-w-2xl mx-auto mb-6 leading-relaxed">
-              We design and supply printed trays, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India. Since 2015, from our showroom in Karol Bagh, New Delhi.
+              We design and supply decorative serving trays, tray sets, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across Delhi NCR and India. Since 2015, from our showroom in Karol Bagh, New Delhi.
             </p>
             <Link to="/collections" className="inline-block text-sm font-semibold text-stone-900 mb-10 sm:mb-14 underline underline-offset-[6px] decoration-stone-400 hover:decoration-stone-900 transition-colors">
               View the full catalogue
@@ -475,6 +476,24 @@ const Home = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 8b. Buying guides (blog) */}
+      <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-end justify-between gap-6 mb-8">
+          <h2 className="font-serif text-3xl sm:text-[44px] leading-[1.1] text-stone-900">Guides for tray buyers</h2>
+          <Link to="/blog" className="text-sm font-semibold text-stone-900 underline underline-offset-[6px] decoration-stone-400 hover:decoration-stone-900 shrink-0">All guides</Link>
+        </div>
+        <div className="grid sm:grid-cols-3 gap-8">
+          {POSTS.slice(0, 3).map((p) => (
+            <Link key={p.slug} to={postPath(p)} className="group block">
+              <div className="aspect-[4/3] overflow-hidden bg-[#E9E2D6]">
+                <img src={img(p.cover, 480)} srcSet={srcSet(p.cover, [480, 960])} sizes="(min-width: 640px) 30vw, 100vw" onError={onImgError(p.cover)} loading="lazy" alt={p.coverAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+              </div>
+              <h3 className="font-serif text-lg sm:text-xl leading-snug text-stone-900 mt-4 group-hover:underline underline-offset-4 decoration-1">{p.title}</h3>
+            </Link>
+          ))}
         </div>
       </section>
 

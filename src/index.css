@@ -25,6 +25,31 @@
 h1, h2 { font-weight: 400; letter-spacing: -0.01em; }
 .font-light { font-weight: 400; }
 
+/* Blog article body (HTML from src/blog/posts.js) */
+.blog-prose { color: #44403c; font-size: 16.5px; line-height: 1.75; }
+.blog-prose > * + * { margin-top: 1.1em; }
+.blog-prose h2 { font-size: 28px; line-height: 1.2; color: #1c1917; margin-top: 2.2em; }
+.blog-prose h3 { font-size: 21px; line-height: 1.3; color: #1c1917; margin-top: 1.6em; }
+.blog-prose a { color: #7a5c25; text-decoration: underline; text-underline-offset: 3px; }
+.blog-prose a:hover { color: #1c1917; }
+.blog-prose strong { color: #1c1917; font-weight: 600; }
+.blog-prose ul, .blog-prose ol { padding-left: 1.3em; }
+.blog-prose ul { list-style: disc; }
+.blog-prose ol { list-style: decimal; }
+.blog-prose li + li { margin-top: .45em; }
+.blog-prose li::marker { color: #a8895a; }
+.blog-prose figure { margin: 2em 0; }
+.blog-prose figure img { width: 100%; height: auto; max-height: 560px; object-fit: cover; background: #E9E2D6; }
+.blog-prose figcaption { font-size: 13.5px; color: #6b645d; margin-top: .6em; }
+.blog-prose table { width: 100%; border-collapse: collapse; font-size: 15px; display: block; overflow-x: auto; }
+.blog-prose th, .blog-prose td { text-align: left; padding: .65em .9em .65em 0; border-bottom: 1px solid #d6d3d1; vertical-align: top; }
+.blog-prose th { color: #1c1917; font-weight: 600; }
+.blog-answer { border-left: 2px solid #C5A059; padding: .2em 0 .2em 1.1em; }
+.blog-answer p { color: #1c1917; }
+.blog-answer .blog-answer-label { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #7a5c25; font-weight: 600; margin-bottom: .3em; }
+.blog-cta { background: #F4EFE7; padding: 1.2em 1.3em; margin-top: 2.2em !important; }
+@media (max-width: 640px) { .blog-prose { font-size: 16px; } .blog-prose h2 { font-size: 24px; } }
+
 @keyframes floatGlow {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }

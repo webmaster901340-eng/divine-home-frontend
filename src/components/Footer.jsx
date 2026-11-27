@@ -24,6 +24,7 @@ const LINES = [
   ['Crockery & Mugs', '/collections?category=Crockery'],
 ];
 const POLICIES = [
+  ['Blog & Buying Guides', '/blog'],
   ['Dealer Registration', '/policy/dealer-registration'],
   ['Shipping & Delivery', '/policy/shipping-policy'],
   ['Wholesale Terms', '/policy/wholesale-terms'],
