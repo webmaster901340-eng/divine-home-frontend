@@ -34,7 +34,12 @@ const products = (await loadProducts()).filter((p) => {
 });
 const template = readFileSync(join(dist, 'index.html'), 'utf8');
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
-const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
+// A schema can be passed as [id, obj]: the id matches the one the React page uses with setJsonLd(), so the
+// runtime replaces the pre-rendered block instead of adding a duplicate.
+const ld = (s) => {
+  const [id, obj] = Array.isArray(s) ? s : [null, s];
+  return `<script type="application/ld+json"${id ? ` id="${id}"` : ''}>${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
+};
 const abs = (src) => (src.startsWith('http') ? src : `${SITE}${src}`);
 
 const writePage = (path, { title, description, image, preload }, schemas, body) => {
@@ -89,7 +94,7 @@ ${(p.images || []).map((src, i) => `<img src="${esc(src)}" alt="${esc(p.title)}$
 <p>${esc(p.description)}</p>
 ${specs ? `<ul>${specs}</ul>` : ''}
 <p>Trade price and MOQ on request. WhatsApp +91 84594 95594 or visit our showroom at Karol Bagh, New Delhi.</p>`;
-  writePage(path, productHead(p, path), [productSchema(p, path)], body);
+  writePage(path, productHead(p, path), [['product-ld', productSchema(p, path)]], body);
 }
 console.log(`seo: ${products.length} product pages`);
 
@@ -103,7 +108,7 @@ for (const post of POSTS) {
 ${post.body}
 ${faq ? `<h2>Frequently asked questions</h2>${faq}` : ''}`;
   const preload = { href: img(post.cover, 960), srcset: srcSet(post.cover, [480, 960, 1600]), sizes: '(min-width: 1024px) 1024px, 100vw' };
-  writePage(path, { title: post.metaTitle || post.title, description: post.description, image: abs(post.cover), preload }, [blogPostSchema(post, path)], body);
+  writePage(path, { title: post.metaTitle || post.title, description: post.description, image: abs(post.cover), preload }, [['blog-ld', blogPostSchema(post, path)]], body);
 }
 console.log(`seo: ${POSTS.length} blog posts`);
 
