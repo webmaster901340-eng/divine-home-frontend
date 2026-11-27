@@ -36,7 +36,21 @@ const P = {
   candy: '/product/ceramic-candy-set-with-tray-in-gift-box',
   dryFruitJar: '/product/silver-dry-fruit-jar-set-with-tray',
   crockery: '/product/elegant-vector-crockery-collection-design-9001',
+  crockeryLotus: '/product/lotus-glow-crockery-collection-design-9002',
+  crockeryPeacock: '/product/peacock-grace-crockery-collection-design-9004',
+  crockeryGold: '/product/elegant-vector-gold-crockery-collection-design-9005',
+  lcWhite: '/product/leather-classic-tray-and-organiser-set-white',
+  deskGray: '/product/leather-desk-and-tissue-organiser-set-gray-design-1110',
+  bread: '/product/gold-wire-bread-basket',
+  cake: '/product/marble-effect-resin-cake-stand-with-server',
+  mugs: '/product/ribbed-ceramic-mug-set',
+  napkin: '/product/napkin-weight-tray-assorted-designs',
+  cutlery: '/product/3-divider-cutlery-holder-assorted-designs',
+  mirrors: '/product/compact-mirrors-assorted-designs',
+  spice: '/product/8-compartment-wooden-spice-box',
 };
+const HORECA = (text = 'Opening, renovating or restocking a hotel, restaurant or café?') =>
+  `<div class="blog-cta"><p><strong>${text}</strong> Send your property name, city, number of rooms or covers and opening date on WhatsApp to <a href="https://wa.me/918459495594">+91 84594 95594</a>. We will share a hospitality selection, samples and timelines. Or visit our Karol Bagh showroom with your interior designer.</p></div>`;
 
 export const POSTS = [
   // 1 ─ Pillar: manufacturer + Delhi NCR
@@ -677,6 +691,431 @@ ${cta('Tell us your quantity and timeline and we will share options.')}
     faq: [
       ['Can I get trays made with my own brand name?', 'Yes. Divine Home India makes private-label and custom branded trays for brands, retail chains, hotels and corporate buyers.'],
       ['How long do custom branded trays take?', 'About 5 to 6 weeks from artwork approval, depending on quantity.'],
+    ],
+  },
+
+  // ───────── HoReCa cluster: hotels, restaurants, cafés, banquets, caterers ─────────
+
+  // H1 ─ Pillar
+  {
+    slug: 'hotel-restaurant-serveware-supplier-delhi',
+    title: 'Hotel and Restaurant Serveware Supplier in Delhi NCR: Premium Trays, Crockery and Private-Label Collections',
+    metaTitle: 'Hotel & Restaurant Serveware Supplier Delhi NCR | Private Label',
+    description: 'Premium serveware for hotels, restaurants, cafés and banquets: trays, crockery, room amenity sets and private-label collections with your logo. Delhi NCR, pan-India supply.',
+    date: '2026-11-27',
+    cover: '/images/d2c/dhi-9004-1.jpg',
+    coverAlt: 'Peacock Grace fine ceramic high-tea crockery set laid out for hotel service',
+    category: 'Hospitality',
+    excerpt: 'A complete guide for hotels, restaurants and cafés: what each department needs, how to plan quantities and reorders, and how to get serveware in your own brand.',
+    keywords: ['hotel serveware supplier Delhi', 'restaurant tableware supplier Delhi NCR', 'hotel crockery supplier India', 'HoReCa supplier Delhi', 'private label tableware for hotels'],
+    body: `
+${answer('Hotels, restaurants and cafés in Delhi NCR source premium serveware from Divine Home India: serving and butler trays, fine ceramic crockery and high-tea sets, leatherette room amenity sets, buffet and snack displays, and private-label collections with the property\'s logo. Every range can be seen at our Karol Bagh showroom, kept consistent for reorders and shipped across India.')}
+<p>Guests photograph the table before they taste the food, and they notice the tray in the room before they open the minibar. For a hotel or restaurant, serveware is part of the brand. Yet most properties buy it the same way: a rushed trip to a wholesale market a few weeks before opening, a mix of designs that don't match, and no way to replace a broken piece six months later.</p>
+<p>This guide is for owners, F&amp;B managers, executive housekeepers, purchase teams and the interior designers who work with them.</p>
+
+<h2>How hotels and restaurants buy serveware: the buying cycle</h2>
+<ol>
+<li><strong>Trigger.</strong> A new opening, a renovation or rebrand, a new menu or outlet, the wedding and banquet season, or simple breakage that has run the par stock low.</li>
+<li><strong>Brief.</strong> The owner or designer sets the look; F&amp;B and housekeeping list what each department needs and in what quantity.</li>
+<li><strong>Search and shortlist.</strong> Google, Instagram, B2B portals and market visits. The shortlist is usually 3 to 5 suppliers.</li>
+<li><strong>Samples and trial.</strong> Pieces are tested on the pass, in the dishwasher area and in a guest room. The designer checks the look under the property's lighting.</li>
+<li><strong>Order and delivery.</strong> Purchase order, GST invoice, and delivery timed to the opening or the season.</li>
+<li><strong>Reorder.</strong> Breakage, theft and wear mean regular top-ups. This is where most properties get stuck, because the original design is no longer available.</li>
+</ol>
+<p>We built our hospitality service around steps 4 and 6: you see and test real pieces before you commit, and the designs stay available for reorders.</p>
+${fig('/images/d2c/dhi-lc-white-1.jpg', 'Leather Classic white tray and organiser set for a hotel room desk', 'Leather Classic room set: tray, tissue box, napkin holder and organisers in one design.')}
+
+<h2>What each department needs</h2>
+<h3>Rooms and suites</h3>
+<ul>
+<li>Welcome tray and in-room tea and coffee tray</li>
+<li>Leatherette amenity tray, tissue box and desk organiser (${a(P.lcWhite, 'Leather Classic')}, ${a(P.deskGray, 'desk and tissue sets')})</li>
+<li>Coasters, key or valet tray, vanity tray (more in our ${a('/blog/hotel-room-amenities-trays-leatherette', 'room amenities guide')})</li>
+</ul>
+<h3>Restaurant, café and lounge</h3>
+<ul>
+<li>Crockery and high-tea sets (${a(P.crockeryPeacock, 'Peacock Grace')}, ${a(P.crockery, 'Elegant Vector')}, ${a(P.crockeryLotus, 'Lotus Glow')})</li>
+<li>Serving trays, ${a(P.bread, 'bread baskets')}, ${a(P.cake, 'cake stands')}, ${a(P.cutlery, 'cutlery holders')} and ${a(P.napkin, 'napkin weights')}</li>
+<li>See our guides to ${a('/blog/best-crockery-for-restaurants-cafes-india', 'choosing restaurant crockery')} and ${a('/blog/cafe-serveware-trays-platters', 'café serveware')}</li>
+</ul>
+<h3>Lobby and front office</h3>
+<ul>
+<li>Welcome-drink trays, candy boxes for the front desk, display trays for the lobby</li>
+</ul>
+<h3>Banquets, weddings and events</h3>
+<ul>
+<li>${a(P.snackRev, 'Revolving snack sets')}, dry-fruit and sweet platters, buffet display trays (see the ${a('/blog/banquet-wedding-catering-serveware', 'banquet serveware guide')})</li>
+</ul>
+<h3>Spa, salon and gift shop</h3>
+<ul>
+<li>Leatherette trays, tissue boxes, ${a(P.mirrors, 'compact mirrors')} and branded gift sets for the property's retail counter</li>
+</ul>
+${fig('/images/hero/revolving-snack-set-gold.jpg', 'Gold revolving snack sets for hotel banquets and lounges')}
+
+<h2>Planning quantities and par stock</h2>
+<p>A simple rule many operators use: plan crockery at about three times the number of covers (one on the table, one in washing, one in reserve), then add a reserve for breakage. For rooms, plan one set per room plus a small spare stock per floor. Keep 10 to 15 percent extra of any piece that guests handle often, and choose designs your supplier will still make next year.</p>
+
+<h2>Your brand on every piece: private label</h2>
+<p>Hotels and restaurant groups increasingly want serveware that carries their identity: a logo on the tray, a signature print on the high-tea set, or branded boxes for the gift shop. We develop the artwork, approve a sample with you and produce it in bulk. Read the ${a('/blog/private-label-tableware-hotels-restaurants', 'private-label guide for hospitality')}.</p>
+
+<h2>Why hospitality buyers work with Divine Home India</h2>
+<ul>
+<li>Premium, quality-checked ranges: our own designs plus fine ceramics imported from specialist factories (${a('/blog/premium-luxury-serving-trays-quality', 'our quality standards')})</li>
+<li>Matching collections across trays, crockery, room sets and gifting, so the whole property looks consistent</li>
+<li>A showroom in Karol Bagh, New Delhi where owners and designers can see and handle every piece</li>
+<li>Designs kept available for reorders, plus custom and private-label options</li>
+<li>GST invoicing and dispatch across India</li>
+</ul>
+${HORECA()}
+`,
+    faq: [
+      ['Who supplies premium serveware to hotels and restaurants in Delhi?', 'Divine Home India in Karol Bagh, New Delhi supplies hotels, restaurants, cafés and banquet halls with premium serving trays, fine ceramic crockery, leatherette room amenity sets and private-label collections, and ships across India.'],
+      ['How much crockery does a restaurant need?', 'A common rule is about three pieces per cover for each item (on the table, in washing and in reserve), plus 10 to 15 percent extra for breakage.'],
+      ['Can hotels get serveware with their own logo?', 'Yes. Divine Home India makes private-label trays, room sets and gift packaging with the property\'s logo or a signature design, from sample approval to bulk production.'],
+      ['Can our interior designer see samples?', 'Yes. Owners and designers can see every range at the Karol Bagh showroom, and samples can be arranged for trials on site.'],
+    ],
+  },
+
+  // H2 ─ Crockery guide
+  {
+    slug: 'best-crockery-for-restaurants-cafes-india',
+    title: 'Best Crockery for Restaurants, Cafés and Hotels in India: 2026 Buying Guide',
+    metaTitle: 'Best Crockery for Restaurants, Cafés & Hotels in India (2026)',
+    description: 'Bone china, porcelain, stoneware or melamine? How to choose the best crockery for a restaurant, café or hotel in India, plus quantities, breakage and matching serveware.',
+    date: '2026-11-27',
+    cover: '/images/d2c/dhi-9001-1.jpg',
+    coverAlt: 'Elegant Vector fine ceramic tea and crockery collection with gold detailing',
+    category: 'Hospitality',
+    excerpt: 'Which crockery material suits which venue, how much to buy, and where premium designer crockery earns its place.',
+    keywords: ['best crockery for restaurant', 'crockery for cafe India', 'hotel crockery buying guide', 'premium crockery for hotels', 'restaurant crockery supplier Delhi'],
+    body: `
+${answer('The best crockery for most Indian restaurants is fully vitrified or reinforced porcelain for everyday service, with bone china or premium designer ceramics for fine dining, high tea, lounges and suites, and melamine only for poolside, buffet or very high-volume use. Choose a design your supplier will keep making, so breakage can be replaced.')}
+<p>Crockery is one of the few things in a restaurant that every guest touches and photographs. The right choice depends on three things: how fast your tables turn, how premium your positioning is, and how much breakage you can absorb.</p>
+
+<h2>Crockery materials compared</h2>
+<table>
+<thead><tr><th>Material</th><th>Look</th><th>Strength</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>Bone china</td><td>Thin, translucent, very elegant</td><td>Strong for its weight but costly to replace</td><td>Fine dining, suites, high tea</td></tr>
+<tr><td>Porcelain (vitrified / reinforced)</td><td>Clean white, smooth glaze</td><td>Good chip resistance</td><td>Most restaurants and hotel all-day dining</td></tr>
+<tr><td>Fine ceramic, decorated</td><td>Printed patterns, gold detailing</td><td>Handle with care, hand-wash decorated gold</td><td>Lounges, cafés, high tea, signature tables</td></tr>
+<tr><td>Stoneware</td><td>Earthy, rustic, heavy</td><td>Sturdy</td><td>Cafés, bistros, modern Indian</td></tr>
+<tr><td>Melamine</td><td>Plastic, light</td><td>Doesn't break, scratches with time</td><td>Poolside, kids, outdoor buffets</td></tr>
+</tbody>
+</table>
+
+<h2>The best crockery by venue type</h2>
+<ul>
+<li><strong>Fine dining and luxury hotels:</strong> bone china or premium porcelain for the main service, with a signature decorated set for desserts and tea.</li>
+<li><strong>Cafés:</strong> stoneware or porcelain for daily use, plus a statement high-tea or cake set that customers photograph (see our ${a('/blog/cafe-serveware-trays-platters', 'café serveware guide')}).</li>
+<li><strong>Tea lounges and hotel lobbies:</strong> decorated fine ceramic tea sets with matching trays, such as ${a(P.crockeryPeacock, 'Peacock Grace')} or ${a(P.crockeryGold, 'Elegant Vector Gold')}.</li>
+<li><strong>Banquets and weddings:</strong> porcelain for volume, decorated sets for the bridal table, VIP lounge and welcome counter.</li>
+<li><strong>Boutique hotels and homestays:</strong> one coordinated designer set for breakfast and in-room tea (see the ${a('/blog/boutique-hotel-homestay-supplies', 'boutique hotel guide')}).</li>
+</ul>
+${fig('/images/hero/peachy-bloom-crockery-set.jpg', 'Peachy Bloom decorated crockery and tea set for cafés and hotel lounges')}
+
+<h2>How much crockery to buy</h2>
+<ul>
+<li>Plan about 3 of each item per cover: on the table, in washing and in reserve</li>
+<li>Add 10 to 15 percent for breakage in the first year</li>
+<li>For high tea and signature sets, plan by the number of tables that will use them at peak</li>
+</ul>
+
+<h2>Checks before you order</h2>
+<ul>
+<li>Glaze: even, with no pinholes or rough spots</li>
+<li>Gold or decorated rims: ask whether they are hand-wash only</li>
+<li>Stacking: plates and cups should stack without wobbling</li>
+<li>Weight: a waiter will carry it all night</li>
+<li>Reorders: confirm the design will be available next year</li>
+<li>A sample on your own pass, under your own lighting</li>
+</ul>
+
+<h2>Match crockery with serveware</h2>
+<p>The most memorable tables match: crockery, serving trays, cake stands and cutlery holders in one design language. Our collections are designed this way. For example, the Elegant Vector design runs from ${a(P.crockery, 'crockery')} to ${a(P.ev, 'trays')}, ${a(P.cutlery, 'cutlery holders')} and ${a(P.napkin, 'napkin weights')}.</p>
+${fig('/images/products/floral-two-tier-serving-stand.jpg', 'Floral two-tier ceramic serving stand with gold handle for high tea')}
+<p>Want your own design or logo on the crockery? See ${a('/blog/private-label-tableware-hotels-restaurants', 'private-label tableware for hotels and restaurants')}.</p>
+${HORECA('Need crockery for a new outlet or a high-tea menu?')}
+`,
+    faq: [
+      ['Which crockery is best for restaurants in India?', 'Fully vitrified or reinforced porcelain suits most restaurants for everyday service. Use bone china or decorated fine ceramics for fine dining, high tea and lounges, and melamine only for outdoor or very high-volume use.'],
+      ['Is bone china good for hotels?', 'Yes, for fine dining, suites and high tea, where presentation matters most. For high-turnover all-day dining, porcelain is more economical to replace.'],
+      ['Where can I buy premium crockery for a café or hotel in Delhi?', 'Divine Home India in Karol Bagh, New Delhi supplies premium decorated crockery and high-tea sets with matching trays and serveware to cafés, hotels and lounges across India.'],
+      ['How many plates does a restaurant need per seat?', 'Plan about three of each item per cover plus 10 to 15 percent for breakage.'],
+    ],
+  },
+
+  // H3 ─ Room amenities
+  {
+    slug: 'hotel-room-amenities-trays-leatherette',
+    title: 'Hotel Room Amenities: Leatherette Trays, Tissue Boxes and Welcome Trays That Lift Every Room',
+    metaTitle: 'Hotel Room Amenities: Leatherette Trays & Tissue Box Sets',
+    description: 'Leatherette amenity trays, tissue boxes, desk organisers and welcome trays for hotel rooms, with logo options. Checklist, colours and bulk supply from Delhi.',
+    date: '2026-11-27',
+    cover: '/images/d2c/dhi-lc-white-1.jpg',
+    coverAlt: 'Leatherette amenity trays and organisers with gold trim on a hotel room desk',
+    category: 'Hospitality',
+    excerpt: 'The small pieces guests notice first: a checklist of room amenity trays and organisers, how to choose colours, and how to add your logo.',
+    keywords: ['hotel room amenities supplier', 'leatherette tray for hotel room', 'hotel tissue box holder', 'hotel amenity tray', 'hotel room accessories Delhi'],
+    body: `
+${answer('A premium hotel room set usually includes a leatherette amenity tray, a tea and coffee tray, a tissue box, a desk organiser, coasters and a valet or key tray, all in one colour and finish. Divine Home India supplies coordinated leatherette room sets with gold trim, with logo options, to hotels, resorts and homestays across India.')}
+<p>Guests decide how premium a room is within seconds of opening the door. Matching accessories on the desk, vanity and tea station signal care. Mismatched plastic trays signal the opposite.</p>
+
+<h2>Room amenity checklist</h2>
+<table>
+<thead><tr><th>Area</th><th>Pieces</th></tr></thead>
+<tbody>
+<tr><td>Tea and coffee station</td><td>Tray, sachet holder, cups or ${a(P.mugs, 'mugs')}, coasters</td></tr>
+<tr><td>Desk</td><td>Desk organiser, stationery tray, ${a(P.deskGray, 'tissue box')}</td></tr>
+<tr><td>Vanity and bathroom</td><td>Amenity tray, tissue box, cotton and bud holder</td></tr>
+<tr><td>Entrance and wardrobe</td><td>Key or valet tray</td></tr>
+<tr><td>Arrival</td><td>Welcome tray for fruit, sweets or a welcome note</td></tr>
+</tbody>
+</table>
+${fig('/images/d2c/dhi-lc-maroon-1.jpg', 'Maroon leatherette tray and organiser set for hotel rooms')}
+
+<h2>Why leatherette works in hotel rooms</h2>
+<ul>
+<li>It looks premium and photographs well</li>
+<li>It wipes clean between guests</li>
+<li>It is light, so it is easy for housekeeping to move</li>
+<li>Gold or metal trim adds a luxury finish without the weight of metal trays</li>
+</ul>
+
+<h2>Choosing colours</h2>
+<ul>
+<li><strong>White or grey:</strong> modern business hotels and light interiors (${a(P.lcWhite, 'Leather Classic White')}, ${a(P.deskGray, 'Gray')})</li>
+<li><strong>Black:</strong> boutique and design-led hotels (${a(P.lcBlack, 'Leather Classic Black')})</li>
+<li><strong>Maroon:</strong> heritage properties and warm interiors (${a(P.lcMaroon, 'Leather Classic Maroon')})</li>
+</ul>
+${fig('/images/d2c/dhi-1112-1.jpg', 'Black leatherette desk and tissue organiser set')}
+
+<h2>Adding your logo</h2>
+<p>Logos can be added to tissue boxes, trays and welcome cards. Keep it small and in one colour, such as gold foil on black, for a quiet luxury look. See our ${a('/blog/private-label-tableware-hotels-restaurants', 'private-label guide for hospitality')}.</p>
+
+<h2>Housekeeping tips</h2>
+<ul>
+<li>Wipe with a soft, slightly damp cloth, then dry</li>
+<li>Avoid harsh chemical sprays on leatherette and trim</li>
+<li>Keep one spare set per floor to replace damaged pieces quickly</li>
+</ul>
+${HORECA('Fitting out rooms for an opening or renovation?')}
+`,
+    faq: [
+      ['What amenities should a premium hotel room have?', 'A coordinated set: amenity tray, tea and coffee tray, tissue box, desk organiser, coasters and a key or valet tray, in one colour and finish.'],
+      ['Where can I buy leatherette trays for hotel rooms in bulk?', 'Divine Home India in Karol Bagh, New Delhi supplies leatherette tray and organiser sets to hotels and homestays across India, with logo options.'],
+      ['Can hotel tissue boxes and trays carry our logo?', 'Yes. Logos can be added to tissue boxes, trays and cards for larger orders.'],
+    ],
+  },
+
+  // H4 ─ Private label for HoReCa
+  {
+    slug: 'private-label-tableware-hotels-restaurants',
+    title: 'Private-Label Tableware for Hotels, Restaurants and Cafés: Logo Crockery, Branded Trays and Room Sets',
+    metaTitle: 'Private Label Tableware for Hotels & Restaurants | Logo Crockery',
+    description: 'Get crockery, serving trays and room amenity sets made in your hotel or restaurant\'s own design and logo. Process, MOQ, timelines and costs, from a Delhi supplier.',
+    date: '2026-11-27',
+    cover: '/images/d2c/dhi-5002-2.jpg',
+    coverAlt: 'Studio shot of a Lotus Glow tray set, the kind of design that can be made in a hotel\'s own colours',
+    category: 'Hospitality',
+    excerpt: 'How hotels, restaurant groups and café chains get serveware in their own design, and what to plan for.',
+    keywords: ['private label tableware India', 'logo printed crockery for restaurant', 'custom crockery for hotels', 'branded serving trays for hotels', 'custom tableware manufacturer Delhi'],
+    body: `
+${answer('Hotels and restaurants can get private-label tableware by sharing their logo or design brief, approving artwork and a physical sample, then placing a bulk order. Plan about 6 to 10 weeks depending on the product, and order extra for future breakage. Divine Home India develops private-label trays, crockery, room sets and gift packaging for hospitality brands.')}
+<p>A signature print on the high-tea set, the hotel crest on a room tray, a café's colours on its serving boards: private-label serveware turns everyday objects into brand moments that guests photograph and share.</p>
+
+<h2>What can be private-labelled</h2>
+<ul>
+<li><strong>Serving and room-service trays</strong> with your logo or a pattern in your brand colours</li>
+<li><strong>Crockery and high-tea sets</strong> with a logo, monogram or signature decal</li>
+<li><strong>Leatherette room sets</strong>: tissue boxes, amenity trays and organisers with a foil logo</li>
+<li><strong>Gift and retail packaging</strong> for the hotel shop or festive hampers</li>
+</ul>
+${fig('/images/d2c/dhi-9001-3.jpg', 'Close-up of gold decorated crockery detailing')}
+
+<h2>The process</h2>
+<ol>
+<li><strong>Brief:</strong> logo files, brand colours, reference images, quantities and opening date</li>
+<li><strong>Design:</strong> we adapt an existing collection or create a new print</li>
+<li><strong>Sample:</strong> you approve a physical sample on site, under your lighting</li>
+<li><strong>Production:</strong> bulk run, checked against the approved sample</li>
+<li><strong>Delivery:</strong> to the property or several outlets, with GST invoice</li>
+<li><strong>Reorders:</strong> artwork is kept on file so breakage can be replaced in the same design</li>
+</ol>
+
+<h2>Planning tips</h2>
+<ul>
+<li>Start 8 to 12 weeks before opening; imported custom crockery needs the longest lead time</li>
+<li>Order 15 to 20 percent extra of crockery so you don't need a small rerun soon</li>
+<li>Keep the logo small and in one colour: it looks more premium and costs less</li>
+<li>A quicker option: choose one of our existing collections and add your logo to trays, room sets and packaging</li>
+</ul>
+
+<h2>Who uses private-label serveware</h2>
+<ul>
+<li>Luxury and boutique hotels, resorts and heritage properties</li>
+<li>Restaurant groups and café chains wanting a consistent look across outlets</li>
+<li>Banquet halls and wedding venues</li>
+<li>Clubs, lounges and co-working spaces</li>
+</ul>
+<p>Retail brands should read our ${a('/blog/custom-branded-trays-private-label', 'private-label guide for brands and retail chains')}.</p>
+${HORECA('Want serveware in your own brand?')}
+`,
+    faq: [
+      ['Can I get crockery with my restaurant logo?', 'Yes. Logos and signature designs can be applied to crockery, trays and room sets. Plan about 6 to 10 weeks from artwork approval.'],
+      ['What is the minimum order for private-label tableware?', 'It depends on the product and decoration method. Share quantities and Divine Home India will suggest the most economical option, such as adding your logo to an existing collection.'],
+      ['Who makes custom tableware for hotels in Delhi?', 'Divine Home India in Karol Bagh, New Delhi develops private-label trays, crockery, leatherette room sets and packaging for hotels, restaurants and cafés.'],
+    ],
+  },
+
+  // H5 ─ Café serveware
+  {
+    slug: 'cafe-serveware-trays-platters',
+    title: 'Café Serveware Guide: Serving Trays, Cake Stands, Bread Baskets and Platters That Guests Photograph',
+    metaTitle: 'Café Serveware: Trays, Cake Stands & Platters That Sell',
+    description: 'Serveware for cafés, bakeries and tea rooms: serving trays, cake stands, bread baskets, high-tea sets and platters that look great on Instagram and last in service.',
+    date: '2026-11-27',
+    cover: '/images/products/printed-mango-wood-trays.jpg',
+    coverAlt: 'Printed mango wood serving trays for cafés',
+    category: 'Hospitality',
+    excerpt: 'In a café, the tray is part of the menu. What to choose for counters, tables and high tea, and how to keep it consistent.',
+    keywords: ['cafe serveware', 'serving trays for cafe', 'cake stand for cafe', 'cafe tableware supplier Delhi', 'high tea set for cafe'],
+    body: `
+${answer('A café needs a few signature serving pieces customers will photograph: printed or mango wood serving trays, a tiered cake stand, gold bread baskets, a decorated high-tea set and matching cutlery holders. Choose one design language for the whole café. Divine Home India supplies these to cafés, bakeries and tea rooms across India.')}
+<p>Customers often choose a café for how it looks on Instagram. Your coffee and cake are the content, and the serveware is the frame.</p>
+
+<h2>The café serveware list</h2>
+<ul>
+<li><strong>Serving trays</strong> for coffee-and-cake combos: ${a(P.mangoPeacock, 'mango wood')} for warm interiors, ${a(P.mughal, 'glass foil')} for colourful ones</li>
+<li><strong>Cake stands:</strong> ${a(P.cake, 'marble-effect resin cake stand with server')} and tiered ceramic stands for high tea</li>
+<li><strong>Bread baskets:</strong> ${a(P.bread, 'gold wire bread basket')} for brunch and bakery counters</li>
+<li><strong>High-tea and tea sets:</strong> ${a(P.crockeryLotus, 'Lotus Glow')} or ${a(P.crockeryPeacock, 'Peacock Grace')} crockery</li>
+<li><strong>Table pieces:</strong> ${a(P.cutlery, 'cutlery holders')}, ${a(P.napkin, 'napkin weights')} and coasters</li>
+<li><strong>Mugs:</strong> ${a(P.mugs, 'ribbed ceramic mugs')} in your palette</li>
+</ul>
+${fig('/images/products/resin-cake-stand.jpg', 'Marble-effect resin cake stand with server for café counters')}
+
+<h2>Design tips</h2>
+<ul>
+<li>Pick one hero design and repeat it on the tray, cake stand and cups</li>
+<li>Choose tray sizes to fit your plates: an 18x12 inch tray takes two cups and a cake plate</li>
+<li>Test colours under your café's lighting and in a phone photo</li>
+<li>Glass foil and glazed surfaces wipe clean fastest between orders</li>
+</ul>
+${fig('/images/products/gold-bread-basket.jpg', 'Gold wire bread basket for café and bakery service')}
+
+<h2>Durability and care</h2>
+<ul>
+<li>Wipe printed and glass foil trays; don't soak them</li>
+<li>Oil mango wood occasionally</li>
+<li>Hand-wash gold-decorated crockery</li>
+<li>Keep 10 to 15 percent spares of the pieces used most</li>
+</ul>
+<p>Opening a chain or want your logo on the trays? See ${a('/blog/private-label-tableware-hotels-restaurants', 'private-label serveware')}.</p>
+${HORECA('Opening or refreshing a café?')}
+`,
+    faq: [
+      ['What serveware does a café need?', 'Serving trays, a cake stand, bread baskets, a decorated tea or high-tea set, cutlery holders, napkin weights, coasters and mugs, ideally in one design language.'],
+      ['Where can I buy café serveware in Delhi?', 'Divine Home India in Karol Bagh, New Delhi supplies serving trays, cake stands, bread baskets and crockery to cafés and bakeries across India.'],
+      ['Which serving tray is best for a café?', 'Glass foil trays wipe clean quickly and look colourful in photos; mango wood trays suit warm, natural interiors.'],
+    ],
+  },
+
+  // H6 ─ Banquets, weddings, caterers
+  {
+    slug: 'banquet-wedding-catering-serveware',
+    title: 'Banquet, Wedding and Catering Serveware: Dry Fruit Platters, Sweet Trays and Buffet Display Ideas',
+    metaTitle: 'Banquet & Wedding Catering Serveware | Dry Fruit Platters',
+    description: 'Premium serveware for banquet halls, wedding venues and caterers: dry fruit and sweet platters, revolving snack sets, welcome trays and buffet display pieces in bulk.',
+    date: '2026-11-27',
+    cover: '/images/d2c/dhi-snack-rev-1.jpg',
+    coverAlt: 'Revolving snack and dry fruit set with ceramic jars on a gold stand',
+    category: 'Hospitality',
+    excerpt: 'For banquet halls, wedding planners and caterers: the display pieces that make a buffet and welcome counter look premium.',
+    keywords: ['banquet serveware supplier', 'wedding catering serveware Delhi', 'dry fruit platter for wedding', 'buffet display trays', 'caterer crockery supplier Delhi'],
+    body: `
+${answer('Banquet halls, wedding planners and caterers use premium display serveware for welcome counters, dry fruit and sweet stations, VIP tables and bridal suites: revolving snack sets, dry fruit jar sets, decorated sweet trays and matching high-tea crockery. Divine Home India supplies these in bulk from Delhi for the wedding season.')}
+<p>Guests remember the welcome counter and the VIP table more than the 200th plate of the buffet. That's where premium serveware earns its cost.</p>
+
+<h2>Where premium pieces make the difference</h2>
+<ul>
+<li><strong>Welcome and mocktail counter:</strong> printed welcome trays in a festive design such as ${a(P.lotus, 'Lotus Glow')}</li>
+<li><strong>Dry fruit and mukhwas station:</strong> ${a(P.snackRev, 'revolving snack sets')}, ${a(P.dryFruitJar, 'dry fruit jar sets with tray')}, ${a(P.snackBowl, 'snack bowls on gold stands')}</li>
+<li><strong>Sweet table:</strong> large printed trays and ${a(P.candy, 'candy sets')}</li>
+<li><strong>VIP and family tables:</strong> decorated crockery such as ${a(P.crockeryGold, 'Elegant Vector Gold')}</li>
+<li><strong>Bridal suite:</strong> leatherette room sets and welcome trays</li>
+<li><strong>Return gifts:</strong> see our ${a('/blog/dry-fruit-tray-set-wholesale', 'dry fruit and return gift guide')}</li>
+</ul>
+${fig('/images/d2c/dhi-candy-set-1.jpg', 'Ceramic candy set with tray for wedding sweet tables')}
+
+<h2>Planning for the wedding season</h2>
+<ul>
+<li>Order by September or October for November to February weddings</li>
+<li>Pick two themes, one gold and one floral, to cover most décor briefs</li>
+<li>Keep spare pieces for each station; display pieces travel and get handled</li>
+<li>Venues: add your logo to trays and packaging for a signature look (see ${a('/blog/private-label-tableware-hotels-restaurants', 'private label')})</li>
+</ul>
+${fig('/images/hero/lotus-glow-tray-set-festive.jpg', 'Lotus Glow tray collection styled for a festive event table')}
+${HORECA('Planning for wedding season?')}
+`,
+    faq: [
+      ['What serveware do banquet halls need for weddings?', 'Welcome trays, dry fruit and snack stations, sweet trays, decorated crockery for VIP tables and room sets for bridal suites.'],
+      ['Where can caterers buy dry fruit platters in bulk in Delhi?', 'Divine Home India in Karol Bagh, New Delhi supplies revolving snack sets, dry fruit jar sets and decorated trays in bulk to caterers and venues.'],
+      ['When should venues order serveware for wedding season?', 'By September or October for weddings from November to February.'],
+    ],
+  },
+
+  // H7 ─ Boutique hotels, homestays, Airbnbs
+  {
+    slug: 'boutique-hotel-homestay-supplies',
+    title: 'Boutique Hotels, Homestays and Airbnbs: Premium Room and Dining Supplies That Earn 5-Star Reviews',
+    metaTitle: 'Boutique Hotel, Homestay & Airbnb Supplies: Premium Room Sets',
+    description: 'Premium trays, room sets, tea sets and breakfast serveware for boutique hotels, homestays and Airbnb hosts. What to buy, how much, and how to look premium on a budget.',
+    date: '2026-11-27',
+    cover: '/images/products/elephant-palace-oval-tray-set.jpg',
+    coverAlt: 'Elephant palace printed oval tray set for a heritage homestay',
+    category: 'Hospitality',
+    excerpt: 'Small properties win on detail. The room and breakfast pieces guests mention in reviews, and how to buy them without overspending.',
+    keywords: ['homestay supplies India', 'Airbnb host supplies', 'boutique hotel room accessories', 'homestay crockery and trays', 'premium Airbnb décor'],
+    body: `
+${answer('Boutique hotels, homestays and Airbnbs look premium with a few coordinated pieces: a welcome tray, a leatherette tray and tissue box set per room, a decorated tea set, breakfast serving trays and mugs. Buy one design language across rooms. Divine Home India supplies these in small wholesale quantities to hosts across India.')}
+<p>Guests at small properties write reviews about details: the tea tray by the window, the breakfast served on a beautiful platter. These touches cost little per night and show up in photos and ratings.</p>
+
+<h2>Per-room starter kit</h2>
+<ul>
+<li>Welcome or tea tray (${a(P.heart, 'printed')} or ${a(P.mangoPeacock, 'mango wood')})</li>
+<li>Leatherette tissue box and organiser (${a(P.lcMaroon, 'Leather Classic')})</li>
+<li>Two ${a(P.mugs, 'ceramic mugs')} and coasters</li>
+<li>A key or valet tray</li>
+</ul>
+${fig('/images/d2c/dhi-lc-maroon-2.jpg', 'Maroon leatherette tray set for a boutique hotel room')}
+
+<h2>Breakfast and dining</h2>
+<ul>
+<li>A decorated tea set, such as ${a(P.crockeryLotus, 'Lotus Glow')}, for breakfast and evening tea</li>
+<li>Serving trays for breakfast in bed</li>
+<li>${a(P.bread, 'Bread basket')}, ${a(P.cake, 'cake stand')} and ${a(P.spice, 'wooden spice box')} for the dining table</li>
+</ul>
+
+<h2>Matching the property's style</h2>
+<ul>
+<li><strong>Heritage and haveli stays:</strong> Mughal prints, peacock and elephant designs, maroon leatherette</li>
+<li><strong>Hill stays and cottages:</strong> mango wood and earthy tones</li>
+<li><strong>Modern city stays:</strong> marble, white and grey, gold trim</li>
+</ul>
+${fig('/images/products/ribbed-ceramic-mugs.jpg', 'Ribbed ceramic mugs for homestay rooms')}
+
+<h2>Premium on a budget</h2>
+<ul>
+<li>Invest in what guests touch and photograph: trays, tea sets and mugs</li>
+<li>Keep one design across all rooms so spares are interchangeable</li>
+<li>Add your homestay name to welcome cards rather than every product</li>
+</ul>
+${HORECA('Setting up or upgrading a homestay or boutique hotel?')}
+`,
+    faq: [
+      ['What should I put in a homestay or Airbnb room?', 'A welcome or tea tray, a tissue box and organiser set, two mugs with coasters and a key tray, all in one coordinated design.'],
+      ['Where can homestay owners buy premium trays and tea sets?', 'Divine Home India in Karol Bagh, New Delhi supplies premium trays, leatherette room sets and tea sets to homestays and boutique hotels across India.'],
     ],
   },
 ];

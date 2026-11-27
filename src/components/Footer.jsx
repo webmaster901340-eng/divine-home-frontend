@@ -25,6 +25,7 @@ const LINES = [
 ];
 const POLICIES = [
   ['Blog & Buying Guides', '/blog'],
+  ['Hotels, Restaurants & Cafés', '/blog/hotel-restaurant-serveware-supplier-delhi'],
   ['Dealer Registration', '/policy/dealer-registration'],
   ['Shipping & Delivery', '/policy/shipping-policy'],
   ['Wholesale Terms', '/policy/wholesale-terms'],
