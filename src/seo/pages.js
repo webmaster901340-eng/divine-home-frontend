@@ -14,7 +14,7 @@ export const BUSINESS = {
 };
 
 export const FAQ = [
-  ['Who is Divine Home India?', 'Divine Home India is a wholesaler and manufacturer of decorative trays, home decor and corporate gifts, based in Karol Bagh, New Delhi. We have supplied shops, distributors and gifting companies across India since 2015.'],
+  ['Who is Divine Home India?', 'Divine Home India is a quality-focused manufacturer, importer and wholesaler of premium decorative trays, luxury home decor and corporate gifts, based in Karol Bagh, New Delhi. We have supplied shops, distributors and gifting companies across India since 2015.'],
   ['Where is your showroom?', 'Our showroom is at 1st Floor, 15A/47, near Hotel Kyron, WEA, Karol Bagh, New Delhi 110005. It is open Monday to Saturday from 10:30 am to 8:00 pm, a short walk from Karol Bagh metro station.'],
   ['What do you make?', 'Our main product is printed decorative trays in rectangle, square, round, oval and capsule sets, with gold or copper finishes. We also supply mango wood trays, ceramic bowl and candy sets, mugs, leatherette organisers, kitchen accessories and corporate gift sets.'],
   ['Do you deliver outside Delhi?', 'Yes. We deliver across India by transport or courier. Freight depends on the city and carton weight.'],
@@ -23,6 +23,8 @@ export const FAQ = [
   ['Can you put our logo on trays or gift boxes?', 'Yes. We make custom-branded trays and gift packaging for corporate orders, hotels and brands. Allow 5 to 6 weeks for custom pieces.'],
   ['How early should we order corporate Diwali gifts?', 'Order 3 to 4 weeks ahead for standard gift sets and 5 to 6 weeks ahead for branded ones. For Diwali, late August to mid-September is the safest time.'],
   ['Are you a serving tray manufacturer or a wholesaler?', 'Both. We design our own tray prints in Delhi, have them made to our standard and sell them wholesale as complete collections to shops, distributors and corporate buyers across India.'],
+  ['Do you import products?', 'Yes. Alongside our own designs and handcrafted Indian lines, we import premium ceramics, tableware, trays and gifting products from specialist factories in China. Every range is approved from a sample, shown in our Karol Bagh showroom and billed with GST.'],
+  ['What makes your trays premium?', 'A sharp print to the edges, hammered metal rims and handles that sit flush, a flat base, an even finish, consistent colour from batch to batch and courier-safe packing. We design for accessible luxury, not the cheapest price.'],
   ['Do you supply trays in Gurgaon, Noida, Ghaziabad and Faridabad?', 'Yes. We supply dealers and corporate buyers across Delhi NCR and the rest of India. Buyers in NCR can also visit our Karol Bagh showroom to see every design.'],
 ];
 
@@ -30,9 +32,9 @@ export const FAQ = [
 export const PAGES = {
   '/': {
     title: 'Serving Tray Manufacturer & Wholesaler in Delhi NCR | Divine Home India',
-    description: 'Decorative and serving tray manufacturer and wholesaler in Karol Bagh, Delhi. Own designs, full tray sets and corporate gifts for 250+ dealers across India.',
-    body: `<h1>Serving tray manufacturer and wholesaler in Delhi, supplying all of India</h1>
-<p>Divine Home India designs and supplies printed serving trays, decorative tray sets, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India, from our showroom in Karol Bagh, New Delhi, since 2015.</p>
+    description: 'Premium serving tray manufacturer, importer and wholesaler in Karol Bagh, Delhi. Luxury tray sets, ceramics and corporate gifts for 250+ dealers across India.',
+    body: `<h1>Premium serving tray manufacturer and wholesaler in Delhi, supplying all of India</h1>
+<p>Divine Home India designs, imports and supplies premium printed serving trays, decorative tray sets, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across India, from our showroom in Karol Bagh, New Delhi, since 2015.</p>
 <h2>What dealers buy from us</h2>
 <ul><li>Decorative printed trays in gold and copper, plain or hammered: rectangle, square, round, oval and capsule sets</li>
 <li>Mango wood trays, handcrafted with natural grain</li><li>Serving and dry-fruit sets for the festive season</li>
@@ -113,8 +115,8 @@ export const businessSchema = () => ({
     { '@type': 'City', name: 'New Delhi' }, { '@type': 'City', name: 'Gurugram' }, { '@type': 'City', name: 'Noida' },
     { '@type': 'City', name: 'Ghaziabad' }, { '@type': 'City', name: 'Faridabad' }, { '@type': 'Country', name: 'India' },
   ],
-  knowsAbout: ['serving trays', 'decorative trays', 'tray sets', 'mango wood trays', 'glass foil trays', 'corporate gifting', 'custom branded trays', 'home decor wholesale'],
-  slogan: 'Designed in Delhi, supplied across India',
+  knowsAbout: ['premium serving trays', 'luxury home decor', 'decorative trays', 'tray sets', 'imported ceramics and tableware', 'home decor import from China', 'mango wood trays', 'glass foil trays', 'corporate gifting', 'custom branded trays', 'home decor wholesale'],
+  slogan: 'Premium home decor, designed in Delhi, supplied across India',
   sameAs: ['https://www.instagram.com/divinehomeindia/'],
 });
 

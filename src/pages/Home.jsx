@@ -206,10 +206,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
                         <h1 className="font-serif text-[28px] sm:text-[44px] leading-[1.12] text-stone-900 mb-4 max-w-3xl mx-auto">
-              Serving Tray Manufacturer &amp; Wholesaler in Delhi, Supplying All of India
+              Premium Serving Tray Manufacturer &amp; Wholesaler in Delhi, Supplying All of India
             </h1>
             <p className="text-[15px] sm:text-base text-stone-600 max-w-2xl mx-auto mb-6 leading-relaxed">
-              We design and supply decorative serving trays, tray sets, mango wood, ceramics and gift sets to shops, distributors and corporate buyers across Delhi NCR and India. Since 2015, from our showroom in Karol Bagh, New Delhi.
+              We design, import and supply luxury serving trays, tray sets, mango wood, fine ceramics and gift sets to shops, distributors and corporate buyers across Delhi NCR and India. Quality first, since 2015, from our showroom in Karol Bagh, New Delhi.
             </p>
             <Link to="/collections" className="inline-block text-sm font-semibold text-stone-900 mb-10 sm:mb-14 underline underline-offset-[6px] decoration-stone-400 hover:decoration-stone-900 transition-colors">
               View the full catalogue
