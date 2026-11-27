@@ -17,6 +17,7 @@ import AdminLogin from './pages/AdminLogin';
 import Cart from './pages/Cart';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import NotFound from './pages/NotFound';
 import { CartProvider } from './context/CartContext';
 
 // Protected Route Wrapper for Admin Security
@@ -49,6 +50,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="*" element={<NotFound />} />
                 <Route path="/policy/:policyType" element={<About />} />
                 <Route path="/admin/login" element={<AdminLogin />} />
 

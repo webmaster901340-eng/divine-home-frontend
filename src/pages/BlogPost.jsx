@@ -4,6 +4,7 @@ import { POSTS, getPost, postPath } from '../blog/posts';
 import { SITE, blogPostSchema } from '../seo/pages';
 import { applyHead, setJsonLd } from '../components/Seo';
 import { img, srcSet, onImgError } from '../utils/img';
+import NotFound from './NotFound';
 
 const fmt = (d) => new Date(`${d}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 
@@ -22,14 +23,8 @@ const BlogPost = () => {
   }, [post]);
 
   if (!post) {
-    return (
-      <div className="max-w-3xl mx-auto px-4 py-24 text-center">
-        <h1 className="font-serif text-3xl text-stone-900">Article not found</h1>
-        <Link to="/blog" className="inline-block mt-6 text-sm font-semibold underline underline-offset-4">See all guides</Link>
-      </div>
-    );
+    return <NotFound />;
   }
-
   // Internal links inside the article body are plain <a> tags; route them without a full page reload.
   const onBodyClick = (e) => {
     const a = e.target.closest('a');
